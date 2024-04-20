@@ -1,6 +1,8 @@
 package getlandestate.pages;
 
 import getlandestate.utilities.Driver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
@@ -312,7 +314,10 @@ public class PropertiesPage {
 
 
 
+//Orhan Taner
 
+    @FindBy(xpath = "/tr[1]/td[5]/div[1]/div[1]/button[1]//*[name()='svg']//*[name()='path' and contains(@d,'M19 6v14a2')]")
+    public WebElement deleteButton;
 
 
 
