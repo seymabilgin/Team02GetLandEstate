@@ -12,6 +12,7 @@ public class GetlandPage {
             PageFactory.initElements(Driver.getDriver(),this);
 
         }
+//15-115 ILKNUR TUCCAR        
 
         @FindBy(xpath = "//a[@data-rr-ui-event-key='5']")
         public WebElement girisButonu;
