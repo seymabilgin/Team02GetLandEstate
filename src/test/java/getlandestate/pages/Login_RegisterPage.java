@@ -523,10 +523,10 @@ public class Login_RegisterPage {
 
 
 //525-625 AYSEGUL ARIK
-
-
-
-
+    @FindBy(xpath = "//a[@href='/login']") public WebElement login;
+    @FindBy(xpath = "//input[@name='email']") public WebElement loginEmail;
+    @FindBy(xpath = "//input[@name='password']") public WebElement loginPassword;
+    @FindBy(xpath = "//button[@type='submit']")  public WebElement loginButton;
 
 
 
