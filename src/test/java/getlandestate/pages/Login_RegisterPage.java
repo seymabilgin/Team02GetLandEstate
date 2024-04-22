@@ -225,7 +225,7 @@ public class Login_RegisterPage {
 //225-325 SEYMA BILGIN
 
     @FindBy(xpath = "//a[text()='Register']")
-    public WebElement registerButton;
+    public WebElement registerEnterButton;
 
     @FindBy(xpath = "//input[@name='firstName']")
     public WebElement registerFirstName;
@@ -236,8 +236,19 @@ public class Login_RegisterPage {
    @FindBy(xpath = "//input[@name='phone']")
     public WebElement registerPhone;
 
-    @FindBy(xpath = "//input[@name='phone']")
-    public WebElement registerPhonee;
+    @FindBy(xpath = "//input[@name=\"email\"]")
+    public WebElement registerEmailBox;
+    @FindBy(xpath = "//input[@name=\"password\"]")
+    public WebElement registerEnterPassword;
+    @FindBy(xpath = "//input[@name=\"confirmPassword\"]")
+    public WebElement registerConfirmPassword;
+    @FindBy(css = "#terms")
+    public WebElement registerCheckbox;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement registerButton;
+    @FindBy(xpath = " //div[.='First name is required' and @class='form-feedback invalid-feedback']")
+    public WebElement firstNameIsRequiresText;
+
 
 
 
