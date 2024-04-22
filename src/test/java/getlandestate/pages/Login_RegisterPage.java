@@ -113,8 +113,8 @@ public class Login_RegisterPage {
 
 
 //115-225 MEHMET TURAN
-
-
+@FindBy(xpath = "//a[text()='Login']") public WebElement loginButton;
+@FindBy(xpath = "//input[@placeholder='Email']") public WebElement emailBox;
 
 
 
