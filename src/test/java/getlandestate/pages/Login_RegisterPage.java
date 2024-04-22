@@ -7,7 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 
 //#!!! Kendi alanımızda calısırken enter a bastıgımızda bir sonrakı kısının satırını kontrol edelim !!!
-public class Login_RegisterPage {
+public class
+Login_RegisterPage {
     public Login_RegisterPage() {PageFactory.initElements(Driver.getDriver(),this);
     }
 
