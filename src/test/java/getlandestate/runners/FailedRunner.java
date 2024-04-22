@@ -24,5 +24,6 @@ public class FailedRunner {
    Bu classta sadece fail olan test scenario larini çalıştıracağız
    sadece txt dosyasındaki fail olan senaryolar çalıştırılacağı için tags parametresine gerek yoktur
 
+
     rerun plugini ile fail olan scenariolari burada belirtmiş olduğumuz failed_scenario.txt dosyası içinde tutabiliriz
  */
