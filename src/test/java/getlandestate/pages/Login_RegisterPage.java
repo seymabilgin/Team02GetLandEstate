@@ -12,7 +12,6 @@ Login_RegisterPage {
     public Login_RegisterPage() {PageFactory.initElements(Driver.getDriver(),this);
     }
 
-
 //15-115 M.FURKAN KARAIS
 
 
@@ -323,18 +322,7 @@ Login_RegisterPage {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-    //325-425 SEVILAY UYANIK
+ //325-425 SEVILAY UYANIK
 
 
 
