@@ -324,7 +324,7 @@ Login_RegisterPage {
 
  //325-425 SEVILAY UYANIK
 
-    @FindBy(xpath = "//a[@class='nav-link active']")
+    @FindBy(xpath = "//a[text()='Login']")
     public WebElement homeLogin;
     @FindBy(xpath = "//input[@placeholder='Email']")
     public WebElement email;
@@ -346,11 +346,6 @@ Login_RegisterPage {
     public WebElement myResponses;
     @FindBy(xpath = "(//button[@class='btn-link approve-button btn btn-primary'])[1]")
     public WebElement firstApprove;
-
-
-
-
-
 
 
 
