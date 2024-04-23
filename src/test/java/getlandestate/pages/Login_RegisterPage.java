@@ -526,7 +526,8 @@ Login_RegisterPage {
     @FindBy(xpath = "//a[@href='/login']") public WebElement login;
     @FindBy(xpath = "//input[@name='email']") public WebElement loginEmail;
     @FindBy(xpath = "//input[@name='password']") public WebElement loginPassword;
-    @FindBy(xpath = "//button[@type='submit']")  public WebElement loginButton;
+    @FindBy(xpath = "//button[@type='submit']")  public WebElement loginButtona;
+
 
 
 
@@ -623,19 +624,18 @@ Login_RegisterPage {
 
 
 //625-725 FEYZI TUGCU
-
-
-
-
-
-
-
-
-
-
-
-
-
+@FindBy(xpath = "//span[text()='Back to Site']")
+public WebElement backToSiteButton;
+@FindBy(xpath = "//input[@class='form-control']")
+public WebElement searchBoxAnaSayfa;
+@FindBy(xpath = "//img[@class='card-img-top property-card-img']")
+public WebElement aramaSonucu;
+@FindBy(xpath = "//input[@id='tourDate']")
+public WebElement tourDate;
+@FindBy(xpath = "//option[@value='01:30']")
+public  WebElement tourTime;
+@FindBy(xpath = "//button[@type='submit']")
+public  WebElement submitButton;
 
 
 
