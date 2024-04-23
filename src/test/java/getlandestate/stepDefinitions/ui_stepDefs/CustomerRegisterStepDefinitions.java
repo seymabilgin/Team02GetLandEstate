@@ -9,7 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class CustomerRegisterStepDefinitions {
-   /* RegisterPage registerPage =new RegisterPage();
+   RegisterPage registerPage =new RegisterPage();
     @Given("Ansayfaya gidilir.")
     public void ansayfayaGidilir() {
         Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
@@ -59,6 +59,6 @@ public class CustomerRegisterStepDefinitions {
      Driver.closeDriver();
 
     }
-    */
+
 }
 
