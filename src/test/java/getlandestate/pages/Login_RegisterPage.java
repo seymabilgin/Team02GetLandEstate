@@ -7,10 +7,10 @@ import org.openqa.selenium.support.PageFactory;
 
 
 //#!!! Kendi alanımızda calısırken enter a bastıgımızda bir sonrakı kısının satırını kontrol edelim !!!
-public class Login_RegisterPage {
+public class
+Login_RegisterPage {
     public Login_RegisterPage() {PageFactory.initElements(Driver.getDriver(),this);
     }
-
 
 //15-115 M.FURKAN KARAIS
 
@@ -113,8 +113,8 @@ public class Login_RegisterPage {
 
 
 //115-225 MEHMET TURAN
-
-
+@FindBy(xpath = "//a[text()='Login']") public WebElement loginButton;
+@FindBy(xpath = "//input[@placeholder='Email']") public WebElement emailBox;
 
 
 
@@ -225,7 +225,7 @@ public class Login_RegisterPage {
 //225-325 SEYMA BILGIN
 
     @FindBy(xpath = "//a[text()='Register']")
-    public WebElement registerButton;
+    public WebElement registerEnterButton;
 
     @FindBy(xpath = "//input[@name='firstName']")
     public WebElement registerFirstName;
@@ -236,8 +236,18 @@ public class Login_RegisterPage {
    @FindBy(xpath = "//input[@name='phone']")
     public WebElement registerPhone;
 
-    @FindBy(xpath = "//input[@name='phone']")
-    public WebElement registerPhonee;
+    @FindBy(xpath = "//input[@name=\"email\"]")
+    public WebElement registerEmailBox;
+    @FindBy(xpath = "//input[@name=\"password\"]")
+    public WebElement registerEnterPassword;
+    @FindBy(xpath = "//input[@name=\"confirmPassword\"]")
+    public WebElement registerConfirmPassword;
+    @FindBy(css = "#terms")
+    public WebElement registerCheckbox;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement registerButton;
+    @FindBy(xpath = " //div[.='First name is required' and @class='form-feedback invalid-feedback']")
+    public WebElement firstNameIsRequiresText;
 
 
 
@@ -312,17 +322,7 @@ public class Login_RegisterPage {
 
 
 
-
-
-
-
-
-
-
-
-
-
-    //325-425 SEVILAY UYANIK
+ //325-425 SEVILAY UYANIK
 
     @FindBy(xpath = "//a[@class='nav-link active']")
     public WebElement homeLogin;
@@ -528,10 +528,10 @@ public class Login_RegisterPage {
 
 
 //525-625 AYSEGUL ARIK
-
-
-
-
+    @FindBy(xpath = "//a[@href='/login']") public WebElement login;
+    @FindBy(xpath = "//input[@name='email']") public WebElement loginEmail;
+    @FindBy(xpath = "//input[@name='password']") public WebElement loginPassword;
+    @FindBy(xpath = "//button[@type='submit']")  public WebElement loginButton;
 
 
 
