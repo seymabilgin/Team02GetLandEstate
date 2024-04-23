@@ -113,7 +113,7 @@ public class DashBoardPage {
 
 
 //115-225 MEHMET TURAN
-@FindBy(css = "//span[.='Reports']") public WebElement dashboardReportsButton;
+@FindBy(xpath = "//*[@title='Reports']") public WebElement dashboardReportsButton;
 @FindBy(xpath = "(//input[@id=\"startDate\"])[1]") public WebElement advertsStartDate;
 @FindBy(xpath = "(//input[@id=\"endDate\"])[1]") public WebElement advertsEndDate;
 @FindBy(css = "#category") public WebElement advertsCategory;
