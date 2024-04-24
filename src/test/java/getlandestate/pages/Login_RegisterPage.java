@@ -523,45 +523,38 @@ Login_RegisterPage {
 
 
 //525-625 AYSEGUL ARIK
-    @FindBy(xpath = "//a[@href='/login']") public WebElement login;
-    @FindBy(xpath = "//input[@name='email']") public WebElement loginEmail;
-    @FindBy(xpath = "//input[@name='password']") public WebElement loginPassword;
-    @FindBy(xpath = "//button[@type='submit']")  public WebElement loginButtona;
-    @FindBy(xpath = "//div[@class='p-toast-detail']") public WebElement updatedPhoto;
-    @FindBy(xpath = "//div[@class='p-toast-detail']")  public WebElement accountDelete;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//a[@href='/login']") public WebElement loginAA;
+    @FindBy(xpath = "//input[@name='email']") public WebElement loginEmailAA;
+    @FindBy(xpath = "//input[@name='password']") public WebElement loginPasswordAA;
+    @FindBy(xpath = "//button[@type='submit']")  public WebElement loginButtonAA;
+    @FindBy(xpath = "//div[@class='user-logo-nav navbar-nav']") public WebElement profileLogAA;
+    @FindBy(xpath = "(//a[@class='dropdown-item'])[5]") public WebElement logoutAA;
+    @FindBy(xpath = "//*[contains(text(),'Invalid email')]") public WebElement invalidEmailAA;
+    @FindBy(xpath = "//div[@class='p-toast-detail']") public WebElement invalidEmailorPasswordAA;
+    @FindBy(xpath = "//*[contains(text(),'Password is required')]") public WebElement passwordIsRequiredAA;
+    @FindBy(xpath = "//*[contains(text(),'Email is required')]")     public WebElement emailIsRequiredAA;
+    @FindBy(xpath = "//*[contains(text(),'My Profile')]")     public WebElement myProfileAA;
+    @FindBy(xpath = "//input[@name='firstName']")      public WebElement firstNameAA;
+    @FindBy(xpath = "//input[@name='lastName']")      public WebElement lastNameAA;
+    @FindBy(xpath = "//input[@name='phone']")      public WebElement phoneAA;
+    @FindBy(xpath = "//input[@name='email']")      public WebElement emailAA;
+    @FindBy(xpath = "(//button[@type='submit'])[1]") public WebElement updateButtonAA;
+    @FindBy(xpath = "//div[@class='p-toast-detail']") public WebElement updateProfileAA;
+    @FindBy(xpath = "//button[@id='react-aria9109298492-:r7:-tab-change-password']") public WebElement changePasswordAA;
+    @FindBy(xpath = "//input[@name='currentPassword']")   public WebElement currentPasswordAA;
+    @FindBy(xpath = "//input[@name='newPassword']")   public WebElement newPasswordAA;
+    @FindBy(xpath = "//input[@name='repeatNewPassword']")   public WebElement repeatNewPasswordAA;
+    @FindBy(xpath = "(//button[@class='submit-button btn btn-secondary'])[2]") public WebElement changeButtonAA;
+    @FindBy(xpath = "//*[contains(text(),'You can login using your GetLandEstate account')]") public WebElement getLandEstateAccountAA;
+    @FindBy(xpath = "//button[@id='react-aria9109298492-:rj:-tab-profile-photo']") public WebElement profilePhotoButtonAA;
+    @FindBy(xpath = "//button[@class='select-button btn btn-primary']") public WebElement selectButtonAA;
+    @FindBy(xpath = "//button[@class='done-button btn btn-primary']")  public WebElement doneButtonAA;
+    @FindBy(xpath = "//button[@class='save-button btn btn-secondary']") public WebElement saveButtonAA;
+    @FindBy(xpath = "//div[@class='p-toast-detail']") public WebElement updatedPhotoMessageAA;
+    @FindBy(xpath = "//button[@id='react-aria9109298492-:rj:-tab-delete-account']") public WebElement deleteAccountButtonAA;
+    @FindBy(xpath = "//input[@name='password']")  public WebElement deleteEmailButtonAA;
+    @FindBy(xpath = "(//button[@class='submit-button btn btn-secondary'])[3]") public WebElement accountDeleteAA;
+    @FindBy(xpath = "//div[@class='p-toast-detail']")  public WebElement accountDeleteMessageAA;
 
 
 
