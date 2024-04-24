@@ -529,6 +529,13 @@ Login_RegisterPage {
     @FindBy(xpath = "//button[@type='submit']")  public WebElement loginButtona;
     @FindBy(xpath = "//div[@class='p-toast-detail']") public WebElement updatedPhoto;
     @FindBy(xpath = "//div[@class='p-toast-detail']")  public WebElement accountDelete;
+  
+
+
+
+
+    
+
 
 
 
@@ -729,19 +736,6 @@ public  WebElement submitButton;
 
 
 //725-825 ORHAN TANER
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
