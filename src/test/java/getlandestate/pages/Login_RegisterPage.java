@@ -523,7 +523,6 @@ Login_RegisterPage {
 
 
 //525-625 AYSEGUL ARIK
-
     @FindBy(xpath = "//a[@href='/login']") public WebElement loginAA;
     @FindBy(xpath = "//input[@name='email']") public WebElement loginEmailAA;
     @FindBy(xpath = "//input[@name='password']") public WebElement loginPasswordAA;
@@ -561,6 +560,7 @@ Login_RegisterPage {
 
 
 
+   
 
 
 
@@ -611,18 +611,18 @@ Login_RegisterPage {
 
 
 
+    @FindBy(xpath = "//a[@href='/login']") public WebElement logina;
+    @FindBy(xpath = "//input[@name='email']") public WebElement loginEmail;
+    @FindBy(xpath = "//input[@name='password']") public WebElement loginPassword;
+    @FindBy(xpath = "//button[@type='submit']")  public WebElement loginButtona;
+    @FindBy(xpath = "//div[@class='p-toast-detail']") public WebElement updatedPhoto;
+    @FindBy(xpath = "//div[@class='p-toast-detail']")  public WebElement accountDelete;
 
 
 
 
 
-
-
-
-
-
-
-    //625-725 FEYZI TUGCU
+ //625-725 FEYZI TUGCU
 @FindBy(xpath = "//span[text()='Back to Site']")
 public WebElement backToSiteButton;
 @FindBy(xpath = "//input[@class='form-control']")
@@ -635,6 +635,12 @@ public WebElement tourDate;
 public  WebElement tourTime;
 @FindBy(xpath = "//button[@type='submit']")
 public  WebElement submitButton;
+@FindBy(xpath = "//div[@class='top-label']")
+ public  WebElement dashboardText;
+@FindBy(xpath = "//a[@href=\"/contact\"]")
+ public  WebElement contactButton;
+@FindBy(xpath = "//h5[text()=\"Have a question? Get in touch!\"]")
+public WebElement verifyQuestion;
 
 
 
@@ -711,6 +717,12 @@ public  WebElement submitButton;
 
 
 
+  
+  
+  
+  
+  
+  //725-825 ORHAN TANER
 
 
 
@@ -722,7 +734,6 @@ public  WebElement submitButton;
 
 
 
-//725-825 ORHAN TANER
 
 
 
@@ -799,17 +810,19 @@ public  WebElement submitButton;
 
 
 
-
-
-
-
-
-
-
-
-
-
-//825-925 ILKNUR TUCCAR
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  //825-925 ILKNUR TUCCAR
 
 
 
