@@ -15,13 +15,13 @@ public class US13 {
     public void anaSayfayaGidilir() {
         Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
     }
-
+/*
     @When("Login butonuna tiklanir")
     public void loginButonunaTiklanir() {
 
         login.homeLogin.click();
 
-    }
+    }*/
 
     @And("E-mail ve password kismina gecerli veriler girilir ve login tiklanir")
     public void eMailVePasswordKisminaGecerliVerilerGirilirVeLoginTiklanir() {
