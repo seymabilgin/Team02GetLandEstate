@@ -11,6 +11,16 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.asserts.SoftAssert;
+
+import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class US16StepDef {
     Login_RegisterPage registerPage = new Login_RegisterPage();
@@ -33,29 +43,155 @@ public class US16StepDef {
 
     @And("Reports butonuna tiklanir")
     public void reportsButonunaTiklanir() {
-        //dashBoardPage.dashboardReportsButton.click();
         ReusableMethods.click(dashBoardPage.dashboardReportsButton);
-
     }
 
     @When("Adverts kismindaki secimler yapilir ve raporlama butonuna tiklanir")
     public void advertsKismindakiSecimlerYapilirVeRaporlamaButonunaTiklanir() {
-        dashBoardPage.advertsStartDate.sendKeys("04/01/24");
+        dashBoardPage.advertsStartDate.sendKeys("01042024");
+        dashBoardPage.advertsEndDate.sendKeys("18042024");
+        Select selectCategory = new Select(dashBoardPage.advertsCategory);
+        selectCategory.selectByIndex(1);
+        dashBoardPage.advertsType.sendKeys("Rent");
+        dashBoardPage.advertsStatus.sendKeys("Activated");
+        //Dosya daha önce indirilmişse silinir
+        String dosyaYolu = System.getProperty("user.home") + "\\Downloads\\filtered-adverts.xlsx";
+        try {
+            Files.delete(Paths.get(dosyaYolu));
+        } catch (IOException e) {
+            System.err.println("Dosya Silinemedi!");
+        }
+        dashBoardPage.advertsDownload.click();
+        //Robot class ı ile download keep e tiklanir
+        ReusableMethods.robotDownloadKeep();
     }
 
-    @Then("Download dogrulamasi yapilir")
-    public void downloadDogrulamasiYapilir() {
+    @Then("Adverts Download dogrulamasi yapilir")
+    public void advertsDownloadDogrulamasiYapilir() {
+        String dosyaYolu = System.getProperty("user.home") + "\\Downloads\\filtered-adverts.xlsx";
+        Assert.assertTrue(Files.exists(Paths.get(dosyaYolu)));
     }
 
     @When("Most Popular Properties kismindaki Amount kısmına deger girilir ve raporlama butonuna tiklanir")
     public void mostPopularPropertiesKismindakiAmountKısmınaDegerGirilirVeRaporlamaButonunaTiklanir() {
+        dashBoardPage.popularAmount.click();
+        dashBoardPage.popularAmount.sendKeys(Keys.BACK_SPACE,"3");
+        ReusableMethods.bekle(1);
+        //Dosya daha önce indirilmişse silinir
+        String dosyaYolu = System.getProperty("user.home") + "\\Downloads\\most-popular-3-adverts.xlsx";
+        try {
+            Files.delete(Paths.get(dosyaYolu));
+        } catch (IOException e) {
+            System.err.println("Dosya Silinemedi!");
+        }
+        dashBoardPage.popularDownload.click();
+        //Robot class ı ile download keep e tiklanir
+        ReusableMethods.robotDownloadKeep();
+    }
+
+    @Then("Most Popular Download dogrulamasi yapilir")
+    public void mostPopularDownloadDogrulamasiYapilir() {
+        String dosyaYolu = System.getProperty("user.home") + "\\Downloads\\most-popular-3-adverts.xlsx";
+        Assert.assertTrue(Files.exists(Paths.get(dosyaYolu)));
     }
 
     @When("Users kisminda Admin rolu secili iken raporlama butonuna tiklanir")
     public void usersKismindaAdminRoluSeciliIkenRaporlamaButonunaTiklanir() {
+        Select selectRole=new Select(dashBoardPage.usersRole);
+        selectRole.selectByValue("ADMIN");
+        dashBoardPage.usersDownload.click();
+        ReusableMethods.bekle(2);
+    }
+
+    @Then("Users Download dogrulamasi yapilir")
+    public void usersDownloadDogrulamasiYapilir() {
+        Assert.assertFalse(dashBoardPage.errorMessage.isDisplayed(),"USERS RAPOR ALINAMADI!!!");
     }
 
     @When("Tour Requests kismindaki secimler yapilir ve raporlama butonuna tiklanir")
     public void tourRequestsKismindakiSecimlerYapilirVeRaporlamaButonunaTiklanir() {
+        dashBoardPage.tourStartDate.sendKeys("01042024");
+        dashBoardPage.tourEndDate.sendKeys("18042024");
+        dashBoardPage.tourStatus.sendKeys("Approved");
+        //Dosya daha önce indirilmişse silinir
+        String dosyaYolu = System.getProperty("user.home") + "\\Downloads\\filtered-tour-requests.xlsx";
+        try {
+            Files.delete(Paths.get(dosyaYolu));
+        } catch (IOException e) {
+            System.err.println("Dosya Silinemedi!");
+        }
+        dashBoardPage.tourDownload.click();
+        //Robot class ı ile download keep e tiklanir
+        ReusableMethods.robotDownloadKeep();
+    }
+
+    @Then("Tour Request Download dogrulamasi yapilir")
+    public void tourRequestDownloadDogrulamasiYapilir() {
+        String dosyaYolu = System.getProperty("user.home") + "\\Downloads\\filtered-tour-requests.xlsx";
+        Assert.assertTrue(Files.exists(Paths.get(dosyaYolu)));
+    }
+
+    @And("Sayfa kapanir")
+    public void sayfaKapanir() {
+        Driver.closeDriver();
+    }
+
+    @When("Adverts kisminda yalniz Category kismi bos birakilarak raporlama butonuna tiklanır")
+    public void advertsKismindaYalnizCategoryKismiBosBirakilarakRaporlamaButonunaTiklanır() {
+        dashBoardPage.advertsStartDate.sendKeys("01042024");
+        dashBoardPage.advertsEndDate.sendKeys("18042024");
+        dashBoardPage.advertsCategory.sendKeys("All");
+        dashBoardPage.advertsType.sendKeys("Rent");
+        dashBoardPage.advertsStatus.sendKeys("Activated");
+        dashBoardPage.advertsDownload.click();
+        ReusableMethods.bekle(1);
+    }
+
+    @Then("Adverts bos Catergory ile No Download dogrulamasi yapilir")
+    public void advertsBosCatergoryIleNoDownloadDogrulamasiYapilir() {
+        Assert.assertTrue(dashBoardPage.errorMessage.isDisplayed());
+    }
+
+    @When("Adverts kisminda yalniz Advert Type kismi bos birakilarak raporlama butonuna tiklanır")
+    public void advertsKismindaYalnizAdvertTypeKismiBosBirakilarakRaporlamaButonunaTiklanır() {
+        dashBoardPage.advertsStartDate.sendKeys("01042024");
+        dashBoardPage.advertsEndDate.sendKeys("18042024");
+        Select selectCategory = new Select(dashBoardPage.advertsCategory);
+        selectCategory.selectByIndex(1);
+        dashBoardPage.advertsType.sendKeys("All");
+        dashBoardPage.advertsStatus.sendKeys("Activated");
+        dashBoardPage.advertsDownload.click();
+        ReusableMethods.bekle(1);
+    }
+
+    @Then("Adverts bos Advert Type ile No Download dogrulamasi yapilir")
+    public void advertsBosAdvertTypeIleNoDownloadDogrulamasiYapilir() {
+        Assert.assertTrue(dashBoardPage.errorMessage.isDisplayed());
+    }
+
+    @When("Most Popular Properties kismindaki Amount a negatif deger girilir ve raporlama butonuna tiklanir")
+    public void mostPopularPropertiesKismindakiAmountANegatifDegerGirilirVeRaporlamaButonunaTiklanir() {
+        dashBoardPage.popularAmount.click();
+        dashBoardPage.popularAmount.sendKeys(Keys.BACK_SPACE,"-2");
+        dashBoardPage.popularDownload.click();
+    }
+
+    @Then("Most Popular No Download dogrulamasi yapilir")
+    public void mostPopularNoDownloadDogrulamasiYapilir() {
+        Assert.assertEquals("Amount must be a positive number",dashBoardPage.amountMessage.getText());
+    }
+
+    @When("Tour Request kisminda yalniz Status kismi bos birakilarak raporlama butonuna tiklanır")
+    public void tourRequestKismindaYalnizStatusKismiBosBirakilarakRaporlamaButonunaTiklanır() {
+        dashBoardPage.tourStartDate.sendKeys("01042024");
+        dashBoardPage.tourEndDate.sendKeys("18042024");
+        dashBoardPage.tourStatus.sendKeys("All");
+        dashBoardPage.tourDownload.click();
+        ReusableMethods.bekle(1);
+    }
+
+    @Then("Tour Request bos Status ile No Download dogrulamasi yapilir")
+    public void tourRequestBosStatusIleNoDownloadDogrulamasiYapilir() {
+        Assert.assertTrue(dashBoardPage.errorMessage.isDisplayed());
     }
 }

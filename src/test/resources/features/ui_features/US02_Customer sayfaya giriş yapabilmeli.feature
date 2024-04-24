@@ -18,18 +18,18 @@ Feature:US_02 Customer sayfaya giriş yapabilmeli
 
   @TC02
   Scenario:Customer olarak gecerli olmayan email ile sayfaya giris yapilamamali
-  And Email gecerli olmayan bilgi girilir
+  And Emaila gecerli olmayan bilgi girilir
   And Enter password gecerli bilgi girilir
   And LOGIN butonu tiklanir
-  Then Customer olarak sayfaya giris yapilamadigi test edilir
+  Then Customera olarak sayfaya giris yapilamadigi test edilir
 
 
   @TC03
   Scenario:Customer olarak gecerli olmayan email ile sayfaya giris yapilamamali
-    And Email gecerli olmayan bilgi girilir
+    And Emailb gecerli olmayan bilgi girilir
     And Enter password gecerli bilgi girilir
     And LOGIN butonu tiklanir
-    Then Customer olarak sayfaya giris yapilamadigi test edilir
+    Then Customerb olarak sayfaya giris yapilamadigi test edilir
 
 
 
@@ -38,7 +38,7 @@ Feature:US_02 Customer sayfaya giriş yapabilmeli
     And Email gecerli bilgi girilir
     And Enter password alani bos birakilir
     And LOGIN butonu tiklanir
-    Then Customer olarak sayfaya giris yapilamadigi test edilir
+    Then Customerc olarak sayfaya giris yapilamadigi test edilir
 
 
 
@@ -47,4 +47,4 @@ Feature:US_02 Customer sayfaya giriş yapabilmeli
     And Email alani bos birakilir
     And Enter password alanı bos birakilir
     And LOGIN butonu tiklanir
-    Then Customer olarak sayfaya giris yapilamadigi test edilir
+    Then Customerd olarak sayfaya giris yapilamadigi test edilir
