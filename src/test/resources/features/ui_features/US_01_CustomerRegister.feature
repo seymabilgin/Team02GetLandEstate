@@ -134,5 +134,5 @@
       And REGISTER  butonuna tıklanır.
       Then Success yazısının görüldügü dogrulanır.
 
-    @US01-UI-TC16
+
 
