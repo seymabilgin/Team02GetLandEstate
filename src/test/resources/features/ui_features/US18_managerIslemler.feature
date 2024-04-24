@@ -1,6 +1,7 @@
+@US018
 Feature:US_18 Manager ilanlar ile ilgili işlemler yapabilmeli
 
-@US018
+
   Scenario:TC_01 Sayfadaki bir ilanı görmek için istekte bulunabilmeli
 
     Given Kullanici "http://www.getlandestate.com/" sayfasina gidilir

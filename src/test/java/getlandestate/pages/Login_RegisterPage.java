@@ -523,7 +523,7 @@ Login_RegisterPage {
 
 
 //525-625 AYSEGUL ARIK
-    @FindBy(xpath = "//a[@href='/login']") public WebElement login;
+    @FindBy(xpath = "//a[@href='/login']") public WebElement logina;
     @FindBy(xpath = "//input[@name='email']") public WebElement loginEmail;
     @FindBy(xpath = "//input[@name='password']") public WebElement loginPassword;
     @FindBy(xpath = "//button[@type='submit']")  public WebElement loginButtona;
@@ -642,18 +642,12 @@ public WebElement tourDate;
 public  WebElement tourTime;
 @FindBy(xpath = "//button[@type='submit']")
 public  WebElement submitButton;
-
-
-
-
-
-
-
-
-
-
-
-
+@FindBy(xpath = "//div[@class='top-label']")
+ public  WebElement dashboardText;
+@FindBy(xpath = "//a[@href=\"/contact\"]")
+ public  WebElement contactButton;
+@FindBy(xpath = "//h5[text()=\"Have a question? Get in touch!\"]")
+public WebElement verifyQuestion;
 
 
 

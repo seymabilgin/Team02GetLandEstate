@@ -1,5 +1,6 @@
 package getlandestate.stepDefinitions.ui_stepDefs;
 
+import getlandestate.pages.GetlandPage;
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.utilities.ConfigReader;
 import getlandestate.utilities.Driver;
@@ -7,6 +8,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
 public class US18_managerStepDefinition {
@@ -63,10 +65,14 @@ public class US18_managerStepDefinition {
 
     @And("Dashboard yazdıgı dogrulanır")
     public void dashboardYazdıgıDogrulanır() {
+        Assert.assertTrue(registerPage.dashboardText.getText().contains("Dashboard"));
+
     }
 
     @And("profil üzerinden MY TOUR REQUEST'e tıklanır")
     public void profilÜzerindenMYTOURREQUESTETıklanır() {
+        registerPage.backToSiteButton.click();
+
     }
 
     @And("MY RESPONSES'e tıklanır")
