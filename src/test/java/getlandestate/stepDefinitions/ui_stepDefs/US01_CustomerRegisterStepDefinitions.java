@@ -9,7 +9,7 @@ import getlandestate.utilities.ReusableMethods;
 import io.cucumber.java.en.*;
 import org.testng.Assert;
 
-public class CustomerRegisterStepDefinitions {
+public class US01_CustomerRegisterStepDefinitions {
     Login_RegisterPage registerPage =new Login_RegisterPage();
     Faker faker=new Faker();
     @Given("Ansayfaya gidilir.")
@@ -19,7 +19,7 @@ public class CustomerRegisterStepDefinitions {
     }
     @When("Register  butonuna tıklanır.")
     public void registerButonunaTıklanır() {
-        registerPage.registerButton.click();
+        registerPage.registerEnterButton.click();
 
     }
     @When("First Name kısmı bos bırakılır.")
@@ -30,13 +30,14 @@ public class CustomerRegisterStepDefinitions {
     @When("Last Name kısmına gecerli bir lastName girilir.")
     public void lastNameKısmınaGecerliBirLastNameGirilir() {
 
-        registerPage.registerLastName.sendKeys(ConfigReader.getProperty("lastName"));
+        registerPage.registerLastName.sendKeys(faker.name().lastName());
 
     }
 
     @And("Phone Number kısmına geçerli bir phone number girilir.")
     public void phoneNumberKısmınaGeçerliBirPhoneNumberGirilir() {
-        registerPage.registerPhone.sendKeys(faker.phoneNumber().phoneNumber());
+        registerPage.registerPhone.click();
+        registerPage.registerPhone.sendKeys(faker.phoneNumber().cellPhone());
     }
 
     @And("Email kısmına geçerli bir email girilir.")
@@ -100,7 +101,7 @@ public class CustomerRegisterStepDefinitions {
 
     @Then("Last Name bos bırakıldıgında Last name is required uyarı metni cıktıgı dogrulanır.")
     public void lastNameBosBırakıldıgındaLastNameIsRequiredUyarıMetniCıktıgıDogrulanır() {
-        Assert.assertEquals("Invalid phone number", registerPage.lastNameIsRequiredText.getText());
+        Assert.assertEquals("Last name is required", registerPage.lastNameIsRequiredText.getText());
     }
 
     @And("Phone Number kısmı bos bırakılır.")
@@ -238,12 +239,19 @@ public class CustomerRegisterStepDefinitions {
         Assert.assertFalse(registerPage.registerButton.isSelected());
     }
 
-
     @Then("Success yazısının görüldügü dogrulanır.")
     public void successYazısınınGörüldügüDogrulanır(){
-
+        String alertText= ReusableMethods.alertGetTextJS(registerPage.alertText);
+        Assert.assertTrue(alertText.contains("Success"));
 
     }
+
+    @Then("Your registration has been completed successfully. Please to activate your account, click on the activation link sent to your e-mail. yazısının görüldügü dogrulanır.")
+    public void yourRegistrationHasBeenCompletedSuccessfullyPleaseToActivateYourAccountClickOnTheActivationLinkSentToYourEMailYazısınınGörüldügüDogrulanır() {
+        String alertText=ReusableMethods.alertGetTextJS(registerPage.alertText);
+        Assert.assertTrue(alertText.contains("Your registration has been completed successfully. Please to activate your account, click on the activation link sent to your e-mail."));
+    }
+
 
 
 

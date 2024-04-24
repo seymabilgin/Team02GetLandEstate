@@ -265,10 +265,8 @@ Login_RegisterPage {
     public WebElement oneSpecialCharacter;
     @FindBy(xpath = "//*[contains(text(),'Confirm password is required')]")
     public WebElement confirmPasswordIsRequire;
-    @FindBy(xpath = "//span[@class='p-toast-summary']")
-    public WebElement successPopUp;
-    @FindBy(xpath = "//div[@class='p-toast-detail']")
-    public WebElement popUpText;
+    @FindBy(xpath = "//div[@class='p-toast-message-text']")
+    public WebElement alertText;
 
 
 
@@ -322,7 +320,9 @@ Login_RegisterPage {
 
 
 
-    //325-425 SEVILAY UYANIK
+
+
+   //325-425 SEVILAY UYANIK
 
     @FindBy(xpath = "//a[text()='Login']")
     public WebElement homeLogin;
@@ -330,8 +330,8 @@ Login_RegisterPage {
     public WebElement email;
     @FindBy(xpath = "//input[@name='password']")
     public WebElement password;
-    @FindBy(xpath = "//button[@class='submit-button btn btn-secondary']")
-    public WebElement login;
+    //@FindBy(xpath = "//button[@class='submit-button btn btn-secondary']")
+    //public WebElement login;
     @FindBy(xpath = "//a[@title='Tour Requests']")
     public WebElement tourRequests;
     @FindBy(xpath = "//input[@name='search']")
@@ -523,6 +523,7 @@ Login_RegisterPage {
 
 
 //525-625 AYSEGUL ARIK
+
     @FindBy(xpath = "//a[@href='/login']") public WebElement loginAA;
     @FindBy(xpath = "//input[@name='email']") public WebElement loginEmailAA;
     @FindBy(xpath = "//input[@name='password']") public WebElement loginPasswordAA;
@@ -621,8 +622,7 @@ Login_RegisterPage {
 
 
 
-
-//625-725 FEYZI TUGCU
+    //625-725 FEYZI TUGCU
 @FindBy(xpath = "//span[text()='Back to Site']")
 public WebElement backToSiteButton;
 @FindBy(xpath = "//input[@class='form-control']")
@@ -721,20 +721,8 @@ public  WebElement submitButton;
 
 
 
+
 //725-825 ORHAN TANER
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
