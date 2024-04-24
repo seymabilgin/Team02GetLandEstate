@@ -135,7 +135,6 @@
       But kullanıcı 4 saniye bekler.
       Then Success yazısının görüldügü dogrulanır.
 
-
     @US01-UI-TC16
     Scenario:"Your registration has been completed successfully. Please to activate your account, click on the activation link sent to your e-mail." metni görülmeli
       When First Name kısmına gecerli bir isim girilir.
@@ -148,4 +147,5 @@
       And REGISTER  butonuna tıklanır.
       But kullanıcı 4 saniye bekler.
       Then Your registration has been completed successfully. Please to activate your account, click on the activation link sent to your e-mail. yazısının görüldügü dogrulanır.
+
 

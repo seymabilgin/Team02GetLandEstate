@@ -1,1 +1,2 @@
-file:src/test/resources/features/ui_features/US_01_CustomerRegister.feature:70
+file:src/test/resources/features/ui_features/US16_Admin%20rapor%20oluşturabilmeli.feature:15:23
+
