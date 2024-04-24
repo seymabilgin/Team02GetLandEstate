@@ -21,9 +21,12 @@ public class Hooks {
         setUp();
     }
 
+    @After("@UICloseDriver")
+    public void tearDown() throws Exception {
+        Driver.closeDriver();
+    }
 
-
-    @After
+    @After("@UITakesScreenShot")
     public void tearDown(Scenario scenario) throws Exception {
         if (scenario.isFailed()) {
             TakesScreenshot ts = (TakesScreenshot) Driver.getDriver();

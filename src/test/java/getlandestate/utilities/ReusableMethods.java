@@ -153,8 +153,16 @@ public class ReusableMethods {
         String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
         System.out.println("Attribute Value: = " + attribute_Value);
     }
+ 
+    //JS GetAlertText
+    public static String alertGetTextJS(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        String alertText = (String) js.executeScript("return arguments[0].innerText", element);
+        return alertText;
+    }
 
-    //Mehmet Robot Class Methodu
+
+   //Mehmet Robot Class Methodu
     public static void robotDownloadKeep() {
         Robot robot= null;
         try {
@@ -194,4 +202,15 @@ public class ReusableMethods {
         robot.keyRelease(KeyEvent.VK_CONTROL);
         robot.delay(1000);
     }
+
+    
+  
+  
+  
+  
+  
+  
+  
+
+
 }
