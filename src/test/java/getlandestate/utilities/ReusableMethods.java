@@ -151,4 +151,12 @@ public class ReusableMethods {
         String attribute_Value = (String) js.executeScript("return document.getElementById('" + id + "')." + attributeName);
         System.out.println("Attribute Value: = " + attribute_Value);
     }
+    //JS GetAlertText
+    public static String alertGetTextJS(WebElement element) {
+        JavascriptExecutor js = (JavascriptExecutor) Driver.getDriver();
+        String alertText = (String) js.executeScript("return arguments[0].innerText", element);
+        return alertText;
+    }
+
+
 }

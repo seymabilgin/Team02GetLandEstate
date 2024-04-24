@@ -1,4 +1,4 @@
-@US01-UI
+@US01-UI  @UICloseDriver @UITakesScreenShot
   Feature:US_01 Customer sayfaya kayıt olabilmelidir.
 
     Background:
@@ -19,7 +19,7 @@
       And REGISTER  butonuna tıklanır.
       But kullanıcı 2 saniye bekler.
       Then First Name bos bırakıldıgında First name is required uyarı metni cıktıgı dogrulanır.
-      And sayfayi kapatir.
+
 
     @US01-UI-TC02
     Scenario:Last Name girmeli,bu alan boş geçildiğinde "Last name is required" uyarı metni gelmeli
@@ -35,7 +35,7 @@
       And REGISTER  butonuna tıklanır.
       But kullanıcı 2 saniye bekler.
       Then Last Name bos bırakıldıgında Last name is required uyarı metni cıktıgı dogrulanır.
-      And sayfayi kapatir.
+
 
     @US01-UI-TC03
     Scenario:Phone Number girmeli. Bu alan boş geçildiğinde "Invalid phone number" uyarı metni gelmeli
@@ -45,7 +45,7 @@
       And Phone Number kısmı bos bırakılır.
       But kullanıcı 2 saniye bekler.
       Then Phone Number kısmı bos bırakıldıgında Invalid phone number uyarı metni cıktıgı dogrulanır.
-      And sayfayi kapatir.
+
 
     @US01-UI-TC04
     Scenario:Email girmeli, bu alan boş geçildiğinde "Email is required" uyarı metni gelmeli
@@ -56,14 +56,14 @@
       And Email kısmı bos bırakılır.
       But kullanıcı 2 saniye bekler.
       Then Email kısmı bos bırakıldıgında Email is required uyarı metni cıktıgı dogrulanır.
-      And sayfayi kapatir.
+
 
     @US01-UI-TC05
     Scenario:Email adresi abc@abc.com formatında olmalı, @ ve . işareti kullanılmadan girilen email adreslerinde "Invalid email" uyarı metni gelmeli.
       When Email kısmına @ ve . olmadan mail yazılır.
       But kullanıcı 2 saniye bekler.
       Then Email kısmına gecersiz formatda email yazıldıgında Invalid email uyarı  metni cıktıgı dogrulanır.
-      And sayfayi kapatir.
+
 
 
     @US01-UI-TC06
@@ -71,7 +71,7 @@
       When Email kısmına . olmadan mail yazılır.
       But kullanıcı 2 saniye bekler.
       Then Email kısmına gecersiz formatda email yazıldıgında Invalid email uyarı  metni cıktıgı dogrulanır.
-      And sayfayi kapatir.
+
 
 
     @US01-UI-TC07
@@ -132,7 +132,20 @@
       And Confirm Password kısmına password tekrar girilir.
       And I understand and agree to GetLandEstate' Terms of Use and Privacy Policy kutucugu tıklanır.
       And REGISTER  butonuna tıklanır.
+      But kullanıcı 4 saniye bekler.
       Then Success yazısının görüldügü dogrulanır.
 
+
     @US01-UI-TC16
+    Scenario:"Your registration has been completed successfully. Please to activate your account, click on the activation link sent to your e-mail." metni görülmeli
+      When First Name kısmına gecerli bir isim girilir.
+      And Last Name kısmına gecerli bir lastName girilir.
+      And Phone Number kısmına geçerli bir phone number girilir.
+      And Email kısmına geçerli bir email girilir.
+      And Enter Password kısmına geçerli password girilir.
+      And Confirm Password kısmına password tekrar girilir.
+      And I understand and agree to GetLandEstate' Terms of Use and Privacy Policy kutucugu tıklanır.
+      And REGISTER  butonuna tıklanır.
+      But kullanıcı 4 saniye bekler.
+      Then Your registration has been completed successfully. Please to activate your account, click on the activation link sent to your e-mail. yazısının görüldügü dogrulanır.
 
