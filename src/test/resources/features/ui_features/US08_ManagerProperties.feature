@@ -7,7 +7,7 @@ Feature:US_08 Manager verdiği ilanları görebilmeli, güncelleyebilmeli ve sil
 
   @TC01
   Scenario: Manager verdigi ilanlari görebilmeli
-    Given Web sitesinin "İlanlarim" bolümüne gidilir.
+    Given Web sitesinde "myAdverts" bolümüne gidilir.
     Then Managerin ilanlarinin listesini gorebildigi dogrulanir.
     And Listeden ilanlardan birini secer.
     Then Managerin sectigi ilanin ayrintilarini goruntuleyebildigi dogrulanir

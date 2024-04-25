@@ -7,15 +7,15 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {
-                "pretty",//==> console da scenariolar ile ilgili ayrintili bilgi verir
+                "pretty",
                 "html:target/default-cucumber-reports.html",
                 "json:target/json-reports/cucumber.json",
                 "junit:target/xml-report/cucumber.xml",
                 "rerun:TestOutPut/failed_scenario.txt"},
-        features = "@TestOutPut/failed_scenario.txt", // yol olarak dosya verirsek başına @ koyarız
-        glue = {"com/managementonSchools/stepDefinitions", "com/managementonSchools/hooks"},
+        features = "@TestOutPut/failed_scenario.txt",
+        glue = {"getlandestate/stepDefinitions", "getlandestate/hooks"},
         dryRun = false,
-        monochrome = true
+        monochrome = false
 
 )
 public class FailedRunner {

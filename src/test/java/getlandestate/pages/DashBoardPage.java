@@ -113,7 +113,7 @@ public class DashBoardPage {
 
 
 //115-225 MEHMET TURAN
-@FindBy(css = "//span[.='Reports']") public WebElement dashboardReportsButton;
+@FindBy(xpath = "//*[@title='Reports']") public WebElement dashboardReportsButton;
 @FindBy(xpath = "(//input[@id=\"startDate\"])[1]") public WebElement advertsStartDate;
 @FindBy(xpath = "(//input[@id=\"endDate\"])[1]") public WebElement advertsEndDate;
 @FindBy(css = "#category") public WebElement advertsCategory;
@@ -128,8 +128,8 @@ public class DashBoardPage {
 @FindBy(xpath = "(//input[@id=\"endDate\"])[2]") public WebElement tourEndDate;
 @FindBy(xpath = "(//select[@id='status'])[2]") public WebElement tourStatus;
 @FindBy(xpath = "(//div[@class='admin-report-button-wrapper'])[4]") public WebElement tourDownload;
-
-
+@FindBy(css = ".p-toast-detail") public WebElement errorMessage;
+@FindBy(css = ".formik-feedback.invalid-feedback") public WebElement amountMessage;
 
 
 
