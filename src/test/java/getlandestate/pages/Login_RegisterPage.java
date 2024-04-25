@@ -324,43 +324,43 @@ Login_RegisterPage {
 
     //325-425 SEVILAY UYANIK
 
-    @FindBy(xpath = "//a[text()='Login']")
-    public WebElement homeLogin;
-    @FindBy(xpath = "//input[@placeholder='Email']")
-    public WebElement email;
-    @FindBy(xpath = "//input[@name='password']")
-    public WebElement password;
-    @FindBy(xpath = "//a[@title='Tour Requests']")
-    public WebElement tourRequests;
-    @FindBy(xpath = "//input[@name='search']")
-    public WebElement ilanSearch;
-    @FindBy(xpath = "//button[@class='search-button btn btn-outline-secondary']")
-    public WebElement searchButton;
-    @FindBy(xpath = "(//div[@class='text'])[1]")
-    public WebElement searchResult;
-    @FindBy(xpath = "(//img[@class='user-pic'])[1]")
-    public WebElement userPicture;
-    @FindBy(xpath = "//p[text()='MY RESPONSES']")
-    public WebElement myResponses;
-    @FindBy(xpath = "(//button[@class='btn-link approve-button btn btn-primary'])[1]")
-    public WebElement firstApprove;
+ @FindBy(xpath = "//a[text()='Login']")
+ public WebElement homeLogin;
+ @FindBy(xpath = "//input[@placeholder='Email']")
+ public WebElement email;
+ @FindBy(xpath = "//input[@name='password']")
+ public WebElement password;
+ @FindBy(xpath = "//a[@title='Tour Requests']")
+ public WebElement tourRequests;
+ @FindBy(xpath = "//input[@name='search']")
+ public WebElement ilanSearch;
+ @FindBy(xpath = "//button[@class='search-button btn btn-outline-secondary']")
+ public WebElement searchButton;
+ @FindBy(xpath = "//*[.='My Tour Requests']")
+ public WebElement myTourRequests;
+ @FindBy(xpath = "(//div[@class='text'])[1]")
+ public WebElement searchResult;
+ @FindBy(xpath = "(//img[@class='user-pic'])[1]")
+ public WebElement userPicture;
+ @FindBy(xpath = "//p[text()='MY RESPONSES']")
+ public WebElement myResponses;
+ @FindBy(xpath = "(//button[@class='btn-link approve-button btn btn-primary'])[1]")
+ public WebElement firstApprove;
 
+ @FindBy(xpath = "(//span[@class='p-button-label p-c'])[2]")
+ public WebElement yes;
 
+ @FindBy(xpath = "(//span[@class='p-button-label p-c'])[1]")
+ public WebElement no;
 
+ @FindBy(xpath = "(//button[@class='btn-link decline-button btn btn-primary'])[2]")
+ public WebElement secondDecline;
 
+ @FindBy(xpath = "(//span[@class='p-tag-value'])[1]")
+ public WebElement firstApproveText;
 
-
-
-
-
-
-
-
-
-
-
-
-
+ @FindBy(xpath = "(//span[@class='p-tag-value'])[2]")
+ public WebElement secondDeclineText;
 
 
 

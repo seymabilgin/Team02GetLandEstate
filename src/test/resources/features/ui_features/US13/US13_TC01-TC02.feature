@@ -9,7 +9,7 @@ Feature: US13 Manager Randevu Testi
     And Search boxa verdigi ilanin ismini girerek aratir
     Then Verdigi ilana ait tour requestlerin goruldugunu dogrular
     And sayfayi kapatir
-
+  @US13TC02
   Scenario: TC02 Verdigi ilana ait randevu isteklerini red ve kabul edebilmeli
     Given Ana sayfaya gidilir
     When Login butonuna tiklanir
