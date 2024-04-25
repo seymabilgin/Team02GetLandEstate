@@ -226,6 +226,11 @@ public class PropertiesPage {
 
     //Orhan Taner 325-415
 
+    @FindBy(css = "#body > div:nth-child(2) > div:nth-child(1) > nav:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > img:nth-child(1)")
+    public WebElement accountIconButton;
+    ////span[normalize-space()='My Adverts']
+    @FindBy(xpath = "//span[normalize-space()='My Adverts']")
+    public WebElement myAdvertsIcon;
     @FindBy(xpath = "//div[@class='advert-container container']")
     public WebElement ilan_Listesi;
 
@@ -285,6 +290,114 @@ public class PropertiesPage {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // 325-425 hanife
+
+    @FindBy(xpath = "//div[@class='page-header container']")
+    public WebElement PropertiesTitle;
+    @FindBy(id = "ps")
+    public WebElement minPrice;
+    @FindBy(id = "pe")
+    public WebElement maxPrice;
+    @FindBy(id = "at")
+    public WebElement advertType;
+    @FindBy(id = "c")
+    public WebElement category;
+
+    @FindBy(id = "ctry")
+    public WebElement country;
+    @FindBy(id = "city")
+    public WebElement city;
+    @FindBy(id = "dist")
+    public WebElement district;
+    @FindBy(xpath = "//button[@class='dynamic-button  btn btn-primary']")
+    public WebElement searchButton;
 
 
 

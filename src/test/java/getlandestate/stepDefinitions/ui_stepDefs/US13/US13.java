@@ -17,19 +17,25 @@ public class US13 {
     public void anaSayfayaGidilir() {
         Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
     }
-
+/*
     @When("Login butonuna tiklanir")
     public void loginButonunaTiklanir() {
 
         login.homeLogin.click();
 
-    }
+    }*/
 
     @And("E-mail ve password kismina gecerli veriler girilir ve login tiklanir")
     public void eMailVePasswordKisminaGecerliVerilerGirilirVeLoginTiklanir() {
+
         login.email.sendKeys(ConfigReader.getProperty("SevilayManagerName"));
         login.password.sendKeys(ConfigReader.getProperty("SevilayManagerPassword"));
         login.loginButtona.click();
+
+        login.email.sendKeys(ConfigReader.getProperty("AdminName"));
+        login.password.sendKeys(ConfigReader.getProperty("AdminPassword"));
+        login.loginButtonMT.click();
+
     }
     @And("Dashboard kisminda Tour Requests tiklanir")
     public void dashboardKismindaTourRequestsTiklanir() {

@@ -1,26 +1,29 @@
-package getlandestate.stepDefinitions.ui_stepDefs;
+package getlandestate.stepDefinitions.ui_stepDefs.US18_19;
 
+import getlandestate.pages.GetlandPage;
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.utilities.ConfigReader;
 import getlandestate.utilities.Driver;
+import getlandestate.utilities.ReusableMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
 public class US18_managerStepDefinition {
 
     Login_RegisterPage registerPage =new Login_RegisterPage();
 
-    @Given("Kullanici {string} sayfasina gidilir")
-    public void kullaniciSayfasinaGidilir(String url) {
+    @Given("Kullanici sayfasina gidilir")
+    public void kullaniciSayfasinaGidilir() {
         Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
     }
 
     @When("login butonuna tiklanır")
     public void loginButonunaTiklanır() {
-        registerPage.login.click();
+        registerPage.loginButtonMT.click();
     }
     @And("email ve password bilgileri ile login olunur")
     public void emailVePasswordBilgileriIleLoginOlunur() {
@@ -57,16 +60,21 @@ public class US18_managerStepDefinition {
 
     @Then("{string} mesaji goruntulendigi dogrulanmalır")
     public void mesajiGoruntulendigiDogrulanmalır(String arg0) {
+        //ReusableMethods.alertGetTextJS();
 
     }
 
 
     @And("Dashboard yazdıgı dogrulanır")
     public void dashboardYazdıgıDogrulanır() {
+        Assert.assertTrue(registerPage.dashboardText.getText().contains("Dashboard"));
+
     }
 
     @And("profil üzerinden MY TOUR REQUEST'e tıklanır")
     public void profilÜzerindenMYTOURREQUESTETıklanır() {
+        registerPage.backToSiteButton.click();
+
     }
 
     @And("MY RESPONSES'e tıklanır")
