@@ -280,6 +280,37 @@ public class PropertiesPage {
 
     @FindBy(xpath = "//div[@class='p-toast-detail']")
     public WebElement ilanDeleteDogrulama;
+    @FindBy(xpath = "//div[contains(text(),'Advert updated successfully')]")
+    public WebElement updatedDogrulama;
+
+    @FindBy(xpath = "//textarea[@id='desc']")
+    public WebElement ilan_EditDescription;
+
+    @FindBy(xpath = "//span[normalize-space()='Adverts']")
+    public WebElement advertsTikla;
+    @FindBy(xpath = "//input[@id='q']")
+    public WebElement advertsSearch;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement searchButton;
+    @FindBy(xpath = "//tr[@draggable='false']//p[contains(text(),'villan')]")
+    public WebElement searchResult;
+    @FindBy(xpath = "//tbody/tr[1]/td[5]/div[1]/div[1]/button[2]//*[name()='svg']")
+    public WebElement advertUpdateikonforActivated;
+
+    @FindBy(xpath = "//select[@id='status']")
+    public WebElement selectStatus;
+    @FindBy(xpath = "//select[@id='statusForAdvert']")
+    public WebElement pendingSelect;
+    @FindBy(xpath = "//select[@id='statusForAdvert']//option[contains(text(),'Activated')]")
+    public WebElement selectActivated;
+    @FindBy(xpath = "//select[@id='statusForAdvert']//option[contains(text(),'Rejected')]")
+    public WebElement selectRejected;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement updatedButton;
+    @FindBy(xpath = "//tbody/tr[2]/td[5]/div[1]/div[1]/button[2]//*[name()='svg']//*[name()='path' and contains(@d,'M17 3a2.85')]")
+    public WebElement advertUpdate_ikonforRejected;
+
+
 
 
 

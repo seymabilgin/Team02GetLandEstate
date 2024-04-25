@@ -7,7 +7,7 @@ Feature:US_08 Manager verdiği ilanları görebilmeli, güncelleyebilmeli ve sil
 
   @TC01
   Scenario: Manager verdigi ilanlari görebilmeli
-    Given Web sitesinde "myAdverts" bolümüne gidilir.
+    Given Web sitesinde myAdverts bolümüne gidilir.
     Then Managerin ilanlarinin listesini gorebildigi dogrulanir.
     And Listeden ilanlardan birini secer.
     Then Managerin sectigi ilanin ayrintilarini goruntuleyebildigi dogrulanir
@@ -18,7 +18,7 @@ Feature:US_08 Manager verdiği ilanları görebilmeli, güncelleyebilmeli ve sil
   Scenario: Manager verdiği ilanlar ile ilgili Date Published, Status ve View-Like-Tour bilgilerini görebilmeli
     Given Web sitesinin "İlanlarım" bolümüne gidilir.
     Then Managerin ilanlarinin  listesini görebildigi dogrulanir.
-    And Managerin verdigi ilanlar ile ilgili "Date Published", "Status" ve "View-Like-Tour" dahil olmak üzere secilen ilanin ayrintilarini goruntuleyebildigi dogrulanir
+    And Managerin verdigi ilanlar ile ilgili Date Published, Status ve View-Like-Tour dahil olmak Uzere secilen ilanin ayrintilarini goruntuleyebildigi dogrulanir
     And sayfayi kapatir.
 
   @TC03
