@@ -2,7 +2,7 @@ Feature:US_02 Customer sayfaya giriş yapabilmeli
 
 
   Background:
-    Given Web sitesine gidilir
+    Given Web sitesine gidilirr
     When Login linkini tiklar
 
 

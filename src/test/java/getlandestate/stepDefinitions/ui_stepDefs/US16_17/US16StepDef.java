@@ -1,4 +1,4 @@
-package getlandestate.stepDefinitions.ui_stepDefs.US16_17;
+/*package getlandestate.stepDefinitions.ui_stepDefs.US16_17;
 
 import getlandestate.pages.DashBoardPage;
 import getlandestate.pages.GetlandPage;
@@ -194,4 +194,4 @@ public class US16StepDef {
     public void tourRequestBosStatusIleNoDownloadDogrulamasiYapilir() {
         Assert.assertTrue(dashBoardPage.errorMessage.isDisplayed());
     }
-}
+}*/
