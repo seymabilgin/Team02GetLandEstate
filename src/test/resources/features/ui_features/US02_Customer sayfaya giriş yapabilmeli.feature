@@ -2,9 +2,12 @@ Feature:US_02 Customer sayfaya giriş yapabilmeli
 
 
   Background:
+
     Given Web sitesine gidilir
     And Profile tıklanır
     And Logout tiklanir
+
+
     When Login linkini tiklar
 
 

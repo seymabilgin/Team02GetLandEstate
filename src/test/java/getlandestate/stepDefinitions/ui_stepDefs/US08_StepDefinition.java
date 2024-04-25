@@ -26,11 +26,11 @@ public class US08_StepDefinition {
         registerPage.homeLogin.click();
         registerPage.loginEmail.sendKeys(ConfigReader.getProperty("email8"));
         registerPage.loginPassword.sendKeys(ConfigReader.getProperty("password8"));
-        registerPage.login.click();
+        registerPage.loginButtonMT.click();
     }
 
-    @Given("Web sitesinin {myAdverts} bolümüne gidilir.")
-    public void webSitesininBolümüneGidilir(String arg0) {
+    @Given("Web sitesinin myAdverts bolümüne gidilir.")
+    public void webSitesininBolümüneGidilir() {
     registerPage.backToSiteButton.click();
     propertiesPage.accountIconButton.click();
     propertiesPage.myAdvertsIcon.click();

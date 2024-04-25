@@ -1,4 +1,4 @@
-package getlandestate.stepDefinitions.ui_stepDefs;
+package getlandestate.stepDefinitions.ui_stepDefs.US18_19;
 
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.utilities.ConfigReader;

@@ -43,11 +43,11 @@ Feature: US16 Admin rapor olusturabilmeli
     Then Adverts bos Advert Type ile No Download dogrulamasi yapilir
     And Sayfa kapanir
 
-    @TC04
-    Scenario: Admin yanlis deger girdiginde rapor olusturamamali (Negative)
-      When Most Popular Properties kismindaki Amount a negatif deger girilir ve raporlama butonuna tiklanir
-      Then Most Popular No Download dogrulamasi yapilir
-      And Sayfa kapanir
+  @TC04
+  Scenario: Admin yanlis deger girdiginde rapor olusturamamali (Negative)
+    When Most Popular Properties kismindaki Amount a negatif deger girilir ve raporlama butonuna tiklanir
+    Then Most Popular No Download dogrulamasi yapilir
+    And Sayfa kapanir
 
   @TC05
   Scenario: TC05 Admin eksik secim ile rapor olusturamamali (Negative)
