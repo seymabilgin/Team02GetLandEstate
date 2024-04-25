@@ -15,9 +15,10 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = {"getlandestate/stepDefinitions/ui_stepDefs", "getlandestate/hooks"},
         tags = "",
-
         dryRun = false,
         monochrome = false
+
+      
 )
 public class Runner {
 }
