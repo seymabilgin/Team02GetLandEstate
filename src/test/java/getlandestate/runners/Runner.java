@@ -18,5 +18,6 @@ import org.junit.runner.RunWith;
         dryRun = false,
         monochrome = false
 )
+
 public class Runner {
 }

@@ -27,7 +27,7 @@ public class US13 {
     public void eMailVePasswordKisminaGecerliVerilerGirilirVeLoginTiklanir() {
         login.email.sendKeys(ConfigReader.getProperty("AdminName"));
         login.password.sendKeys(ConfigReader.getProperty("AdminPassword"));
-        login.login.click();
+        //login.login.click();
     }
     @And("Dashboard kisminda Tour Requests tiklanir")
     public void dashboardKismindaTourRequestsTiklanir() {
