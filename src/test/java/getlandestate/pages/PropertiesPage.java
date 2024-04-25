@@ -299,4 +299,112 @@ public class PropertiesPage {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ // 325-425 hanife
+
+    @FindBy(xpath = "//div[@class='page-header container']")
+    public WebElement PropertiesTitle;
+    @FindBy(id = "ps")
+    public WebElement minPrice;
+    @FindBy(id = "pe")
+    public WebElement maxPrice;
+    @FindBy(id = "at")
+    public WebElement advertType;
+    @FindBy(id = "c")
+    public WebElement category;
+
+    @FindBy(id = "ctry")
+    public WebElement country;
+    @FindBy(id = "city")
+    public WebElement city;
+    @FindBy(id = "dist")
+    public WebElement district;
+    @FindBy(xpath = "//button[@class='dynamic-button  btn btn-primary']")
+    public WebElement searchButton;
+
+
+
+
+
+
+
+
+
 }

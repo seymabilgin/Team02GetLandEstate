@@ -14,7 +14,8 @@ import org.junit.runner.RunWith;
                 "rerun:TestOutPut/failed_scenario.txt"},
         features = "src/test/resources/features",
         glue = {"getlandestate/stepDefinitions/ui_stepDefs", "getlandestate/hooks"},
-        tags = "@US19",
+        tags = "",
+
         dryRun = false,
         monochrome = false
 )
