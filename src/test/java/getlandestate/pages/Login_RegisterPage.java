@@ -330,8 +330,6 @@ Login_RegisterPage {
     public WebElement email;
     @FindBy(xpath = "//input[@name='password']")
     public WebElement password;
-    @FindBy(xpath = "//button[@class='submit-button btn btn-secondary']")
-    public WebElement login;
     @FindBy(xpath = "//a[@title='Tour Requests']")
     public WebElement tourRequests;
     @FindBy(xpath = "//input[@name='search']")
@@ -346,6 +344,8 @@ Login_RegisterPage {
     public WebElement myResponses;
     @FindBy(xpath = "(//button[@class='btn-link approve-button btn btn-primary'])[1]")
     public WebElement firstApprove;
+
+
 
 
 

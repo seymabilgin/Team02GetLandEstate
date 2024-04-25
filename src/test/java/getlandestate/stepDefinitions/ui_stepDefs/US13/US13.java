@@ -46,31 +46,36 @@ public class US13 {
     public void sayfayiKapatir() {
     }
 
-    @And("Dashboard kisminda {string} tiklar")
-    public void dashboardKismindaTiklar(String arg0) {
-    }
-
-    @And("User kismindan {string} tiklar")
-    public void userKismindanTiklar(String arg0) {
-    }
-
-    @And("Acilan menude {string} tiklar")
-    public void acilanMenudeTiklar(String arg0) {
-    }
-
     @And("Bekleyen taleplerden ilkini onay resmine tiklayarak kabul eder")
     public void bekleyenTaleplerdenIlkiniOnayResmineTiklayarakKabulEder() {
-    }
-
-    @Then("İlana ait status kisminin {string} olduğunu dogrular")
-    public void ilanaAitStatusKismininOlduğunuDogrular(String arg0) {
     }
 
     @And("Bekleyen {int}.ilanı x kismina tiklayarak reddeder")
     public void bekleyenIlanıXKisminaTiklayarakReddeder(int arg0) {
     }
 
-    @Then("Reddettigi ilanın status kısmının {string} oldugunu dogrular")
-    public void reddettigiIlanınStatusKısmınınOldugunuDogrular(String arg0) {
+
+    @And("Dashboard kisminda back to site tiklar")
+    public void dashboardKismindaBackToSiteTiklar() {
+    }
+
+    @And("User kismindan My Tour Requests tiklar")
+    public void userKismindanMyTourRequestsTiklar() {
+    }
+
+    @And("Acilan menude My Responses tiklar")
+    public void acilanMenudeMyResponsesTiklar() {
+    }
+
+    @Then("İlana ait status kisminin approved olduğunu dogrular")
+    public void ilanaAitStatusKismininApprovedOlduğunuDogrular() {
+    }
+
+    @And("Bekleyen ikinci ilanı x kismina tiklayarak reddeder")
+    public void bekleyenIkinciIlanıXKisminaTiklayarakReddeder() {
+    }
+
+    @Then("Reddettigi ilanın status kisminin declined oldugunu dogrular")
+    public void reddettigiIlanınStatusKismininDeclinedOldugunuDogrular() {
     }
 }
