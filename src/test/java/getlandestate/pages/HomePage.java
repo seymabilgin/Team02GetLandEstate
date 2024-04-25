@@ -426,11 +426,14 @@ public class HomePage {
 
 //425-525 HANIFE OZTURK
 
+    @FindBy(xpath = "//button[contains(@class, 'ad-type-button') and contains(text(), 'Rent')]")
+    public WebElement rentButton;
 
+    @FindBy(xpath = "//input[@class='form-control']")
+    public WebElement searchInput;
 
-
-
-
+    @FindBy(xpath = "//button[@class='btn btn-primary']")
+    public WebElement searchButton;
 
 
 
