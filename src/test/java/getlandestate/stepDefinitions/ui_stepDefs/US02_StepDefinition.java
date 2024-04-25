@@ -17,6 +17,14 @@ public class US02_StepDefinition {
     public void webSitesineGidilir() {
         Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
     }
+    @And("Profile tıklanır")
+    public void profileTıklanır() {
+        customer.profileLogAA.click();
+    }
+    @And("Logout tiklanir")
+    public void logoutTiklanir() {
+        customer.logoutAA.submit();
+    }
 
     @When("Login linkini tiklar")
     public void loginLinkiniTiklar() {

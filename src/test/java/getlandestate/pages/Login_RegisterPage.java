@@ -554,6 +554,7 @@ Login_RegisterPage {
     @FindBy(xpath = "//button[@id='react-aria9109298492-:rj:-tab-delete-account']") public WebElement deleteAccountButtonAA;
     @FindBy(xpath = "//input[@name='password']")  public WebElement deleteEmailButtonAA;
     @FindBy(xpath = "(//button[@class='submit-button btn btn-secondary'])[3]") public WebElement accountDeleteAA;
+    @FindBy(xpath = "//button[@aria-label='Yes']") public WebElement yesButtonAA;
     @FindBy(xpath = "//div[@class='p-toast-detail']")  public WebElement accountDeleteMessageAA;
 
 
