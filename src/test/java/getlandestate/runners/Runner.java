@@ -14,11 +14,13 @@ import org.junit.runner.RunWith;
                 "rerun:TestOutPut/failed_scenario.txt"},
         features = "src/test/resources/features",
         glue = {"getlandestate/stepDefinitions/ui_stepDefs", "getlandestate/hooks"},
-        tags = "@TC0001",
+        tags = "",
+
         dryRun = false,
         monochrome = false
 
-      
+
 )
+
 public class Runner {
 }

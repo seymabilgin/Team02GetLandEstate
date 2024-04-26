@@ -648,7 +648,7 @@ Login_RegisterPage {
 
 
  //625-725 FEYZI TUGCU
-@FindBy(xpath = "//span[text()='Back to Site']")
+@FindBy(xpath = "//span[contains(text(),'Back to Site')]")
 public WebElement backToSiteButton;
 @FindBy(xpath = "//input[@class='form-control']")
 public WebElement searchBoxAnaSayfa;
@@ -656,17 +656,47 @@ public WebElement searchBoxAnaSayfa;
 public WebElement aramaSonucu;
 @FindBy(xpath = "//input[@id='tourDate']")
 public WebElement tourDate;
-@FindBy(xpath = "//option[@value='01:30']")
+@FindBy(xpath = "//select[@id='tourTime']")
 public  WebElement tourTime;
 @FindBy(xpath = "//button[@type='submit']")
 public  WebElement submitButton;
 @FindBy(xpath = "//div[@class='top-label']")
  public  WebElement dashboardText;
-@FindBy(xpath = "//a[@href=\"/contact\"]")
+@FindBy(xpath = "//a[@data-rr-ui-event-key=\"4\"]")
  public  WebElement contactButton;
 @FindBy(xpath = "//h5[text()=\"Have a question? Get in touch!\"]")
 public WebElement verifyQuestion;
+@FindBy(xpath = "//img[@class='user-pic']")
+public WebElement profilTouch;
+@FindBy(xpath = "//span[contains(text(),'My Tour Requests')]")
+public WebElement MyTourRequestt;
+@FindBy(xpath = "//button[@id='react-aria423375101-:rd:-tab-response']")
+public WebElement MyResponses;
+@FindBy(xpath = "//button[@class='btn-link approve-button btn btn-primary']")
+public WebElement acceptDavet;
+@FindBy(xpath = "//p[contains(text(),'Special home')]")
+public WebElement verifyIlan;
+@FindBy(xpath = "//button[@class='btn-link decline-button btn btn-primary'])")
+public WebElement declineDavet;
+@FindBy(xpath = "//input[@id='firstName']")
+public WebElement firstNameContact;
+@FindBy(xpath = "//div[@class='recaptcha-checkbox-border']")
+public WebElement capctha;
+@FindBy(xpath = "//textarea[@placeholder='Type your message here']")
+public WebElement messageBox;
+@FindBy(xpath = "//input[@id='firstName']")
+public WebElement firstnameget;
+@FindBy(xpath = "//input[@id='email']")
+public WebElement emailBox;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement sentButton;
+@FindBy(id = "recaptcha-anchor-label")
+public WebElement captcha2;
 
+    @FindBy(id = "//div[@class='p-toast-message-text']")
+    public WebElement succesText;
+    @FindBy(xpath = "//div[@class='recaptcha-wrapper']")
+    public WebElement notRobotIframe;
 
 
 
@@ -700,53 +730,6 @@ public WebElement verifyQuestion;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
   //725-825 ORHAN TANER
 
 

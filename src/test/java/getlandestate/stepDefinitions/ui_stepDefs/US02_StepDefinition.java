@@ -1,4 +1,4 @@
-package getlandestate.stepDefinitions.ui_stepDefs;
+/*package getlandestate.stepDefinitions.ui_stepDefs;
 
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.utilities.ConfigReader;
@@ -115,3 +115,4 @@ public class US02_StepDefinition {
     And Logout tiklanir
      */
 }
+*/
