@@ -380,7 +380,7 @@ public class PropertiesPage {
  // 325-425 hanife
 
     @FindBy(xpath = "//div[@class='page-header container']")
-    public WebElement PropertiesTitle;
+    public WebElement propertiesTitle;
     @FindBy(id = "ps")
     public WebElement minPrice;
     @FindBy(id = "pe")
@@ -398,6 +398,11 @@ public class PropertiesPage {
     public WebElement district;
     @FindBy(xpath = "//button[@class='dynamic-button  btn btn-primary']")
     public WebElement searchButton;
+    @FindBy(xpath = "//span[@class='d-none d-sm-inline']")
+    public WebElement totalFound;
+
+    @FindBy(xpath = "//a[@href='/advert/1713619965130-villa']")
+    public WebElement choiseRent;
 
 
 

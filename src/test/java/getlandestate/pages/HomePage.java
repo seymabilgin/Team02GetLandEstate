@@ -524,9 +524,6 @@ public class HomePage {
 
 
 
-
-
-
 //525-625 AYSEGUL ARIK
 
 

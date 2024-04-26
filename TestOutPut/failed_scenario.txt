@@ -1,2 +1,1 @@
-file:src/test/resources/features/ui_features/US16_Admin%20rapor%20oluşturabilmeli.feature:15:23
-
+file:src/test/resources/features/ui_features/US11_customerSatılıkIlanArayabilmeli.feature:19:37:44:52:59

@@ -17,6 +17,7 @@ Feature: US10 Customer Kiralik Ilan Arama Testi
 
   @TC02
   Scenario: TC02 Price Range, Advert Type, Category, Country, City, District bölümlerini girerek özel arama yapabilmeli
+
     When Price Range kismina istenilen fiyat araligi secilir
     And Advert Type kismina rent kismi secilir
     And Category butonundan istenilen emlak turu secilir
@@ -24,6 +25,7 @@ Feature: US10 Customer Kiralik Ilan Arama Testi
     And City butonunda istenilen sehir secilir
     And District butonuyla mahalle secilir
     Then Search butonuna tiklayarak ozel aranan emlak turleri goruntulendigi dogrulanir
+    And Filtrelenen emlaklardan bir emlak secilir
 
   @TC03
   Scenario: TC03 Seçtiği emlak ile alakalı resim, Description, DETAILS, LOCATION bilgilerini görebilmeli
@@ -35,7 +37,9 @@ Feature: US10 Customer Kiralik Ilan Arama Testi
   @TC04
   Scenario: TC04 İlanı verenin iletişim bilgilerini görebilmeli
     Then Ilan veren kisinin iletisim bilgileri goruntulendigi dorgulanmali
+    But kullanıcı 2 saniye bekler.
     And Gorunurluk butonuna tiklayarak telefon bilgileri goruntulendigi dorgulanmali
+    But kullanıcı 2 saniye bekler.
     And Gorunurluk butonuna tiklayarak mail bilgileri goruntulendigi dorgulanmali
 
   @TC05
@@ -47,7 +51,7 @@ Feature: US10 Customer Kiralik Ilan Arama Testi
 
   @TC06
   Scenario: TC06 Randevu isteklerini görebilmeli
-    When Kullanici profilinden "My tour request" e tiklayarak randevu sayfasina ulasir
+    When Kullanici profilinden My tour request  e tiklayarak randevu sayfasina ulasir
     Then Kullanici istekte bulundugu randevulari goruntulendigi dogrulanir
 
   @TC07
