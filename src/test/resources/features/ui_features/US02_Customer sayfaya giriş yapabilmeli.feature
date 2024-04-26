@@ -4,10 +4,6 @@ Feature:US_02 Customer sayfaya giriş yapabilmeli
   Background:
 
     Given Web sitesine gidilir
-    And Profile tıklanır
-    And Logout tiklanir
-
-
     When Login linkini tiklar
 
 
@@ -24,7 +20,7 @@ Feature:US_02 Customer sayfaya giriş yapabilmeli
   @TC002
   Scenario:Customer olarak gecerli olmayan email ile sayfaya giris yapilamamali
   And Emaila gecerli olmayan bilgi girilir
-  And Enter password gecerli bilgi girilir
+  And Enter password geçerli bilgi girilir
   And LOGIN butonu tiklanir
   Then Customera olarak sayfaya giris yapilamadigi test edilir
 
@@ -32,7 +28,7 @@ Feature:US_02 Customer sayfaya giriş yapabilmeli
   @TC003
   Scenario:Customer olarak gecerli olmayan email ile sayfaya giris yapilamamali
     And Emailb gecerli olmayan bilgi girilir
-    And Enter password gecerli bilgi girilir
+    And Enter password geçerli bilgi girilir
     And LOGIN butonu tiklanir
     Then Customerb olarak sayfaya giris yapilamadigi test edilir
 
@@ -40,9 +36,10 @@ Feature:US_02 Customer sayfaya giriş yapabilmeli
 
   @TC004
   Scenario:Customer olarak "Enter password" linki bos birakildiginda sayfaya giris yapilamamali
-    And Email gecerli bilgi girilir
     And Enter password alani bos birakilir
+    And Email gecerli bilgi girilir
     And LOGIN butonu tiklanir
+    But  kullanıcı 3 saniye bekler.
     Then Customerc olarak sayfaya giris yapilamadigi test edilir
 
 

@@ -548,7 +548,7 @@ Login_RegisterPage {
     @FindBy(xpath = "//div[@class='user-logo-nav navbar-nav']") public WebElement profileLogAA;
     @FindBy(xpath = "(//a[@class='dropdown-item'])[5]") public WebElement logoutAA;
     @FindBy(xpath = "//*[contains(text(),'Invalid email')]") public WebElement invalidEmailAA;
-    @FindBy(xpath = "//div[@class='p-toast-detail']") public WebElement invalidEmailorPasswordAA;
+    @FindBy(xpath = "//div[@class='p-toast-message-text']") public WebElement invalidEmailorPasswordAA;
     @FindBy(xpath = "//*[contains(text(),'Password is required')]") public WebElement passwordIsRequiredAA;
     @FindBy(xpath = "//*[contains(text(),'Email is required')]")     public WebElement emailIsRequiredAA;
     @FindBy(xpath = "//*[contains(text(),'My Profile')]")     public WebElement myProfileAA;
@@ -574,7 +574,13 @@ Login_RegisterPage {
     @FindBy(xpath = "(//button[@class='submit-button btn btn-secondary'])[3]") public WebElement accountDeleteAA;
     @FindBy(xpath = "//button[@aria-label='Yes']") public WebElement yesButtonAA;
     @FindBy(xpath = "//div[@class='p-toast-detail']")  public WebElement accountDeleteMessageAA;
+    public WebElement getMyprofilbutonu() {
+        return myProfileAA;
+    }
 
+    public void setMyprofilbutonu(WebElement myprofilbutonu) {
+        this.myProfileAA = myprofilbutonu;
+    }
 
 
 
