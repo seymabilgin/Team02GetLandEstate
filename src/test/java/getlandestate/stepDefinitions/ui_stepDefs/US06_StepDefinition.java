@@ -24,7 +24,6 @@ public class US06_StepDefinition {
     public void createPropertyButonunaTıklanır() {
         createPropertyPage.createPropertyButton.click();
         Driver.getDriver().navigate().refresh();
-        Driver.getDriver().navigate().refresh();
     }
     @And("Title {string} ile doldurulur")
     public void titleIleDoldurulur(String title) {
