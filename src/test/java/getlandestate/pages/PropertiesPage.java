@@ -113,118 +113,118 @@ public class PropertiesPage {
 
 
 //115-225 MEHMET TURAN
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //225-325 ORHAN TANER    
 
-    //Orhan Taner 325-415
+
 
     @FindBy(css = "#body > div:nth-child(2) > div:nth-child(1) > nav:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > img:nth-child(1)")
     public WebElement accountIconButton;
@@ -295,21 +295,26 @@ public class PropertiesPage {
     @FindBy(xpath = "//tr[@draggable='false']//p[contains(text(),'villan')]")
     public WebElement searchResult;
     @FindBy(xpath = "//tbody/tr[1]/td[5]/div[1]/div[1]/button[2]//*[name()='svg']")
-    public WebElement advertUpdateikonforActivated;
+    public WebElement advertUpdateikonforStatus;
 
     @FindBy(xpath = "//select[@id='status']")
     public WebElement selectStatus;
     @FindBy(xpath = "//select[@id='statusForAdvert']")
     public WebElement pendingSelect;
     @FindBy(xpath = "//select[@id='statusForAdvert']//option[contains(text(),'Activated')]")
-    public WebElement selectActivated;
+    public WebElement selectActivatedVerify;
     @FindBy(xpath = "//select[@id='statusForAdvert']//option[contains(text(),'Rejected')]")
-    public WebElement selectRejected;
+    public WebElement selectRejectedVerify;
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement updatedButton;
-    @FindBy(xpath = "//tbody/tr[2]/td[5]/div[1]/div[1]/button[2]//*[name()='svg']//*[name()='path' and contains(@d,'M17 3a2.85')]")
+    @FindBy(xpath = "//tbody/tr[2]/td[5]/div[1]/div[1]/button[2]//*[name()='svg']")
     public WebElement advertUpdate_ikonforRejected;
 
+    @FindBy(xpath = "//select[@id='statusForAdvert']//option[contains(text(),'Rejected')]")
+    public WebElement adminAdvertVerify;
+
+    @FindBy(xpath = "//a[@title='Adverts']")
+    public WebElement getMyAdvertsText;
 
 
 
@@ -428,7 +433,7 @@ public class PropertiesPage {
     @FindBy(id = "dist")
     public WebElement district;
     @FindBy(xpath = "//button[@class='dynamic-button  btn btn-primary']")
-    public WebElement searchButton;
+    public WebElement search1Button;
 
 
 

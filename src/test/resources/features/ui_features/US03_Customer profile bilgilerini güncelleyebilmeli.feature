@@ -1,6 +1,6 @@
 Feature:US_03 Customer profile bilgilerini görebilmeli ve güncelleyebilmeli
 Background:
-  Given Web sitesine gidilir
+  Given Web sitesine gidilirr
   And Profile tıklanır
   And Logout tiklanir
   When Login linkini tıklar

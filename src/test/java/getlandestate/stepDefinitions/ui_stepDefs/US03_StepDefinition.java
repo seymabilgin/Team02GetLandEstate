@@ -11,7 +11,7 @@ import org.testng.Assert;
 
 public class US03_StepDefinition {
     Login_RegisterPage customer= new Login_RegisterPage();
-    @Given("Web sitesine gidilir")
+    @Given("Web sitesine gidilirr")
     public void webSitesineGidilir() {
         Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
     }

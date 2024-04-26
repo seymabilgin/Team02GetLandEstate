@@ -1,4 +1,4 @@
-
+@US_08
 Feature:US_08 Manager verdiği ilanları görebilmeli, güncelleyebilmeli ve silebilmelidir
 
   Background:
