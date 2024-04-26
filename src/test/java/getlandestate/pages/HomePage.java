@@ -1,6 +1,8 @@
 package getlandestate.pages;
 
 import getlandestate.utilities.Driver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 
@@ -922,8 +924,82 @@ public class HomePage {
 
 
 
-//925-1025 TUNCER OZGUR
+//925-1025 TUNCER OZGUR-Yakup ibrahimbaş
+@FindBy(xpath = "//a[@href='/login']")
+public WebElement loginbutton;
 
+    @FindBy(css = "input[name='email']")
+    public WebElement emailTextBox;
+
+    @FindBy(xpath = "//input[@type='password']")
+    public WebElement passwordTextBox;
+
+    @FindBy(xpath = "//*[@id=\"root\"]/div[1]/div/div[2]/div/div/div[1]/div[2]/form/div[4]/button")
+    public WebElement loginButton;
+
+    @FindBy(xpath = "//span[normalize-space()='Back to Site']")
+    public WebElement backToSite;
+
+    @FindBy(xpath = "//img[@class='flag-icon']")
+    public WebElement flagIcon;
+
+    @FindBy(xpath = "//a[.='Home']")
+    public WebElement englishTextVerify;
+
+    @FindBy(xpath = "//a[normalize-space()='Türkçe']")
+    public WebElement trflagIconButton;
+
+    @FindBy(xpath = "//a[normalize-space()='Anasayfa']")
+    public WebElement turkishText;
+
+    @FindBy(xpath = "//a[normalize-space()='Français']")
+    public WebElement franchIconButton;
+
+    @FindBy(xpath = "//a[.='Accueil']")
+    public WebElement frTextVerify;
+    @FindBy(xpath = "//a[normalize-space()='Deutsch']")
+    public WebElement grIconButton;
+
+    @FindBy(xpath = "//a[.='Zuhause']")
+    public WebElement grTextVerify;
+
+    @FindBy(xpath = "//a[normalize-space()='Español']")
+    public WebElement spIconButton;
+
+    @FindBy(xpath = "//a[.='Inicio']")
+    public WebElement spTextVerify;
+    @FindBy(xpath = "//*[@title='Users']")
+    public WebElement kullanicilar;
+    @FindBy(xpath = "//*[@class='form-control']")
+    public WebElement kullaniciKontrol;
+    @FindBy(xpath = "(//*[@stroke-linejoin])[2]")
+    public WebElement kullaniciDuzenle;
+    @FindBy(xpath = "//*[@name='role']")
+    public WebElement kullaniciRolDuzenleme;
+    @FindBy(id = "email")
+    public WebElement kullaniciEmailDuzenleme;
+    @FindBy(xpath = "//*[@value='ADMIN']")
+    public WebElement kullaniciADMIN;
+    @FindBy(xpath = "//*[@value='MANAGER']")
+    public WebElement kullaniciMANAGER;
+    @FindBy(xpath = "//*[@value='CUSTOMER']")
+    public WebElement kullaniciCUSTOMER;
+    @FindBy(xpath = "//*[@type='submit']")
+    public WebElement guncelleButton;
+    @FindBy(xpath = "(//*[@type='button'])[2]")
+    public WebElement silButton;
+
+    @FindBy(xpath = "//*[@name='firstName']")
+    public WebElement nameVerify;
+
+    @FindBy(xpath = "//*[@name='lastName']")
+    public WebElement lastNameVerify;
+
+    @FindBy(xpath = "//*[@name='phone']")
+    public WebElement telefonVerify;
+
+    @FindBy(xpath = "//*[.='User type save successfully']")
+    public WebElement DogrulamaYazisi;
 
 
 
@@ -1023,10 +1099,6 @@ public class HomePage {
 
 
 //1025-... YAKUP IBRAHIMBAS
-
-
-
-
 
 
 
