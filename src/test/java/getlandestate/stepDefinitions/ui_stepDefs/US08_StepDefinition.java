@@ -26,7 +26,7 @@ public class US08_StepDefinition {
         registerPage.homeLogin.click();
         registerPage.loginEmail.sendKeys(ConfigReader.getProperty("email8"));
         registerPage.loginPassword.sendKeys(ConfigReader.getProperty("password8"));
-        registerPage.login.click();
+        registerPage.loginButtonMT.click();
     }
 
     @Given("Web sitesinin {myAdverts} bolümüne gidilir.")
