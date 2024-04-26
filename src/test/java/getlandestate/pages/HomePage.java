@@ -15,8 +15,8 @@ public class HomePage {
 
 
 //15-115 M.FURKAN KARAIS
-
-
+@FindBy(xpath="//div/a[@data-rr-ui-event-key='5']")
+public WebElement loginButtonInHomePage;
 
 
 
