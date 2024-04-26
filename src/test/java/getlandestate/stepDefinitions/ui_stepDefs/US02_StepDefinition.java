@@ -108,6 +108,7 @@ public class US02_StepDefinition {
 
        String fail3=customer.emailIsRequiredAA.getText();
        Assert.assertEquals("Email is required",fail3);
+
     }
 
     /*
