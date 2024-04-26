@@ -423,10 +423,7 @@ Login_RegisterPage {
 
 
 //425-525 HANIFE OZTURK
-
-
-
-    @FindBy(xpath = "//a[@href='/my-tour-requests']") public WebElement myRequestsButton;
+  @FindBy(xpath = "//a[@href='/my-tour-requests']") public WebElement myRequestsButton;
 
 
 
@@ -522,7 +519,10 @@ Login_RegisterPage {
   
   
   
-  //525-625 AYSEGUL ARIK
+ 
+    
+    
+    //525-625 AYSEGUL ARIK
     @FindBy(xpath = "//a[@href='/login']")
     public WebElement loginAA;
     @FindBy(xpath = "//input[@name='email']")
@@ -605,10 +605,7 @@ Login_RegisterPage {
         this.myProfileAA = myprofilbutonu;
     }
 
-
-
-
-     @FindBy(xpath = "//a[@href='/login']") public WebElement logina;
+    @FindBy(xpath = "//a[@href='/login']") public WebElement logina;
     @FindBy(xpath = "//input[@name='email']") public WebElement loginEmail;
     @FindBy(xpath = "//input[@name='password']") public WebElement loginPassword;
     @FindBy(xpath = "//button[@type='submit']")  public WebElement loginButtona;
@@ -622,7 +619,10 @@ Login_RegisterPage {
  
   
   
-  //625-725 FEYZI TUGCU
+  
+    
+    
+    //625-725 FEYZI TUGCU
 @FindBy(xpath = "//span[contains(text(),'Back to Site')]")
 public WebElement backToSiteButton;
 @FindBy(xpath = "//input[@class='form-control']")
@@ -663,26 +663,24 @@ public WebElement messageBox;
 public WebElement firstnameget;
 @FindBy(xpath = "//input[@id='email']")
 public WebElement emailBox;
-    @FindBy(xpath = "//button[@type='submit']")
-    public WebElement sentButton;
+@FindBy(xpath = "//button[@type='submit']")
+public WebElement sentButton;
 @FindBy(id = "recaptcha-anchor-label")
 public WebElement captcha2;
-
-    @FindBy(id = "//div[@class='p-toast-message-text']")
-    public WebElement succesText;
-    @FindBy(xpath = "//div[@class='recaptcha-wrapper']")
-    public WebElement notRobotIframe;
-
+@FindBy(id = "//div[@class='p-toast-message-text']")
+public WebElement succesText;
+ @FindBy(xpath = "//div[@class='recaptcha-wrapper']")
+public WebElement notRobotIframe;
 
 
 
-
-
-
-
-
-
-
+/*    @FindBy(xpath = "//span[text()='Back to Site']")
+    public WebElement backToSiteButton;
+   @FindBy(xpath = "//option[@value='01:30']")
+    public WebElement tourTime;
+    @FindBy(xpath = "//a[@href=\"/contact\"]")
+    public WebElement contactButton;  */
+ 
 
 
 
@@ -705,7 +703,33 @@ public WebElement captcha2;
 
 
 
-  //725-825 ORHAN TANER
+
+
+
+
+
+
+
+
+ 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    //725-825 ORHAN TANER
 
 
 
@@ -900,25 +924,7 @@ public WebElement captcha2;
 
 
 
-    //625-725 FEYZI TUGCU
-    @FindBy(xpath = "//span[text()='Back to Site']")
-    public WebElement backToSiteButton;
-    @FindBy(xpath = "//input[@class='form-control']")
-    public WebElement searchBoxAnaSayfa;
-    @FindBy(xpath = "//img[@class='card-img-top property-card-img']")
-    public WebElement aramaSonucu;
-    @FindBy(xpath = "//input[@id='tourDate']")
-    public WebElement tourDate;
-    @FindBy(xpath = "//option[@value='01:30']")
-    public WebElement tourTime;
-    @FindBy(xpath = "//button[@type='submit']")
-    public WebElement submitButton;
-    @FindBy(xpath = "//div[@class='top-label']")
-    public WebElement dashboardText;
-    @FindBy(xpath = "//a[@href=\"/contact\"]")
-    public WebElement contactButton;
-    @FindBy(xpath = "//h5[text()=\"Have a question? Get in touch!\"]")
-    public WebElement verifyQuestion;
+  
 
 
     //725-825 ORHAN TANER
