@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -160,6 +161,7 @@ public class ReusableMethods {
         String alertText = (String) js.executeScript("return arguments[0].innerText", element);
         return alertText;
     }
+
 
 
    //Mehmet Robot Class Methodu
