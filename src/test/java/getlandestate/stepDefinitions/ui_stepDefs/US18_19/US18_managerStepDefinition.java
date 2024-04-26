@@ -1,9 +1,10 @@
-package getlandestate.stepDefinitions.ui_stepDefs;
+package getlandestate.stepDefinitions.ui_stepDefs.US18_19;
 
 import getlandestate.pages.GetlandPage;
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.utilities.ConfigReader;
 import getlandestate.utilities.Driver;
+import getlandestate.utilities.ReusableMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -15,14 +16,18 @@ public class US18_managerStepDefinition {
 
     Login_RegisterPage registerPage =new Login_RegisterPage();
 
-    @Given("Kullanici {string} sayfasina gidilir")
-    public void kullaniciSayfasinaGidilir(String url) {
+    @Given("Kullanici sayfasina gidilir")
+    public void kullaniciSayfasinaGidilir() {
         Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
     }
 
     @When("login butonuna tiklanır")
     public void loginButonunaTiklanır() {
-       // registerPage.login.click();
+<<<<<<< HEAD:src/test/java/getlandestate/stepDefinitions/ui_stepDefs/US18_managerStepDefinition.java
+        //registerPage.login.click();
+=======
+        registerPage.loginButtonMT.click();
+>>>>>>> master:src/test/java/getlandestate/stepDefinitions/ui_stepDefs/US18_19/US18_managerStepDefinition.java
     }
     @And("email ve password bilgileri ile login olunur")
     public void emailVePasswordBilgileriIleLoginOlunur() {
@@ -59,6 +64,7 @@ public class US18_managerStepDefinition {
 
     @Then("{string} mesaji goruntulendigi dogrulanmalır")
     public void mesajiGoruntulendigiDogrulanmalır(String arg0) {
+        //ReusableMethods.alertGetTextJS();
 
     }
 

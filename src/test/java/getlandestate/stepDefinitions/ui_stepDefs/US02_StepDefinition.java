@@ -13,29 +13,37 @@ public class US02_StepDefinition {
     Login_RegisterPage customer= new Login_RegisterPage();
 
 
-    //@Given("Web sitesine gidilir")
-    //public void webSitesineGidilir() {
-       // Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
-   // }
+    @Given("Web sitesine gidilirr")
+    public void webSitesineGidilir() {
+        Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
+    }
+    @And("Profile tıklanır")
+    public void profileTıklanır() {
+        customer.profileLogAA.click();
+    }
+    @And("Logout tiklanir")
+    public void logoutTiklanir() {
+        customer.logoutAA.submit();
+    }
 
     @When("Login linkini tiklar")
     public void loginLinkiniTiklar() {
-        customer.loginAA.click();
+        customer.loginButtonMT.click();
     }
 
     @And("Email gecerli bilgi girilir")
     public void emailGecerliBilgiGirilir() {
-        customer.loginEmailAA.sendKeys(ConfigReader.getProperty("emailAyse"));
+        customer.loginEmail.sendKeys(ConfigReader.getProperty("emailAyse"));
     }
 
     @And("Enter password geçerli bilgi girilir")
     public void enterPasswordGeçerliBilgiGirilir() {
-        customer.loginPasswordAA.sendKeys(ConfigReader.getProperty("passwordAyse"));
+        customer.loginPassword.sendKeys(ConfigReader.getProperty("passwordAyse"));
     }
 
     @And("LOGIN butonu tiklanir")
     public void logınButonuTiklanir() {
-        customer.loginButtonAA.submit();
+        customer.loginButtonMT.submit();
     }
 
     @Then("Customer olarak sayfaya giris yapildigi test edilir")
