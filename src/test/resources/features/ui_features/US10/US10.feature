@@ -10,7 +10,8 @@ Feature: US10 Customer Kiralik Ilan Arama Testi
   @TC01
   Scenario: TC01 Search kısmından istediği emlağı seçip genel arama yapma islemi
     When Rent butonu tiklanir
-    And Arama kismina aradigimiz emlak turu aratilir
+    But kullanıcı 2 saniye bekler.
+    And Arama kismina aradigimiz "villa" aratilir
     Then  Aranan emlak turleri goruntulendigi dogrulanir
 
 
@@ -19,7 +20,8 @@ Feature: US10 Customer Kiralik Ilan Arama Testi
     When Price Range kismina istenilen fiyat araligi secilir
     And Advert Type kismina rent kismi secilir
     And Category butonundan istenilen emlak turu secilir
-    And City butonunda istenilen ulke secilir
+    And Country butonundan istenilen ulke secilir
+    And City butonunda istenilen sehir secilir
     And District butonuyla mahalle secilir
     Then Search butonuna tiklayarak ozel aranan emlak turleri goruntulendigi dogrulanir
 
