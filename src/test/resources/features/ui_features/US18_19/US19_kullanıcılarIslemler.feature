@@ -13,6 +13,7 @@ Feature:US_19 Kullanıcılar sayfadan mesaj gönderebilmeli (Contact)
     And Email Addres girilir
     And Messsage girilir
     But captcha geçilir
+ ##And sayfayı kapatır
 
 @US19_TC02
   Scenario:TC_02 Contact kısmına ulaşabilmeli ve mesaj gönderebilmelidir
@@ -35,8 +36,19 @@ Feature:US_19 Kullanıcılar sayfadan mesaj gönderebilmeli (Contact)
     And mesaj kısmına bir deger girer
     And im not a robot checkbox'ını işaretler
     And sent butonun aktif oldugunu dogrular
+    And sayfayı kapatır
 
-
+  @US19_TC04
+  Scenario:TC_04 Contact kısmına ulaşabilmeli ve mesaj gönderebilmelidir
+    Given kullanici sayfaya giderr
+    And Contact yazısına tıklanır
+    And  First Name  girilir(virgilio)
+    And Last Name girilirrrr(bohem)
+    And email kısmına bir deger girerrr(abc@abccom)
+    And mesaj kısmına bir deger girer
+    And im not a robot checkbox'ını işaretler
+    And sent butonun aktif oldugunu dogrular
+  And sayfayı kapatır
 
 
 

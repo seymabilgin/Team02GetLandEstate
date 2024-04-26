@@ -15,6 +15,14 @@ public class US03_StepDefinition {
     public void webSitesineGidilir() {
         Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
     }
+    @And("Profile tıklanır")
+    public void profileTıklanır() {
+        customer.profileLogAA.click();
+    }
+    @And("Logout tiklanir")
+    public void logoutTiklanir() {
+        customer.logoutAA.submit();
+    }
 
     @When("Login linkini tıklar")
     public void loginLinkiniTıklar() {
@@ -26,8 +34,8 @@ public class US03_StepDefinition {
         customer.loginEmailAA.sendKeys(ConfigReader.getProperty("emailAyse"));
     }
 
-    @And("Enter password gecerili bilgi girilir")
-    public void enterPasswordGeceriliBilgiGirilir() {
+    @And("Enter password gecerli bilgi girilir")
+    public void enterPasswordGecerliBilgiGirilir() {
         customer.loginPasswordAA.sendKeys(ConfigReader.getProperty("passwordAyse"));
     }
 
@@ -80,7 +88,10 @@ public class US03_StepDefinition {
         String message=customer.updateProfileAA.getText();
         Assert.assertEquals("Profile updated successfully",message);
     }
-
+    @And("Yeni email geçerli bilgi girilir")
+    public void yeniEmailGeçerliBilgiGirilir() {
+        customer.loginEmailAA.sendKeys(ConfigReader.getProperty("emailYeniAyse"));
+    }
     @And("Chance Password tıklanır")
     public void chancePasswordTıklanır() {
         customer.changePasswordAA.click();
@@ -109,17 +120,23 @@ public class US03_StepDefinition {
         customer.changeButtonAA.submit();
     }
 
-    @Then("Customer olarak pasword bilgilerini değiştirdiği test edilir")
-    public void customerOlarakPaswordBilgileriniDeğiştirdiğiTestEdilir() {
+    @Then("Customer olarak password bilgilerini değiştirdiği test edilir")
+    public void customerOlarakPasswordBilgileriniDeğiştirdiğiTestEdilir() {
         Assert.assertTrue(customer.getLandEstateAccountAA.isDisplayed());
+    }
+    @And("Yeni Enter password gecerli bilgi girilir")
+    public void yeniEnterPasswordGecerliBilgiGirilir() {
+        customer.loginPasswordAA.sendKeys(ConfigReader.getProperty("passwordYeniAyse"));
     }
 
     @And("Profile Photo tıklanır")
     public void profilePhotoTıklanır() {
+        customer.profilePhotoButtonAA.click();
     }
 
     @And("Select tıklanır")
     public void selectTıklanır() {
+        customer.selectButtonAA.click();
     }
 
     @And("Photograf seçilir")
@@ -128,33 +145,46 @@ public class US03_StepDefinition {
 
     @And("Done butonu tıklanır")
     public void doneButonuTıklanır() {
+        customer.doneButtonAA.click();
     }
 
     @And("Save butonu tıklanır")
     public void saveButonuTıklanır() {
+        customer.saveButtonAA.click();
     }
 
     @Then("Customer olarak profil resmi eklenebildiği test edilir")
     public void customerOlarakProfilResmiEklenebildiğiTestEdilir() {
+      String message=customer.updatedPhotoMessageAA.getText();
+      Assert.assertTrue(message.contains("You have updated your profile photo"));
     }
 
     @And("Delete Account tıklanır")
     public void deleteAccountTıklanır() {
+        customer.deleteAccountButtonAA.click();
     }
 
-    @And("Enter your password pasword bilgileri girilir")
+    @And("Enter your password password bilgileri girilir")
     public void enterYourPasswordPaswordBilgileriGirilir() {
+      customer.deleteEmailButtonAA.sendKeys(ConfigReader.getProperty("passwordYeniAyse"));
     }
 
     @And("Delete Account butonu tıklanır")
     public void deleteAccountButonuTıklanır() {
+        customer.accountDeleteAA.click();
     }
 
     @And("Yes butonu tıklanır")
     public void yesButonuTıklanır() {
+        customer.yesButtonAA.click();
     }
 
     @Then("Customer olarak hesabını silebildiği test edilir")
     public void customerOlarakHesabınıSilebildiğiTestEdilir() {
+        String deleteMassage=customer.accountDeleteMessageAA.getText();
+        Assert.assertTrue(deleteMassage.contains("Account deleted successfully"));
     }
+
+
+
 }

@@ -324,29 +324,47 @@ Login_RegisterPage {
 
    //325-425 SEVILAY UYANIK
 
-    @FindBy(xpath = "//a[text()='Login']")
-    public WebElement homeLogin;
-    @FindBy(xpath = "//input[@placeholder='Email']")
-    public WebElement email;
-    @FindBy(xpath = "//input[@name='password']")
-    public WebElement password;
-    //@FindBy(xpath = "//button[@class='submit-button btn btn-secondary']")
-    //public WebElement login;
-    @FindBy(xpath = "//a[@title='Tour Requests']")
-    public WebElement tourRequests;
-    @FindBy(xpath = "//input[@name='search']")
-    public WebElement ilanSearch;
-    @FindBy(xpath = "//button[@class='search-button btn btn-outline-secondary']")
-    public WebElement searchButton;
-    @FindBy(xpath = "(//div[@class='text'])[1]")
-    public WebElement searchResult;
-    @FindBy(xpath = "(//img[@class='user-pic'])[1]")
-    public WebElement userPicture;
-    @FindBy(xpath = "//p[text()='MY RESPONSES']")
-    public WebElement myResponses;
-    @FindBy(xpath = "(//button[@class='btn-link approve-button btn btn-primary'])[1]")
-    public WebElement firstApprove;
 
+ @FindBy(xpath = "//a[text()='Login']")
+ public WebElement homeLogin;
+ @FindBy(xpath = "//input[@placeholder='Email']")
+ public WebElement email;
+ @FindBy(xpath = "//input[@name='password']")
+ public WebElement password;
+ @FindBy(xpath = "//a[@title='Tour Requests']")
+ public WebElement tourRequests;
+ @FindBy(xpath = "//input[@name='search']")
+ public WebElement ilanSearch;
+ @FindBy(xpath = "//button[@class='search-button btn btn-outline-secondary']")
+ public WebElement searchButton;
+ @FindBy(xpath = "//*[.='My Tour Requests']")
+ public WebElement myTourRequests;
+ @FindBy(xpath = "(//div[@class='text'])[1]")
+ public WebElement searchResult;
+ @FindBy(xpath = "(//img[@class='user-pic'])[1]")
+ public WebElement userPicture;
+ @FindBy(xpath = "//p[text()='MY RESPONSES']")
+ public WebElement myResponses;
+ @FindBy(xpath = "(//button[@class='btn-link approve-button btn btn-primary'])[1]")
+ public WebElement firstApprove;
+
+ @FindBy(xpath = "(//span[@class='p-button-label p-c'])[2]")
+ public WebElement yes;
+
+ @FindBy(xpath = "(//span[@class='p-button-label p-c'])[1]")
+ public WebElement no;
+
+ @FindBy(xpath = "(//button[@class='btn-link decline-button btn btn-primary'])[2]")
+ public WebElement secondDecline;
+
+ @FindBy(xpath = "(//span[@class='p-tag-value'])[1]")
+ public WebElement firstApproveText;
+
+ @FindBy(xpath = "(//span[@class='p-tag-value'])[2]")
+ public WebElement secondDeclineText;
+  
+  
+ 
 
 
 
@@ -554,6 +572,7 @@ Login_RegisterPage {
     @FindBy(xpath = "//button[@id='react-aria9109298492-:rj:-tab-delete-account']") public WebElement deleteAccountButtonAA;
     @FindBy(xpath = "//input[@name='password']")  public WebElement deleteEmailButtonAA;
     @FindBy(xpath = "(//button[@class='submit-button btn btn-secondary'])[3]") public WebElement accountDeleteAA;
+    @FindBy(xpath = "//button[@aria-label='Yes']") public WebElement yesButtonAA;
     @FindBy(xpath = "//div[@class='p-toast-detail']")  public WebElement accountDeleteMessageAA;
 
 
@@ -661,6 +680,17 @@ public WebElement capctha;
 public WebElement messageBox;
 @FindBy(xpath = "//input[@id='firstName']")
 public WebElement firstnameget;
+@FindBy(xpath = "//input[@id='email']")
+public WebElement emailBox;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement sentButton;
+@FindBy(id = "recaptcha-anchor-label")
+public WebElement captcha2;
+
+    @FindBy(id = "//div[@class='p-toast-message-text']")
+    public WebElement succesText;
+    @FindBy(xpath = "//div[@class='recaptcha-wrapper']")
+    public WebElement notRobotIframe;
 
 
 
@@ -694,34 +724,6 @@ public WebElement firstnameget;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  
-  
-  
   //725-825 ORHAN TANER
 
 

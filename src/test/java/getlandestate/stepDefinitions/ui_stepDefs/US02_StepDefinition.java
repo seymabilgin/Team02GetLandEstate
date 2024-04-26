@@ -1,4 +1,4 @@
-package getlandestate.stepDefinitions.ui_stepDefs;
+/*package getlandestate.stepDefinitions.ui_stepDefs;
 
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.utilities.ConfigReader;
@@ -16,6 +16,14 @@ public class US02_StepDefinition {
     @Given("Web sitesine gidilirr")
     public void webSitesineGidilir() {
         Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
+    }
+    @And("Profile tıklanır")
+    public void profileTıklanır() {
+        customer.profileLogAA.click();
+    }
+    @And("Logout tiklanir")
+    public void logoutTiklanir() {
+        customer.logoutAA.submit();
     }
 
     @When("Login linkini tiklar")
@@ -99,3 +107,4 @@ public class US02_StepDefinition {
        Assert.assertEquals("Email is required",fail3);
     }
 }
+*/

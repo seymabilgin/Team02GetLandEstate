@@ -62,12 +62,13 @@ public class US18_managerStepDefinition {
     registerPage.submitButton.click();
     }
 
-  // @Then("{string} mesaji goruntulendigi dogrulanmalır")
-  // public void mesajiGoruntulendigiDogrulanmalır(String arg0) {
-  //     Alert alert=registerPage.
-  //     //ReusableMethods.alertGetTextJS();
+  @Then("{string} mesaji goruntulendigi dogrulanmalır")
+   public void mesajiGoruntulendigiDogrulanmalır(String arg0) {
+      // Alert alert=registerPage.
+      String succesText= ReusableMethods.alertGetTextJS(registerPage.succesText);
+       Assert.assertTrue(succesText.contains("Succes"));
 
-  // }
+   }
 
 
   //  @And("Dashboard yazdıgı dogrulanır")

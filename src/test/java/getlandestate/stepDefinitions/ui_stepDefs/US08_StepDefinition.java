@@ -13,8 +13,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class US08_StepDefinition {
-    Login_RegisterPage registerPage =new Login_RegisterPage();
-    PropertiesPage propertiesPage= new PropertiesPage();
+    Login_RegisterPage registerPage = new Login_RegisterPage();
+    PropertiesPage propertiesPage = new PropertiesPage();
 
     @Given("Manager Anasayfaya gider")
     public void managerAnasayfayaGider() {
@@ -26,14 +26,15 @@ public class US08_StepDefinition {
         registerPage.homeLogin.click();
         registerPage.loginEmail.sendKeys(ConfigReader.getProperty("email8"));
         registerPage.loginPassword.sendKeys(ConfigReader.getProperty("password8"));
-        registerPage.loginButtonMT.click();
+
+        registerPage.loginButtonAA.click();
     }
 
     @Given("Web sitesinin myAdverts bolümüne gidilir.")
-    public void webSitesininBolümüneGidilir() {
-    registerPage.backToSiteButton.click();
-    propertiesPage.accountIconButton.click();
-    propertiesPage.myAdvertsIcon.click();
+    public void webSitesininBolümüneGidilir(String arg0) {
+        registerPage.backToSiteButton.click();
+        propertiesPage.accountIconButton.click();
+        propertiesPage.myAdvertsIcon.click();
     }
 
     @Then("Managerin ilanlarinin listesini gorebildigi dogrulanir.")
@@ -58,29 +59,41 @@ public class US08_StepDefinition {
         Assert.assertTrue(propertiesPage.ilan_Listesi.isDisplayed());
     }
 
-    @And("Managerin verdigi ilanlar ile ilgili {string}, {string} ve {string} dahil olmak üzere secilen ilanin ayrintilarini goruntuleyebildigi dogrulanir")
-    public void managerinVerdigiIlanlarIleIlgiliVeDahilOlmakÜzereSecilenIlaninAyrintilariniGoruntuleyebildigiDogrulanir(String arg0, String arg1, String arg2) {
+    @And("Managerin verdigi ilanlar ile ilgili Date Published, Status ve View-Like-Tour dahil olmak üzere secilen ilanin ayrintilarini goruntuleyebildigi dogrulanir")
+    public void managerinVerdigiIlanlarIleIlgiliDatePublishedStatusVeViewLikeTourDahilOlmakUzereSecilenIlaninAyrintilariniGoruntuleyebildigiDogrulanir() {
+        Assert.assertTrue(propertiesPage.Date_Published.isDisplayed());
+        Assert.assertTrue(propertiesPage.View_Like_Tour.isDisplayed());
+        Assert.assertTrue(propertiesPage.Status.isDisplayed());
     }
 
-    @And("Bazı bilgileri ( başlık, açıklama, fiyat vb.) güncelleyerek ilanı düzenleyin.")
-    public void bazıBilgileriBaşlıkAçıklamaFiyatVbGüncelleyerekIlanıDüzenleyin() {
+
+    @And("Bazı bilgileri güncelleyerek ilanı düzenleyin.")
+    public void bazıBilgileriGüncelleyerekIlanıDüzenleyin() {
+        propertiesPage.ilan_Select1.click();
+        propertiesPage.ilan_EditAdvert.click();
+        propertiesPage.ilan_EditDescription.clear();
+        propertiesPage.ilan_EditDescription.sendKeys("Denize Nazır Villa");
+        propertiesPage.ilan_EditPrice.clear();
+        propertiesPage.ilan_EditPrice.sendKeys("17000");
     }
 
     @And("Değişiklikleri kaydedin.")
     public void değişiklikleriKaydedin() {
+        propertiesPage.ilanUpdate_Button.click();
     }
-
     @Then("Değişikliklerin ilan ayrıntılarına yansıtıldığını doğrulayın.")
     public void değişikliklerinIlanAyrıntılarınaYansıtıldığınıDoğrulayın() {
+        Assert.assertTrue(propertiesPage.updatedDogrulama.isDisplayed());
+        Driver.closeDriver();
     }
-
     @And("Bazı ilanlar silinir.")
     public void bazıIlanlarSilinir() {
+        propertiesPage.ilanDeleteButton.click();
     }
-
     @Then("İlanin artik Managerin ilanlar listesinde görünmedigini dogrulayin.")
     public void ilaninArtikManagerinIlanlarListesindeGörünmediginiDogrulayin() {
+        Assert.assertTrue(propertiesPage.ilanDeleteDogrulama.isDisplayed());
+        Driver.closeDriver();
     }
-
 
 }

@@ -1,80 +1,94 @@
 package getlandestate.stepDefinitions.ui_stepDefs;
 
+import getlandestate.pages.GetlandPage;
+import getlandestate.pages.HomePage;
+import getlandestate.pages.PropertiesPage;
+import getlandestate.utilities.ConfigReader;
+import getlandestate.utilities.Driver;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
+import org.openqa.selenium.Keys;
 
 public class US10StepDef {
+
+    GetlandPage getlandPage = new GetlandPage();
+    HomePage homePage = new HomePage();
+
+    PropertiesPage propertiesPage = new PropertiesPage();
+
     @Given("kullanici sayfaya gider")
     public void kullanici_sayfaya_gider() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+        Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
     }
 
     @When("login butonuna tiklar")
     public void login_butonuna_tiklar() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        getlandPage.girisButonu.click();
+
+
     }
 
     @When("email ve password bilgileri ile login olur")
     public void email_ve_password_bilgileri_ile_login_olur() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        getlandPage.emailKutusu.sendKeys(ConfigReader.getProperty("costumerMail"));
+        getlandPage.passwordKutusu.sendKeys(ConfigReader.getProperty("costumerPassword"), Keys.ENTER);
     }
 
     @When("Rent butonu tiklanir")
     public void rent_butonu_tiklanir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        homePage.rentButton.click();
     }
 
     @When("Arama kismina aradigimiz emlak turu aratilir")
     public void arama_kismina_aradigimiz_emlak_turu_aratilir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        homePage.searchInput.sendKeys("villa");
+        homePage.searchButton.click();
     }
 
     @Then("Aranan emlak turleri goruntulendigi dogrulanir")
     public void aranan_emlak_turleri_goruntulendigi_dogrulanir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Assert.assertTrue(propertiesPage.PropertiesTitle.getText().contains("Properties"));
+
+
     }
 
     @When("Price Range kismina istenilen fiyat araligi secilir")
     public void price_range_kismina_istenilen_fiyat_araligi_secilir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        propertiesPage.minPrice.sendKeys("100");
+        propertiesPage.maxPrice.sendKeys("3000");
+
     }
 
     @When("Advert Type kismina rent kismi secilir")
     public void advert_type_kismina_rent_kismi_secilir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        propertiesPage.advertType.sendKeys("r",Keys.ENTER);
+
+
     }
 
     @When("Category butonundan istenilen emlak turu secilir")
     public void category_butonundan_istenilen_emlak_turu_secilir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        propertiesPage.category.sendKeys("v",Keys.ENTER);
     }
 
     @When("City butonunda istenilen ulke secilir")
     public void city_butonunda_istenilen_ulke_secilir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
+
     }
 
     @When("District butonuyla mahalle secilir")
     public void district_butonuyla_mahalle_secilir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        propertiesPage.district.sendKeys("b",Keys.ENTER);
     }
 
     @Then("Search butonuna tiklayarak ozel aranan emlak turleri goruntulendigi dogrulanir")
     public void search_butonuna_tiklayarak_ozel_aranan_emlak_turleri_goruntulendigi_dogrulanir() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+
     }
 
     @Then("Emlak turunun resmi goruntulendigi dorgulanmali")
@@ -173,4 +187,21 @@ public class US10StepDef {
         throw new io.cucumber.java.PendingException();
     }
 
+
+    @And("Arama kismina aradigimiz {string} aratilir")
+    public void aramaKisminaAradigimizAratilir(String str) {
+        homePage.searchInput.sendKeys(str);
+        homePage.searchButton.click();
+    }
+
+    @And("Country butonundan istenilen ulke secilir")
+    public void countryButonundanIstenilenUlkeSecilir() {
+        propertiesPage.country.sendKeys("t",Keys.ENTER);
+
+    }
+
+    @And("City butonunda istenilen sehir secilir")
+    public void cityButonundaIstenilenSehirSecilir() {
+        propertiesPage.city.sendKeys("m","m","m","m","m",Keys.ENTER);
+    }
 }
