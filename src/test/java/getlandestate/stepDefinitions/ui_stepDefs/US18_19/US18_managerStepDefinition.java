@@ -1,22 +1,24 @@
-package getlandestate.stepDefinitions.ui_stepDefs;
+package getlandestate.stepDefinitions.ui_stepDefs.US18_19;
 
 import getlandestate.pages.GetlandPage;
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.utilities.ConfigReader;
 import getlandestate.utilities.Driver;
+import getlandestate.utilities.ReusableMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 
 public class US18_managerStepDefinition {
 
     Login_RegisterPage registerPage =new Login_RegisterPage();
 
-    @Given("Kullanici {string} sayfasina gidilir")
-    public void kullaniciSayfasinaGidilir(String url) {
+    @Given("Kullanici sayfasina gidilir")
+    public void kullaniciSayfasinaGidilir() {
         Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
     }
 
@@ -24,6 +26,7 @@ public class US18_managerStepDefinition {
     public void loginButonunaTiklanır() {
         registerPage.loginButtonMT.click();
     }
+
     @And("email ve password bilgileri ile login olunur")
     public void emailVePasswordBilgileriIleLoginOlunur() {
     registerPage.loginEmail.sendKeys(ConfigReader.getProperty("email"));
@@ -48,8 +51,10 @@ public class US18_managerStepDefinition {
 
     @And("tour date ,tour time girilir")
     public void tourDateTourTimeGirilir() {
-        registerPage.tourDate.sendKeys("24042024");
+        registerPage.tourDate.sendKeys("24052024");
+        ReusableMethods.bekle(2);
         registerPage.tourTime.sendKeys("2",Keys.ENTER);
+        ReusableMethods.bekle(2);
     }
 
     @And("Submit a tour request butonuna tiklayarak randevu talebinde bulunulur")
@@ -57,37 +62,46 @@ public class US18_managerStepDefinition {
     registerPage.submitButton.click();
     }
 
-    @Then("{string} mesaji goruntulendigi dogrulanmalır")
-    public void mesajiGoruntulendigiDogrulanmalır(String arg0) {
+  @Then("{string} mesaji goruntulendigi dogrulanmalır")
+   public void mesajiGoruntulendigiDogrulanmalır(String arg0) {
+      // Alert alert=registerPage.
+      String succesText= ReusableMethods.alertGetTextJS(registerPage.succesText);
+       Assert.assertTrue(succesText.contains("Succes"));
 
-    }
+   }
 
 
-    @And("Dashboard yazdıgı dogrulanır")
-    public void dashboardYazdıgıDogrulanır() {
-        Assert.assertTrue(registerPage.dashboardText.getText().contains("Dashboard"));
-
-    }
+  //  @And("Dashboard yazdıgı dogrulanır")
+  //  public void dashboardYazdıgıDogrulanır() {
+  //      Assert.assertTrue(registerPage.dashboardText.getText().contains("Dashboard"));
+//
+  //  }
 
     @And("profil üzerinden MY TOUR REQUEST'e tıklanır")
     public void profilÜzerindenMYTOURREQUESTETıklanır() {
         registerPage.backToSiteButton.click();
+        registerPage.userPicture.click();
+        registerPage.tourRequests.click();
 
     }
 
     @And("MY RESPONSES'e tıklanır")
     public void myRESPONSESETıklanır() {
+        registerPage.myResponses.click();
     }
 
     @And("çıkan ekranda  doğru ilan olduğu doğrulanır")
     public void çıkanEkrandaDoğruIlanOlduğuDoğrulanır() {
+        Assert.assertTrue(registerPage.verifyIlan.getText().contains("Special home"));
     }
 
     @And("birincisini kabul edebilir")
     public void birincisiniKabulEdebilir() {
+        registerPage.acceptDavet.click();
     }
 
     @Then("ikincisini ret edebilir")
     public void ikincisiniRetEdebilir() {
+        registerPage.declineDavet.click();
     }
 }

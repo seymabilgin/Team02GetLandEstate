@@ -26,15 +26,15 @@ public class US08_StepDefinition {
         registerPage.homeLogin.click();
         registerPage.loginEmail.sendKeys(ConfigReader.getProperty("email8"));
         registerPage.loginPassword.sendKeys(ConfigReader.getProperty("password8"));
-        registerPage.loginButtonMT.click();
+        //registerPage.login.click();
     }
 
-    @Given("Web sitesinin {myAdverts} bolümüne gidilir.")
+  /*  @Given("Web sitesinin {myAdverts} bolümüne gidilir.")
     public void webSitesininBolümüneGidilir(String arg0) {
     registerPage.backToSiteButton.click();
     propertiesPage.accountIconButton.click();
     propertiesPage.myAdvertsIcon.click();
-    }
+    }*/
 
     @Then("Managerin ilanlarinin listesini gorebildigi dogrulanir.")
     public void managerinIlanlarininListesiniGorebildigiDogrulanir() {

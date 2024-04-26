@@ -11,12 +11,15 @@ import static getlandestate.base_url.Base_Url.setUp;
 
 
 public class Hooks {
-    @Before("@UIAdmin")
-    public void uiAdmin(){
+    @Before("@APIAdmin")
+    public void apiAdmin(){
         setUp();
     }
-
-    @Before("@UICustomer")
+    @Before("@APIManager")
+    public void apiManager(){
+        setUp();
+    }
+    @Before("@APICustomer")
     public void uiCustomer(){
         setUp();
     }
