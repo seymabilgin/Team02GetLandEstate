@@ -425,6 +425,7 @@ Login_RegisterPage {
 //425-525 HANIFE OZTURK
 
 
+    @FindBy(xpath = "//a[@href='/my-tour-requests']") public WebElement myRequestsButton;
 
 
 
