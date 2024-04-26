@@ -130,8 +130,8 @@ public class DashBoardPage {
 @FindBy(xpath = "(//div[@class='admin-report-button-wrapper'])[4]") public WebElement tourDownload;
 @FindBy(css = ".p-toast-detail") public WebElement errorMessage;
 @FindBy(css = ".formik-feedback.invalid-feedback") public WebElement amountMessage;
-
-
+@FindBy(xpath = "//a[@title='Logout']") public WebElement dashboardLogout;
+@FindBy(xpath = "//span[.='Yes']") public WebElement dashboardLogoutYes;
 
 
 
