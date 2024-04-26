@@ -427,8 +427,7 @@ public class PropertiesPage {
     public WebElement city;
     @FindBy(id = "dist")
     public WebElement district;
-    @FindBy(xpath = "//button[@class='dynamic-button  btn btn-primary']")
-    public WebElement searchButton;
+
 
 
 
