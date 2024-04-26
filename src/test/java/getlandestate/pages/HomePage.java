@@ -7,8 +7,6 @@ import org.openqa.selenium.support.PageFactory;
 
 
 
-
-
 public class HomePage {
     public HomePage() {PageFactory.initElements(Driver.getDriver(),this);
     }
@@ -1025,9 +1023,8 @@ public WebElement loginButtonInHomePage;
 
 
 //1025-... TUNCER OZGUR
-//1025-... TUNCER OZGUR
-@FindBy(xpath = "//button[normalize-space()='Rent']")
-public WebElement searchAreaRentButton;
+   @FindBy(xpath = "//button[normalize-space()='Rent']")
+   public WebElement searchAreaRentButton;
 
     @FindBy(xpath = "//button[normalize-space()='Sale']")
     public WebElement searchAreaSaleButton;
