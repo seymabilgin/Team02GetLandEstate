@@ -1,1 +1,5 @@
+<<<<<<< HEAD
+file:src/test/resources/features/ui_features/US15/US_15_Admin_Authorization.feature:49:72
+=======
 file:src/test/resources/features/ui_features/US_01_CustomerRegister.feature:70
+>>>>>>> master
