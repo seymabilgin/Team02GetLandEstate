@@ -1,4 +1,4 @@
-@US01-UI  @UICloseDriver @UITakesScreenShot
+ @UI @US01-UI  @UICloseDriver @UITakesScreenShot
   Feature:US_01 Customer sayfaya kayıt olabilmelidir.
 
     Background:

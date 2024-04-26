@@ -13,10 +13,10 @@ public class US02_StepDefinition {
     Login_RegisterPage customer= new Login_RegisterPage();
 
 
-    @Given("Web sitesine gidilir")
-    public void webSitesineGidilir() {
-        Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
-    }
+    //@Given("Web sitesine gidilir")
+    //public void webSitesineGidilir() {
+       // Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
+   // }
 
     @When("Login linkini tiklar")
     public void loginLinkiniTiklar() {
