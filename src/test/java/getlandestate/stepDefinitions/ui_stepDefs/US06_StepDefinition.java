@@ -1,6 +1,7 @@
 package getlandestate.stepDefinitions.ui_stepDefs;
 
 import getlandestate.pages.CreatePropertyPage;
+import getlandestate.pages.HomePage;
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.utilities.ConfigReader;
 import getlandestate.utilities.Driver;
@@ -15,6 +16,11 @@ import static getlandestate.utilities.ReusableMethods.*;
 public class US06_StepDefinition {
     Login_RegisterPage loginPage=new Login_RegisterPage();
     CreatePropertyPage createPropertyPage= new CreatePropertyPage();
+    HomePage homePage=new HomePage();
+    @And("Login butonuna tıklanır")
+    public void loginButonunaTıklanır() {
+        homePage.loginButtonInHomePage.click();
+    }
     @And("Kullanıcı Manager olarak {string} ve {string} kısmına geçerli bir bir veri girer ve login butonuna tıklar")
     public void kullanıcıManagerOlarakVeKısmınaGeçerliBirBirVeriGirerVeLoginButonunaTıklar(String email, String password) {
         loginPage.email.sendKeys(ConfigReader.getProperty(email));
@@ -35,6 +41,7 @@ public class US06_StepDefinition {
     }
     @And("Kullanıcı ilana uygun Price'i {string} seçer")
     public void kullanıcıIlanaUygunPriceISeçer(String price) {
+        createPropertyPage.priceOfProperty.click();
         createPropertyPage.priceOfProperty.clear();
         createPropertyPage.priceOfProperty.sendKeys(price);
     }
@@ -179,4 +186,6 @@ public class US06_StepDefinition {
         screenShot("US06-TC05-Bug");
         Assert.assertFalse(createPropertyPage.createButtonOfPropert.isDisplayed());
     }
+
+
 }

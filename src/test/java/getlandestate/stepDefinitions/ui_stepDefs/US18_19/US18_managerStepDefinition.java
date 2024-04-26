@@ -23,11 +23,7 @@ public class US18_managerStepDefinition {
 
     @When("login butonuna tiklanır")
     public void loginButonunaTiklanır() {
-<<<<<<< HEAD:src/test/java/getlandestate/stepDefinitions/ui_stepDefs/US18_managerStepDefinition.java
-        //registerPage.login.click();
-=======
         registerPage.loginButtonMT.click();
->>>>>>> master:src/test/java/getlandestate/stepDefinitions/ui_stepDefs/US18_19/US18_managerStepDefinition.java
     }
     @And("email ve password bilgileri ile login olunur")
     public void emailVePasswordBilgileriIleLoginOlunur() {
