@@ -524,9 +524,6 @@ public WebElement loginButtonInHomePage;
 
 
 
-
-
-
 //525-625 AYSEGUL ARIK
 
 

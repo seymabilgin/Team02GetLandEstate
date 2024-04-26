@@ -242,9 +242,7 @@ public class PropertiesPage {
 
     @FindBy(xpath = "//div[@class='row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row']")
     public WebElement ilan_Details;
-
-
-
+    
     @FindBy(xpath = "//tbody/tr[1]/td[2]/div[1]")
     public WebElement Date_Published;
 
@@ -252,8 +250,6 @@ public class PropertiesPage {
     public WebElement Status;
     @FindBy(xpath = "//tbody/tr[1]/td[4]/div[1]")
     public WebElement View_Like_Tour;
-
-
 
     @FindBy(xpath = "//tbody/tr[1]/td[5]/div[1]/div[1]/button[2]//*[name()='svg']")
     public WebElement ilan_Update_GirisButton;
@@ -338,80 +334,23 @@ public class PropertiesPage {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- // 325-425 hanife
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  // 350-425 hanife
 
     @FindBy(xpath = "//div[@class='page-header container']")
-    public WebElement PropertiesTitle;
+    public WebElement propertiesTitle;
     @FindBy(id = "ps")
     public WebElement minPrice;
     @FindBy(id = "pe")
@@ -427,6 +366,14 @@ public class PropertiesPage {
     public WebElement city;
     @FindBy(id = "dist")
     public WebElement district;
+
+    @FindBy(xpath = "//button[@class='dynamic-button  btn btn-primary']")
+    public WebElement searchButton;
+    @FindBy(xpath = "//span[@class='d-none d-sm-inline']")
+    public WebElement totalFound;
+
+    @FindBy(xpath = "//a[@href='/advert/1713619965130-villa']")
+    public WebElement choiseRent;
 
 
 

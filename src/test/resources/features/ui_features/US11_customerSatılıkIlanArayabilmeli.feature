@@ -1,5 +1,5 @@
-@US10
-Feature: US10 Customer Kiralik Ilan Arama Testi
+@US11
+Feature: US11 Customer Satilik Ilan Arama Testi
 
   @Setup
   Scenario: Setup
@@ -9,7 +9,7 @@ Feature: US10 Customer Kiralik Ilan Arama Testi
 
   @TC01
   Scenario: TC01 Search kısmından istediği emlağı seçip genel arama yapma islemi
-    When Rent butonu tiklanir
+    When Sale butonu tiklanir
     But kullanıcı 2 saniye bekler.
     And Arama kismina aradigimiz "villa" aratilir
     Then  Aranan emlak turleri goruntulendigi dogrulanir
@@ -18,12 +18,18 @@ Feature: US10 Customer Kiralik Ilan Arama Testi
   @TC02
   Scenario: TC02 Price Range, Advert Type, Category, Country, City, District bölümlerini girerek özel arama yapabilmeli
 
-    When Price Range kismina istenilen fiyat araligi secilir
-    And Advert Type kismina rent kismi secilir
+    When Price Range kismina istenilen  fiyat araligi secilir
+    But kullanıcı 2 saniye bekler.
+    And Advert Type kismina sale kismi secilir
+    But kullanıcı 2 saniye bekler.
     And Category butonundan istenilen emlak turu secilir
+    But kullanıcı 2 saniye bekler.
     And Country butonundan istenilen ulke secilir
+    But kullanıcı 2 saniye bekler.
     And City butonunda istenilen sehir secilir
+    But kullanıcı 2 saniye bekler.
     And District butonuyla mahalle secilir
+    But kullanıcı 2 saniye bekler.
     Then Search butonuna tiklayarak ozel aranan emlak turleri goruntulendigi dogrulanir
     And Filtrelenen emlaklardan bir emlak secilir
 

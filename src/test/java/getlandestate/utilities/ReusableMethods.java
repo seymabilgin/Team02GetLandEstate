@@ -205,6 +205,14 @@ public class ReusableMethods {
         robot.delay(1000);
     }
 
+
+  
+      public static void InvisibleWait(WebElement element, int sayi) {
+        WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(sayi));
+        wait.until(ExpectedConditions.invisibilityOf(element));
+    }
+  
+
     public static void uploadFilePath(String dosyaYolu){
         try{
             bekle(3); // 3 saniye bekletir. Bu, kodun başka işlemler için hazır olmasını sağlar.
@@ -234,6 +242,7 @@ public class ReusableMethods {
   
   
   
+
   
   
   
