@@ -242,9 +242,7 @@ public class PropertiesPage {
 
     @FindBy(xpath = "//div[@class='row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row']")
     public WebElement ilan_Details;
-
-
-
+    
     @FindBy(xpath = "//tbody/tr[1]/td[2]/div[1]")
     public WebElement Date_Published;
 
@@ -252,8 +250,6 @@ public class PropertiesPage {
     public WebElement Status;
     @FindBy(xpath = "//tbody/tr[1]/td[4]/div[1]")
     public WebElement View_Like_Tour;
-
-
 
     @FindBy(xpath = "//tbody/tr[1]/td[5]/div[1]/div[1]/button[2]//*[name()='svg']")
     public WebElement ilan_Update_GirisButton;
@@ -280,9 +276,35 @@ public class PropertiesPage {
 
     @FindBy(xpath = "//div[@class='p-toast-detail']")
     public WebElement ilanDeleteDogrulama;
+    @FindBy(xpath = "//div[contains(text(),'Advert updated successfully')]")
+    public WebElement updatedDogrulama;
 
+    @FindBy(xpath = "//textarea[@id='desc']")
+    public WebElement ilan_EditDescription;
 
+    @FindBy(xpath = "//span[normalize-space()='Adverts']")
+    public WebElement advertsTikla;
+    @FindBy(xpath = "//input[@id='q']")
+    public WebElement advertsSearch;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement searchButton;
+    @FindBy(xpath = "//tr[@draggable='false']//p[contains(text(),'villan')]")
+    public WebElement searchResult;
+    @FindBy(xpath = "//tbody/tr[1]/td[5]/div[1]/div[1]/button[2]//*[name()='svg']")
+    public WebElement advertUpdateikonforActivated;
 
+    @FindBy(xpath = "//select[@id='status']")
+    public WebElement selectStatus;
+    @FindBy(xpath = "//select[@id='statusForAdvert']")
+    public WebElement pendingSelect;
+    @FindBy(xpath = "//select[@id='statusForAdvert']//option[contains(text(),'Activated')]")
+    public WebElement selectActivated;
+    @FindBy(xpath = "//select[@id='statusForAdvert']//option[contains(text(),'Rejected')]")
+    public WebElement selectRejected;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement updatedButton;
+    @FindBy(xpath = "//tbody/tr[2]/td[5]/div[1]/div[1]/button[2]//*[name()='svg']//*[name()='path' and contains(@d,'M17 3a2.85')]")
+    public WebElement advertUpdate_ikonforRejected;
 
 
 
@@ -312,72 +334,20 @@ public class PropertiesPage {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- // 325-425 hanife
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  // 350-425 hanife
 
     @FindBy(xpath = "//div[@class='page-header container']")
     public WebElement propertiesTitle;
@@ -396,6 +366,7 @@ public class PropertiesPage {
     public WebElement city;
     @FindBy(id = "dist")
     public WebElement district;
+
     @FindBy(xpath = "//button[@class='dynamic-button  btn btn-primary']")
     public WebElement searchButton;
     @FindBy(xpath = "//span[@class='d-none d-sm-inline']")
@@ -403,6 +374,7 @@ public class PropertiesPage {
 
     @FindBy(xpath = "//a[@href='/advert/1713619965130-villa']")
     public WebElement choiseRent;
+
 
 
 

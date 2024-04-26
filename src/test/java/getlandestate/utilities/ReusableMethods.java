@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.awt.*;
+import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -34,8 +35,8 @@ public class ReusableMethods {
         Driver.getDriver().switchTo().alert().dismiss();
     }
     //Alert getText()
-    public static void alertText() {
-        Driver.getDriver().switchTo().alert().getText();
+    public static void alert() {
+        Driver.getDriver().switchTo().alert();
     }
     //Alert promptBox
     public static void alertprompt(String text) {
@@ -162,6 +163,7 @@ public class ReusableMethods {
     }
 
 
+
    //Mehmet Robot Class Methodu
     public static void robotDownloadKeep() {
         Robot robot= null;
@@ -204,12 +206,43 @@ public class ReusableMethods {
     }
 
 
-
-
-    public static void InvisibleWait(WebElement element, int sayi) {
+  
+      public static void InvisibleWait(WebElement element, int sayi) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(sayi));
         wait.until(ExpectedConditions.invisibilityOf(element));
     }
+  
+
+    public static void uploadFilePath(String dosyaYolu){
+        try{
+            bekle(3); // 3 saniye bekletir. Bu, kodun başka işlemler için hazır olmasını sağlar.
+            StringSelection stringSelection = new StringSelection(dosyaYolu);
+            //Verilen Dosya yolunu bir StringSelection objectine dönüştürürüz
+            Toolkit.getDefaultToolkit().getSystemClipboard().setContents(stringSelection,null);
+            //verilen stringSelection'i (bu durumda dosya yolu), daha sonra başka bir yere yapıştırmak üzere sistem panosuna kopyalamaktır.
+            Robot robot = new Robot();
+            // Robot sınıfından bir object olustururuz, Bu class javadan gelir ve klavye ve mouse etkileşimlerini simüle eder.
+            robot.keyPress(KeyEvent.VK_CONTROL);
+            robot.keyPress(KeyEvent.VK_V);
+            // CTRL+V tuslarina basar dolayisiyla panodaki veriyi yapıştırır.
+            robot.keyRelease(KeyEvent.VK_CONTROL);
+            robot.keyRelease(KeyEvent.VK_V);
+            // CTRL ve V tuşlarından elini kaldirir
+            robot.delay(3000);
+            // 3 saniye bekler, bu süre içerisinde yapıştırılan verinin işlenmesini sağlar.
+            robot.keyPress(KeyEvent.VK_ENTER);
+            robot.keyRelease(KeyEvent.VK_ENTER);
+            // ENTER tuşuna basarak yapıştırma işlemini onaylar veya diyalog penceresini kapatır.
+            robot.delay(3000);
+            // Sonraki işlemler için ek 3 saniye bekler.
+        }catch (Exception ignored){
+            // Herhangi bir hata oluşursa, bu hata yoksayılır.
+        }
+    }
+  
+  
+  
+
   
   
   
