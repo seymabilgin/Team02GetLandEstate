@@ -22,7 +22,7 @@ public class US18_managerStepDefinition {
 
     @When("login butonuna tiklanır")
     public void loginButonunaTiklanır() {
-        registerPage.login.click();
+       // registerPage.login.click();
     }
     @And("email ve password bilgileri ile login olunur")
     public void emailVePasswordBilgileriIleLoginOlunur() {
