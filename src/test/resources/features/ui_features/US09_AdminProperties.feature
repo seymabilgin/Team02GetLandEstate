@@ -7,7 +7,7 @@ Feature:US_09 Admin girilen ilanları aktif edebilmeli, reddedebilmeli, güncell
 
   @TC01
   Scenario: Admin Ilanlar ile ilgili Arama yapabilmeli
-    Given Web sitesinin "Ilanlarim" bolümüne gidilir.
+    #Given Web sitesinin "Ilanlarim" bolümüne gidilir.
     And  Belirli kriterlere gore ilan aratilir.
     Then Adminin arama kriterleriyle eslesen ilanlarin listesini görüntüleyebildigi dogrulanir.
     And sayfayi kapatir.
@@ -15,7 +15,7 @@ Feature:US_09 Admin girilen ilanları aktif edebilmeli, reddedebilmeli, güncell
 
   @TC02
   Scenario: Admin Ilanlar  ile ilgili "Activated" işlemini yapabilmeli
-    Given Web sitesinin "Ilanlarım" bolümüne gidilir.
+   # Given Web sitesinin "Ilanlarım" bolümüne gidilir.
     And  Pending olan ilanlar aratilir
     Then Adminin arama kriterleriyle eslesen ilanlarin listesini görüntüleyebildigi dogrulanir.
     And Listeden herhangi bir ilan seçilir.
@@ -25,7 +25,7 @@ Feature:US_09 Admin girilen ilanları aktif edebilmeli, reddedebilmeli, güncell
 
   @TC03
   Scenario: Admin Ilanlar ile ilgili "Rejected"  islemini yapabilmeli
-    Given Web sitesinin "İlanlarim" bolümüne gidilir.
+   # Given Web sitesinin "İlanlarim" bolümüne gidilir.
     And  Belirli kriterlere gore ilan aratilir.
     Then Adminin arama kriterleriyle eslesen ilanlarin listesini görüntüleyebildigi dogrulanir.
     And Listeden herhangi bir ilan seçilir.
@@ -35,7 +35,7 @@ Feature:US_09 Admin girilen ilanları aktif edebilmeli, reddedebilmeli, güncell
 
   @TC04
   Scenario: Admin Ilanlar ile ilgili "Update"  islemini yapabilmeli
-    Given Web sitesinin "İlanlarim" bolümüne gidilir.
+    #Given Web sitesinin "İlanlarim" bolümüne gidilir.
     And  Belirli kriterlere gore ilan aratilir.
     Then Adminin arama kriterleriyle eslesen ilanlarin listesini görüntüleyebildigi dogrulanir.
     And Listeden herhangi bir ilan seçilir.
