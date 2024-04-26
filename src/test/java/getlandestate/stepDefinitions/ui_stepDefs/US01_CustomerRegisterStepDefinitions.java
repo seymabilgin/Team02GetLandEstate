@@ -250,7 +250,10 @@ public class US01_CustomerRegisterStepDefinitions {
     public void yourRegistrationHasBeenCompletedSuccessfullyPleaseToActivateYourAccountClickOnTheActivationLinkSentToYourEMailYazısınınGörüldügüDogrulanır() {
         String alertText=ReusableMethods.alertGetTextJS(registerPage.alertText);
         Assert.assertTrue(alertText.contains("Your registration has been completed successfully. Please to activate your account, click on the activation link sent to your e-mail."));
+
+
     }
+
 
 
 
