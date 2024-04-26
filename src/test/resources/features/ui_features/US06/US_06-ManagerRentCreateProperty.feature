@@ -2,7 +2,7 @@
 Feature:Manager Sayfada Kiralık İlanı Verebilmeli
   Background:
     Given Kullanici siteye gider
-    And Login butonuna tiklanir
+    And Login butonuna tıklanır
     And Kullanıcı Manager olarak "getLandEmailManager" ve "getLandPswManager" kısmına geçerli bir bir veri girer ve login butonuna tıklar
     And Back to Site butonuna tiklanir
     And Create Property butonuna tıklanır
@@ -102,7 +102,7 @@ Feature:Manager Sayfada Kiralık İlanı Verebilmeli
           Then Create butonu aktif olmaz ve ilan oluşturulamadığı doğrulanır
           And sayfayi kapatir
 
-          @US06-TC05
+          @US06-TC05 @UITakesScreenShot
           Scenario: TC05-Manager tüm bilgileri girmeden kiralık ilan olusturamamalı Bug
             And Title "Memurlara Özel Aile Evi" ile doldurulur
             And Description "3+1 sehre 5dk uzaklıkta, eşyalı, bakımı yeni yapıldı garajı ve bahçeli e" ile doldurulur
