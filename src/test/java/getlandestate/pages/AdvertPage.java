@@ -20,10 +20,9 @@ public class AdvertPage {
     public WebElement description;
     @FindBy (xpath = "//div[@class='row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 row']")
     public WebElement details;
-    @FindBy (xpath = "////div[@class='advert-details-location-container container']//h4/following-sibling::div[@class='row']")
+    @FindBy (xpath = "//div[@class='advert-details-location-container container']//h4/following-sibling::div[@class='row']")
     public WebElement location;
-    @FindBy (xpath = "//button[@class='show-toggle btn btn-danger']")
-    public WebElement gorunurlukButton;
+
     @FindBy (xpath = "//a[@class='advert-detail-phone-link']")
     public WebElement telNumberBox;
     @FindBy (xpath = "//a[@class='advert-detail-mail-link']")
@@ -31,7 +30,7 @@ public class AdvertPage {
     @FindBy (xpath = "//a[@class='advert-detail-phone-link']")
     public WebElement telNumber;
     @FindBy (id = "tourDate")
-    public WebElement tourDate;
+    public WebElement  tourDate;
     @FindBy (id = "tourTime")
     public WebElement tourTime;
     @FindBy (xpath = "//button[@type='submit']")
@@ -40,7 +39,11 @@ public class AdvertPage {
     public WebElement succesMessage;
     //toast success message   (bu messajlara toast mesaj da denilebilir. Genelde xpath icerisinde toast kelimesi gecer)
 
+    @FindBy (xpath = "//div[@class='advert-details-owner-name']")
+    public WebElement gorunurlukButton;
 
+    @FindBy (xpath = "//div[@class='advert-details-owner-name']")
+    public WebElement ownerName;
 
 
 
@@ -107,7 +110,8 @@ public class AdvertPage {
 
 
 
-    
+
+
 
 
 
