@@ -1,8 +1,9 @@
-package getlandestate.stepDefinitions.ui_stepDefs;
+/*package getlandestate.stepDefinitions.ui_stepDefs;
 
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.utilities.ConfigReader;
 import getlandestate.utilities.Driver;
+import getlandestate.utilities.ReusableMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -13,7 +14,7 @@ public class US02_StepDefinition {
     Login_RegisterPage customer= new Login_RegisterPage();
 
 
-    @Given("Web sitesine gidilirr")
+    @Given("Web sitesine gidilir")
     public void webSitesineGidilir() {
         Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
     }
@@ -43,14 +44,13 @@ public class US02_StepDefinition {
 
     @And("LOGIN butonu tiklanir")
     public void logınButonuTiklanir() {
-        customer.loginButtonMT.submit();
+        ReusableMethods.click(customer.loginButtonAA);
     }
 
     @Then("Customer olarak sayfaya giris yapildigi test edilir")
     public void customerOlarakSayfayaGirisYapildigiTestEdilir() {
         customer.profileLogAA.click();
-        String logout=customer.logoutAA.getText();
-        Assert.assertEquals("Logout","Logout");
+        Assert.assertTrue(customer.logoutAA.isDisplayed());
     }
 
     @And("Emaila gecerli olmayan bilgi girilir")
@@ -58,10 +58,10 @@ public class US02_StepDefinition {
         customer.loginEmailAA.sendKeys(ConfigReader.getProperty("gecerliolmayanEmail1"));
     }
 
-    @And("Enter password gecerli bilgi girilir")
+   /* @And("Enter password gecerli bilgi girilir")
     public void enterPasswordGecerliBilgiGirilir() {
         customer.loginPasswordAA.sendKeys(ConfigReader.getProperty("passwordAyse"));
-    }
+    }*/
 
     @Then("Customera olarak sayfaya giris yapilamadigi test edilir")
     public void customeraOlarakSayfayaGirisYapilamadigiTestEdilir() {
@@ -70,17 +70,20 @@ public class US02_StepDefinition {
     }
     @And("Emailb gecerli olmayan bilgi girilir")
     public void emailbGecerliOlmayanBilgiGirilir() {
-        customer.loginEmailAA.sendKeys(ConfigReader.getProperty("gecerliolmayanEmail2"));
+        customer.loginEmailAA.sendKeys(ConfigReader.getProperty("gecerliolmayanemail2"));
     }
     @Then("Customerb olarak sayfaya giris yapilamadigi test edilir")
     public void customerbOlarakSayfayaGirisYapilamadigiTestEdilir() {
         String fail1=customer.invalidEmailorPasswordAA.getText();
-        Assert.assertEquals("Invalid email or password",fail1);
+
+        Assert.assertTrue(fail1.contains("Invalid email or password. Please check your credentials and try again."));
+
     }
 
-    @And("Enter password alani bos birakilir")
+   @And("Enter password alani bos birakilir")
     public void enterPasswordAlaniBosBirakilir() {
-        customer.loginPasswordAA.clear();
+        customer.loginPasswordAA.click();
+
     }
     @Then("Customerc olarak sayfaya giris yapilamadigi test edilir")
     public void customercOlarakSayfayaGirisYapilamadigiTestEdilir() {
@@ -107,4 +110,10 @@ public class US02_StepDefinition {
        Assert.assertEquals("Email is required",fail3);
 
     }
+
+    /*
+     And Profile tıklanır
+    And Logout tiklanir
+     */
 }
+*/

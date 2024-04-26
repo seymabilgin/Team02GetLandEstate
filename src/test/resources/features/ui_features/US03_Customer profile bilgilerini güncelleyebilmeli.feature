@@ -1,9 +1,7 @@
 Feature:US_03 Customer profile bilgilerini görebilmeli ve güncelleyebilmeli
 Background:
-  Given Web sitesine gidilirr
-  And Profile tıklanır
-  And Logout tiklanir
-  When Login linkini tıklar
+  Given Web sitesine gidilir
+  When Login linkini tiklar
 
 
 
@@ -11,25 +9,24 @@ Background:
 
 
   @TC0001
-  Scenario:Customer profile bilgilerini görebilmeli ve güncelleyebilmel
-    And Email geçerli bilgi girilir
-    And Enter password gecerli bilgi girilir
-    And LOGIN butonu tıklanır
+  Scenario:Customer profile bilgilerini görebilmeli ve güncelleyebilmeli
+    And Email gecerli bilgi girilir
+    And Enter password geçerli bilgi girilir
+    And LOGIN butonu tiklanir
     And Profil tıklanır
     And My Profile tıklanır
-    And İsmini Aysegul olarak değiştirir
-    And Soyismini Gull olarak değiştirir
-    And Telefon numarasını 5303405061 olarak değiştirir
-    And Email adresini aysegul@gul.com olarak değiştirir
+    And İsmini değiştirir
+    And Soyismini değiştirir
+    And Telefon numarasını değiştirir
     And Update butonu tıklanır
     Then Customer olarak profil bilgilerini değiştirdiği test edilir
 
 
   @TC0002
   Scenario:Customer profile bilgilerini görebilmeli  password bilgilerini değiştirebilmeli
-    And Yeni email geçerli bilgi girilir
-    And Enter password gecerli bilgi girilir
-    And LOGIN butonu tıklanır
+    And Email gecerli bilgi girilir
+    And Enter password geçerli bilgi girilir
+    And LOGIN butonu tiklanir
     And Profil tıklanır
     And My Profile tıklanır
     And Chance Password tıklanır
@@ -42,9 +39,9 @@ Background:
 
   @TC0003
   Scenario:Customer profile bilgilerini görebilmeli  ve profil resmi ekleyebilmeli
-    And Yeni email geçerli bilgi girilir
+    And Email gecerli bilgi girilir
     And Yeni Enter password gecerli bilgi girilir
-    And LOGIN butonu tıklanır
+    And LOGIN butonu tiklanir
     And Profil tıklanır
     And My Profile tıklanır
     And Profile Photo tıklanır
@@ -57,13 +54,13 @@ Background:
 
   @TC0004
   Scenario:Customer profile bilgilerini görebilmeli  ve hesabını silebilmeli
-    And Yeni email geçerli bilgi girilir
+    And Email gecerli bilgi girilir
     And Yeni Enter password gecerli bilgi girilir
-    And LOGIN butonu tıklanır
+    And LOGIN butonu tiklanir
     And Profil tıklanır
     And My Profile tıklanır
     And Delete Account tıklanır
-    And Yeni email geçerli bilgi girilir
+    And Yeni Enter password gecerli bilgi girilir
     And Delete Account butonu tıklanır
     And Yes butonu tıklanır
     Then Customer olarak hesabını silebildiği test edilir

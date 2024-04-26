@@ -1,4 +1,4 @@
-package getlandestate.stepDefinitions.ui_stepDefs.US13;
+package getlandestate.stepDefinitions.ui_stepDefs.US13_US14;
 
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.utilities.ConfigReader;
@@ -17,13 +17,13 @@ public class US13 {
     public void anaSayfayaGidilir() {
         Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
     }
-/*
-    @When("Login butonuna tiklanir")
-    public void loginButonunaTiklanir() {
+
+    @When("Login butonuna tiklanirSU")
+    public void loginButonunaTiklanirSU() {
 
         login.homeLogin.click();
 
-    }*/
+    }
 
     @And("E-mail ve password kismina gecerli veriler girilir ve login tiklanir")
     public void eMailVePasswordKisminaGecerliVerilerGirilirVeLoginTiklanir() {
