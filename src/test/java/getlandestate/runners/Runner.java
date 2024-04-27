@@ -13,10 +13,10 @@ import org.junit.runner.RunWith;
                 "junit:target/xml-report/cucumber1.xml",
                 "rerun:TestOutPut/failed_scenario.txt"},
         features = "src/test/resources/features",
-        tags = "",
+        glue = {"getlandestate/stepDefinitions","getlandestate/hooks"},
+        tags = "@US19",
         dryRun = false,
         monochrome = false
-
 
 )
 

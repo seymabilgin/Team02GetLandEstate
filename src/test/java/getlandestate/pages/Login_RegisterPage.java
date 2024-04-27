@@ -609,8 +609,8 @@ Login_RegisterPage {
     @FindBy(xpath = "//input[@name='email']") public WebElement loginEmail;
     @FindBy(xpath = "//input[@name='password']") public WebElement loginPassword;
     @FindBy(xpath = "//button[@type='submit']")  public WebElement loginButtona;
-    @FindBy(xpath = "//div[@class='p-toast-detail']") public WebElement updatedPhoto;
-    @FindBy(xpath = "//div[@class='p-toast-detail']")  public WebElement accountDelete;
+    //@FindBy(xpath = "//div[@class='p-toast-detail']") public WebElement updatedPhoto;
+    //@FindBy(xpath = "//div[@class='p-toast-detail']")  public WebElement accountDelete;
 
 
 
@@ -672,63 +672,56 @@ public WebElement succesText;
  @FindBy(xpath = "//div[@class='recaptcha-wrapper']")
 public WebElement notRobotIframe;
 
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement SentButton;
 
 
-/*    @FindBy(xpath = "//span[text()='Back to Site']")
-    public WebElement backToSiteButton;
-   @FindBy(xpath = "//option[@value='01:30']")
-    public WebElement tourTime;
-    @FindBy(xpath = "//a[@href=\"/contact\"]")
-    public WebElement contactButton;  */
+    @FindBy(xpath = "//div[@class=\"top-label\"]")
+    public WebElement dashboard;
+
+    @FindBy(xpath = "//span[text()='My Tour Requests']")
+    public WebElement requestMy;
+
+    @FindBy(xpath = "//span[@class='p-button-label p-c']")
+    public WebElement getYes;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
     
     
     
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
     //725-825 ORHAN TANER
 
 
