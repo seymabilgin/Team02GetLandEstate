@@ -13,7 +13,7 @@ import org.testng.Assert;
 
 import static getlandestate.utilities.ReusableMethods.*;
 
-public class US06_StepDefinition {
+public class CreatePropertyAsAManager_StepDefinition {
     Login_RegisterPage loginPage=new Login_RegisterPage();
     CreatePropertyPage createPropertyPage= new CreatePropertyPage();
     HomePage homePage=new HomePage();
@@ -24,21 +24,26 @@ public class US06_StepDefinition {
     @And("Kullanıcı Manager olarak {string} ve {string} kısmına geçerli bir bir veri girer ve login butonuna tıklar")
     public void kullanıcıManagerOlarakVeKısmınaGeçerliBirBirVeriGirerVeLoginButonunaTıklar(String email, String password) {
         loginPage.email.sendKeys(ConfigReader.getProperty(email));
-        loginPage.password.sendKeys(ConfigReader.getProperty(password));
+        loginPage.password.sendKeys(ConfigReader.getProperty(password),Keys.ENTER);
+
     }
+
     @And("Create Property butonuna tıklanır")
     public void createPropertyButonunaTıklanır() {
         createPropertyPage.createPropertyButton.click();
         Driver.getDriver().navigate().refresh();
     }
+
     @And("Title {string} ile doldurulur")
     public void titleIleDoldurulur(String title) {
         createPropertyPage.titleOfProperty.sendKeys(title);
     }
+
     @And("Description {string} ile doldurulur")
     public void descriptionIleDoldurulur(String description) {
         createPropertyPage.descrptionOfProperty.sendKeys(description);
     }
+
     @And("Kullanıcı ilana uygun Price'i {string} seçer")
     public void kullanıcıIlanaUygunPriceISeçer(String price) {
         createPropertyPage.priceOfProperty.click();
@@ -147,45 +152,53 @@ public class US06_StepDefinition {
     @Then("Create butonuna tıklayarak ilan oluşturulur ve {string} mesajı çıktıgı dogrulanır")
     public void createButonunaTıklayarakIlanOluşturulurVeMesajıÇıktıgıDogrulanır(String createdAlert) {
         createPropertyPage.createButtonOfPropert.click();
-        visibleWait(createPropertyPage.advertCreatedVeriflyTextOfPropert,7);
+        visibleWait(createPropertyPage.advertCreatedVeriflyTextOfPropert,15);
         Assert.assertEquals(createPropertyPage.advertCreatedVeriflyTextOfPropert.getText(),createdAlert);
     }
+
     @And("Title ve description alanları boş bırakılır")
     public void titleVeDescriptionAlanlarıBoşBırakılır() {
         //Bu alan boş bırakılmak istendiği icin kod yazılmadı
     }
+
     @And("Title icin {string} , description alanı icin {string} uyarı metni geldiği doğrulanır")
     public void titleIcinDescriptionAlanıIcinUyarıMetniGeldiğiDoğrulanır(String titleErorMsg, String descriptionErrorMsg) {
+        createPropertyPage.titleOfProperty.click();
+        bekle(2);
+        createPropertyPage.descrptionOfProperty.click();
         Assert.assertEquals(createPropertyPage.titleErrorMsgOfPropert.getText(),titleErorMsg);
         createPropertyPage.titleOfProperty.click();
         Assert.assertEquals(createPropertyPage.descrptionErrorMsgOfPropert.getText(),descriptionErrorMsg);
     }
+
     @Then("Create butonu aktif olmaz ve ilan oluşturulamadığı doğrulanır")
     public void createButonuAktifOlmazVeIlanOluşturulamadığıDoğrulanır() {
         scrollEnd();
         Assert.assertFalse(createPropertyPage.createButtonOfPropert.isEnabled());
     }
+
     @And("Address alanı boş bırakılır ve {string} uyarı metni geldiği doğrulanır")
     public void addressAlanıBoşBırakılırVeUyarıMetniGeldiğiDoğrulanır(String addressErrorTxt) {
         createPropertyPage.adressOfPropert.sendKeys("",Keys.TAB);
         Assert.assertEquals(createPropertyPage.adressErrorTextOfPropert.getText(),addressErrorTxt);
     }
+
     @When("Drag and drop the images or click here alanına tıklanır ve 3 mb dan büyük resim seçilir")
     public void dragAndDropTheImagesOrClickHereAlanınaTıklanırVeMbDanBüyükResimSeçilir() {
         createPropertyPage.dragAndDropImgOfPropert.click();
         String dosyaYolu= System.getProperty("user.home") + "\\Downloads\\Müstakilev";
         uploadFilePath(dosyaYolu);
     }
+
     @Then("{string} uyarı metni geldiği doğrulanır")
     public void uyarıMetniGeldiğiDoğrulanır(String errorText) {
         Assert.assertEquals(createPropertyPage.imageErrorTextOfPropert.getText(),errorText);
     }
+
     @Then("Create butonu aktifleşmez ve ilanın oluşturulamadığı doğrulanır")
     public void createButonuAktifleşmezVeIlanınOluşturulamadığıDoğrulanır() {
         scroll(createPropertyPage.createButtonOfPropert);
-        screenShot("US06-TC05-Bug");
+        //screenShot("US06-TC05-Bug");
         Assert.assertFalse(createPropertyPage.createButtonOfPropert.isDisplayed());
     }
-
-
 }

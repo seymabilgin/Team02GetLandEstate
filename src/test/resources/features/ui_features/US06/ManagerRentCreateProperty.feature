@@ -1,11 +1,13 @@
-@US06
+@US06 @UITakesScreenShot @UICloseDriver
 Feature:Manager Sayfada Kiralık İlanı Verebilmeli
+
   Background:
     Given Kullanici siteye gider
     And Login butonuna tıklanır
     And Kullanıcı Manager olarak "getLandEmailManager" ve "getLandPswManager" kısmına geçerli bir bir veri girer ve login butonuna tıklar
     And Back to Site butonuna tiklanir
     And Create Property butonuna tıklanır
+
   @US06-TC01
   Scenario:TC_01 Manager valid değerler ile sayfada kiralık ilanı verebilmeli
     And Title "Memurlara Özel Aile Evi" ile doldurulur
@@ -28,7 +30,6 @@ Feature:Manager Sayfada Kiralık İlanı Verebilmeli
     When Drag and drop the images or click here alanına tıklanır ve gerekli resimler seçilip eklenir
     Then Kullanıcı  ilanla ilgili resim eklendiği doğrulanır
     Then Create butonuna tıklayarak ilan oluşturulur ve "Advert created successfully" mesajı çıktıgı dogrulanır
-    And Sayfa kapanir
 
     @US06-TC02
     Scenario: TC02 Manager kiralık ilan verirken "Title" alanını boş bırakırsa ilan oluşturamamalı
@@ -52,7 +53,6 @@ Feature:Manager Sayfada Kiralık İlanı Verebilmeli
       When Drag and drop the images or click here alanına tıklanır ve gerekli resimler seçilip eklenir
       Then Kullanıcı  ilanla ilgili resim eklendiği doğrulanır
       Then Create butonu aktif olmaz ve ilan oluşturulamadığı doğrulanır
-      And sayfayi kapatir
 
       @US06-TC03
       Scenario: Manager kiralık ilan verirken "Address" alanını boş bırakırsa kiralık ilan oluşturamamalı
@@ -76,7 +76,6 @@ Feature:Manager Sayfada Kiralık İlanı Verebilmeli
         When Drag and drop the images or click here alanına tıklanır ve gerekli resimler seçilip eklenir
         Then Kullanıcı  ilanla ilgili resim eklendiği doğrulanır
         Then Create butonu aktif olmaz ve ilan oluşturulamadığı doğrulanır
-        And sayfayi kapatir
 
         @US06-TC04
         Scenario: TC04-Manager kiralık ilan verirken 3mb'dan büyük resim eklerse ilan oluşturulamamalı
@@ -100,12 +99,11 @@ Feature:Manager Sayfada Kiralık İlanı Verebilmeli
           When Drag and drop the images or click here alanına tıklanır ve 3 mb dan büyük resim seçilir
           Then "Each image should be a maximum of 3 MB" uyarı metni geldiği doğrulanır
           Then Create butonu aktif olmaz ve ilan oluşturulamadığı doğrulanır
-          And sayfayi kapatir
 
-          @US06-TC05 @UITakesScreenShot
+          @US06-TC05
           Scenario: TC05-Manager tüm bilgileri girmeden kiralık ilan olusturamamalı Bug
-            And Title "Memurlara Özel Aile Evi" ile doldurulur
-            And Description "3+1 sehre 5dk uzaklıkta, eşyalı, bakımı yeni yapıldı garajı ve bahçeli e" ile doldurulur
+            And Title "Yurt Dışındaki Oğlum Gelene Kadar Kiralık" ile doldurulur
+            And Description "2+1 şehrin ortasında, Balkonlu kiralık" ile doldurulur
             And Kullanıcı ilana uygun Price'i "7500" seçer
             And AdvertType'ı "Rent" secer
             And Category'i "House" secer
@@ -124,4 +122,3 @@ Feature:Manager Sayfada Kiralık İlanı Verebilmeli
             When Drag and drop the images or click here alanına tıklanır ve gerekli resimler seçilip eklenir
             Then Kullanıcı  ilanla ilgili resim eklendiği doğrulanır
             Then Create butonu aktifleşmez ve ilanın oluşturulamadığı doğrulanır
-            And sayfayi kapatir
