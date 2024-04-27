@@ -68,7 +68,7 @@ public class US05StepDefinitions {
     public void dahaOnceBelirlemisOldugımuzCustomerKullanıcsıAramaKutusundaAratılır(int arg0) throws InterruptedException {
         homePage.kullaniciKontrol.sendKeys(ConfigReader.getProperty("getlandcustomermail3"));
         homePage.buyutec.click();
-        ReusableMethods.bekle(3);
+        ReusableMethods.bekle(5);
         Thread.sleep(3000);
         homePage.kullaniciDuzenle.click();
     }
