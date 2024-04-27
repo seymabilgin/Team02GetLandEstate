@@ -986,8 +986,11 @@ public WebElement loginbutton;
     public WebElement kullaniciCUSTOMER;
     @FindBy(xpath = "//*[@type='submit']")
     public WebElement guncelleButton;
+
     @FindBy(xpath = "(//*[@type='button'])[2]")
     public WebElement silButton;
+    @FindBy(xpath = "(//*[@data-pc-section='label'])[2]")
+    public WebElement silButtononayla;
 
     @FindBy(xpath = "//*[@name='firstName']")
     public WebElement nameVerify;
@@ -1001,7 +1004,8 @@ public WebElement loginbutton;
     @FindBy(xpath = "//*[.='User type save successfully']")
     public WebElement DogrulamaYazisi;
 
-
+    @FindBy(xpath = "//*[@class='search-button btn btn-outline-secondary']")
+    public WebElement buyutec;
 
 
 
