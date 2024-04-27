@@ -29,6 +29,7 @@ Background:
     And LOGIN butonu tiklanir
     And Profil tıklanır
     And My Profile tıklanır
+    But kullanıcı 2 saniye bekler.
     And Chance Password tıklanır
     And Current Pasword kısmına mevcut şifre girilir
     And New Password kısmına yeni şifre girilir
@@ -48,6 +49,7 @@ Background:
     And Select tıklanır
     And Photograf seçilir
     And Done butonu tıklanır
+    But kullanıcı 2 saniye bekler.
     And Save butonu tıklanır
     Then Customer olarak profil resmi eklenebildiği test edilir
 
@@ -62,5 +64,7 @@ Background:
     And Delete Account tıklanır
     And Yeni Enter password gecerli bilgi girilir
     And Delete Account butonu tıklanır
+    But kullanıcı 2 saniye bekler.
     And Yes butonu tıklanır
+    But kullanıcı 2 saniye bekler.
     Then Customer olarak hesabını silebildiği test edilir

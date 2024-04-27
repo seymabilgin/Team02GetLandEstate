@@ -557,7 +557,7 @@ Login_RegisterPage {
     public WebElement updateButtonAA;
     @FindBy(xpath = "//div[@class='p-toast-detail']")
     public WebElement updateProfileAA;
-    @FindBy(xpath = "//button[@id='react-aria9109298492-:r7:-tab-change-password']")
+    @FindBy(xpath = "//*[contains(text(),'Change Password')]")
     public WebElement changePasswordAA;
     @FindBy(xpath = "//input[@name='currentPassword']")
     public WebElement currentPasswordAA;
@@ -569,7 +569,7 @@ Login_RegisterPage {
     public WebElement changeButtonAA;
     @FindBy(xpath = "//*[contains(text(),'You can login using your GetLandEstate account')]")
     public WebElement getLandEstateAccountAA;
-    @FindBy(xpath = "//button[@id='react-aria9109298492-:rj:-tab-profile-photo']")
+    @FindBy(xpath = "//*[contains(text(),'Profile Photo')]")
     public WebElement profilePhotoButtonAA;
     @FindBy(xpath = "//button[@class='select-button btn btn-primary']")
     public WebElement selectButtonAA;
@@ -577,9 +577,9 @@ Login_RegisterPage {
     public WebElement doneButtonAA;
     @FindBy(xpath = "//button[@class='save-button btn btn-secondary']")
     public WebElement saveButtonAA;
-    @FindBy(xpath = "//div[@class='p-toast-detail']")
+    @FindBy(xpath = "//div[@class='p-toast-message-text']")
     public WebElement updatedPhotoMessageAA;
-    @FindBy(xpath = "//button[@id='react-aria9109298492-:rj:-tab-delete-account']")
+    @FindBy(xpath = "(//*[contains(text(),'Delete Account')])[1]")
     public WebElement deleteAccountButtonAA;
     @FindBy(xpath = "//input[@name='password']")
     public WebElement deleteEmailButtonAA;
@@ -609,8 +609,9 @@ Login_RegisterPage {
     @FindBy(xpath = "//input[@name='email']") public WebElement loginEmail;
     @FindBy(xpath = "//input[@name='password']") public WebElement loginPassword;
     @FindBy(xpath = "//button[@type='submit']")  public WebElement loginButtona;
-  // @FindBy(xpath = "//div[@class='p-toast-detail']") public WebElement updatedPhoto;
-  // @FindBy(xpath = "//div[@class='p-toast-detail']")  public WebElement accountDelete;
+   // @FindBy(xpath = "//div[@class='p-toast-detail']") public WebElement updatedPhoto;
+    //@FindBy(xpath = "//div[@class='p-toast-detail']")  public WebElement accountDelete;
+
 
 
 
@@ -621,8 +622,7 @@ Login_RegisterPage {
   
   
     
-    
-    //625-725 FEYZI TUGCU
+      //625-725 FEYZI TUGCU
 @FindBy(xpath = "//span[contains(text(),'Back to Site')]")
 public WebElement backToSiteButton;
 @FindBy(xpath = "//input[@class='form-control']")
@@ -721,15 +721,8 @@ public WebElement notRobotIframe;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    //725-825 ORHAN TANER
+   
+  //725-825 ORHAN TANER
 
 
 
@@ -927,15 +920,108 @@ public WebElement notRobotIframe;
   
 
 
-    //725-825 ORHAN TANER
-
-
-    //825-925 ILKNUR TUCCAR
 
 
 //925-1025 TUNCER OZGUR
-
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 //1025-... YAKUP IBRAHIMBAS
 
 

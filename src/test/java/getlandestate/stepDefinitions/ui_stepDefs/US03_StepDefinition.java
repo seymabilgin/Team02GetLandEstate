@@ -54,17 +54,18 @@ public class US03_StepDefinition {
     }
     @And("Update butonu tıklanır")
    public void updateButonuTıklanır() {
-        //customer.updateButtonAA.submit();
+        ReusableMethods.scroll(customer.updateButtonAA);
+        customer.updateButtonAA.submit();
     }
 
     @Then("Customer olarak profil bilgilerini değiştirdiği test edilir")
     public void customerOlarakProfilBilgileriniDeğiştirdiğiTestEdilir() {
-        //String message=customer.updateProfileAA.getText();
-        //Assert.assertEquals("Profile updated successfully",message);
+        String message=customer.updateProfileAA.getText();
+        Assert.assertEquals("Profile updated successfully",message);
     }
     @And("Chance Password tıklanır")
     public void chancePasswordTıklanır() {
-        customer.changePasswordAA.click();
+        ReusableMethods.click(customer.changePasswordAA);
     }
 
     @And("Current Pasword kısmına mevcut şifre girilir")
@@ -112,7 +113,8 @@ public class US03_StepDefinition {
     @And("Photograf seçilir")
     public void photografSeçilir() {
         String path="C:\\Users\\DELL\\Desktop\\Photo\\IMG_0445.JPG";
-        //ReusableMethods.uploadFileWithRobot(path);
+        ReusableMethods.uploadFilePath(path);
+        //String dosyaYolu= System.getProperty("user.home") + "\\Downloads\\evv.jpg";
     }
 
     @And("Done butonu tıklanır")
@@ -127,8 +129,9 @@ public class US03_StepDefinition {
 
     @Then("Customer olarak profil resmi eklenebildiği test edilir")
     public void customerOlarakProfilResmiEklenebildiğiTestEdilir() {
+        ReusableMethods.visibleWait(customer.updatedPhotoMessageAA,10);
       String message=customer.updatedPhotoMessageAA.getText();
-      Assert.assertTrue(message.contains("You have updated your profile photo"));
+      Assert.assertTrue(message.contains("You have updated your profile"));
     }
 
     @And("Delete Account tıklanır")
@@ -153,6 +156,7 @@ public class US03_StepDefinition {
 
     @Then("Customer olarak hesabını silebildiği test edilir")
     public void customerOlarakHesabınıSilebildiğiTestEdilir() {
+        ReusableMethods.visibleWait(customer.accountDeleteMessageAA,15);
         String deleteMassage=customer.accountDeleteMessageAA.getText();
         Assert.assertTrue(deleteMassage.contains("Account deleted successfully"));
     }
