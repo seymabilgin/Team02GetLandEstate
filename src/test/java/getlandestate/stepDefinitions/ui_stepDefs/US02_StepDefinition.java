@@ -61,7 +61,7 @@ public class US02_StepDefinition {
    /* @And("Enter password gecerli bilgi girilir")
     public void enterPasswordGecerliBilgiGirilir() {
         customer.loginPasswordAA.sendKeys(ConfigReader.getProperty("passwordAyse"));
-    }*/
+    }
 
     @Then("Customera olarak sayfaya giris yapilamadigi test edilir")
     public void customeraOlarakSayfayaGirisYapilamadigiTestEdilir() {
@@ -114,6 +114,7 @@ public class US02_StepDefinition {
     /*
      And Profile tıklanır
     And Logout tiklanir
+    }
+
      */
-}
-*/
+

@@ -81,10 +81,8 @@ public class US04StepDefinitions {
         homePage.emailTextBox.sendKeys(ConfigReader.getProperty("getlandcustomermail"));
         homePage.passwordTextBox.sendKeys(ConfigReader.getProperty("getlandcustomerpassword"));
         homePage.loginButton.click();
-    }
-
-    @And("sayfayi kapatir")
-    public void sayfayiKapatir() {
-        Driver.closeDriver();
+ //   }
+ //   @And("sayfayi kapatir") public void sayfayiKapatir() {
+  //      Driver.closeDriver();
     }
 }
