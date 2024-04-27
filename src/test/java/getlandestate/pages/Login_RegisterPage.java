@@ -616,13 +616,13 @@ Login_RegisterPage {
 
 
 
+
  
   
   
   
     
-    
-    //625-725 FEYZI TUGCU
+      //625-725 FEYZI TUGCU
 @FindBy(xpath = "//span[contains(text(),'Back to Site')]")
 public WebElement backToSiteButton;
 @FindBy(xpath = "//input[@class='form-control']")
@@ -721,15 +721,8 @@ public WebElement notRobotIframe;
     
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    //725-825 ORHAN TANER
+   
+  //725-825 ORHAN TANER
 
 
 
@@ -927,15 +920,108 @@ public WebElement notRobotIframe;
   
 
 
-    //725-825 ORHAN TANER
-
-
-    //825-925 ILKNUR TUCCAR
 
 
 //925-1025 TUNCER OZGUR
-
-
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
 //1025-... YAKUP IBRAHIMBAS
 
 
