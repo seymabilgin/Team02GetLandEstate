@@ -12,7 +12,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
-public class US10_11StepDefinition {
+public class US10_US11_StepDefinitions {
 
     GetlandPage getlandPage = new GetlandPage();
     HomePage homePage = new HomePage();

@@ -1,6 +1,5 @@
-package getlandestate.stepDefinitions.ui_stepDefs.US18_19;
+package getlandestate.stepDefinitions.ui_stepDefs;
 
-import getlandestate.pages.GetlandPage;
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.utilities.ConfigReader;
 import getlandestate.utilities.Driver;
@@ -10,10 +9,9 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 
-public class US18_managerStepDefinition {
+public class US18_StepDefinitions {
 
     Login_RegisterPage registerPage =new Login_RegisterPage();
 

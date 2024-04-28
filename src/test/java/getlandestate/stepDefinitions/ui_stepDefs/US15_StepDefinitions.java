@@ -1,4 +1,4 @@
-package getlandestate.stepDefinitions.ui_stepDefs.US15;
+package getlandestate.stepDefinitions.ui_stepDefs;
 
 import com.github.javafaker.Faker;
 import getlandestate.pages.DashBoardPage;
@@ -14,7 +14,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
-public class US15_StepDefs {
+public class US15_StepDefinitions {
     Login_RegisterPage login;
     DashBoardPage dashBoardPage;
     Faker faker;

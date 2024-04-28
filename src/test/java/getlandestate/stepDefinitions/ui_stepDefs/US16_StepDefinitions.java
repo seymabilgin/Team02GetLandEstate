@@ -16,9 +16,8 @@ import org.testng.Assert;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.concurrent.Callable;
 
-public class US16_StepDef {
+public class US16_StepDefinitions {
     Login_RegisterPage registerPage = new Login_RegisterPage();
     DashBoardPage dashBoardPage = new DashBoardPage();
 

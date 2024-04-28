@@ -6,7 +6,7 @@ import getlandestate.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
 
-public class US04StepDefinitions {
+public class US04_StepDefinitions {
     HomePage homePage=new HomePage();
 
     @Given("kullanici {string} gider")

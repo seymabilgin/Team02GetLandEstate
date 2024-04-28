@@ -1,4 +1,4 @@
-package getlandestate.stepDefinitions.ui_stepDefs.US13_US14;
+package getlandestate.stepDefinitions.ui_stepDefs;
 
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.utilities.ConfigReader;
@@ -10,7 +10,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 
-public class US13 {
+public class US13_StepDefinitions {
 
     Login_RegisterPage login =new Login_RegisterPage();
     @Given("Ana sayfaya gidilir")

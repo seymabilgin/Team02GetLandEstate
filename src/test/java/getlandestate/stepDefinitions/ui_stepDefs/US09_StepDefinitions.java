@@ -11,7 +11,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class US09_StepDefinition {
+public class US09_StepDefinitions {
     Login_RegisterPage registerPage =new Login_RegisterPage();
     PropertiesPage propertiesPage= new PropertiesPage();
 
