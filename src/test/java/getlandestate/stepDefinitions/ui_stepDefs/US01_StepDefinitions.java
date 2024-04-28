@@ -9,7 +9,7 @@ import getlandestate.utilities.ReusableMethods;
 import io.cucumber.java.en.*;
 import org.testng.Assert;
 
-public class US01_CustomerRegisterStepDefinitions {
+public class US01_StepDefinitions {
     Login_RegisterPage registerPage =new Login_RegisterPage();
     Faker faker=new Faker();
     @Given("Ansayfaya gidilir.")

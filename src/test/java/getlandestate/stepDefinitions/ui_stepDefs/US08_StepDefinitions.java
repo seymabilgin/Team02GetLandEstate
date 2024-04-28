@@ -9,10 +9,8 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
-public class US08_StepDefinition {
+public class US08_StepDefinitions {
     Login_RegisterPage registerPage =new Login_RegisterPage();
     PropertiesPage propertiesPage= new PropertiesPage();
 

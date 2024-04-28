@@ -11,7 +11,7 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 
-public class US17_StepDef {
+public class US17_StepDefinitions {
 
     Login_RegisterPage registerPage = new Login_RegisterPage();
     DashBoardPage dashBoardPage = new DashBoardPage();

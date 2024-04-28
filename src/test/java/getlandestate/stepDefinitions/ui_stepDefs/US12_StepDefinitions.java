@@ -1,4 +1,4 @@
-package getlandestate.stepDefinitions.ui_stepDefs.US12;
+package getlandestate.stepDefinitions.ui_stepDefs;
 
 import getlandestate.pages.HomePage;
 import getlandestate.utilities.ConfigReader;
@@ -11,7 +11,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class US12_StepDefs {
+public class US12_StepDefinitions {
     HomePage homePage;
 
     @Given("Kullanici siteye gider")

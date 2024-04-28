@@ -1,4 +1,4 @@
-package getlandestate.stepDefinitions.ui_stepDefs.US18_19;
+package getlandestate.stepDefinitions.ui_stepDefs;
 
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.utilities.ConfigReader;
@@ -9,9 +9,7 @@ import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 
-import javax.swing.*;
-
-public class US19_ContactMesssages {
+public class US19_StepDefinitions {
     Actions actions=new Actions(Driver.getDriver());
     Login_RegisterPage registerPage =new Login_RegisterPage();
 

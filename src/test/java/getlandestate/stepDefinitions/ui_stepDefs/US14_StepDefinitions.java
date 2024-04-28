@@ -1,4 +1,4 @@
-package getlandestate.stepDefinitions.ui_stepDefs.US13;
+package getlandestate.stepDefinitions.ui_stepDefs;
 
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.utilities.ReusableMethods;
@@ -7,7 +7,7 @@ import io.cucumber.java.en.Then;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 
-public class US14 {
+public class US14_StepDefinitions {
 
     Login_RegisterPage login =new Login_RegisterPage();
 

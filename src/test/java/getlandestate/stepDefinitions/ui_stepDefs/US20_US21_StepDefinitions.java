@@ -12,7 +12,7 @@ import org.openqa.selenium.Keys;
 
 
 
-public class GetLandStepDefinition20_21 {
+public class US20_US21_StepDefinitions {
 
 GetlandPage getlandPage = new GetlandPage();
 

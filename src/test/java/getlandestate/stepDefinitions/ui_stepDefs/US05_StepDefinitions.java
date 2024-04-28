@@ -2,18 +2,12 @@ package getlandestate.stepDefinitions.ui_stepDefs;
 
 import getlandestate.pages.HomePage;
 import getlandestate.utilities.ConfigReader;
-import getlandestate.utilities.Driver;
 import getlandestate.utilities.ReusableMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 
-public class US05StepDefinitions {
+public class US05_StepDefinitions {
     HomePage homePage=new HomePage();
     @And("Kullanıcılar Kısmına tıklanır")
     public void kullanıcılarKısmınaTıklanır() {

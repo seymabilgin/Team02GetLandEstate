@@ -13,7 +13,7 @@ import org.testng.Assert;
 
 import static getlandestate.utilities.ReusableMethods.*;
 
-public class CreatePropertyAsAManager_StepDefinition {
+public class US06_US07_StepDefinitions {
     Login_RegisterPage loginPage=new Login_RegisterPage();
     CreatePropertyPage createPropertyPage= new CreatePropertyPage();
     HomePage homePage=new HomePage();

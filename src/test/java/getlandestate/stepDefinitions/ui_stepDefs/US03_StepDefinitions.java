@@ -5,17 +5,14 @@ import getlandestate.utilities.ConfigReader;
 import getlandestate.utilities.Driver;
 import getlandestate.utilities.ReusableMethods;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
-import org.checkerframework.checker.units.qual.C;
 import org.openqa.selenium.Keys;
 
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 
 
-public class US03_StepDefinition {
+public class US03_StepDefinitions {
     Login_RegisterPage customer= new Login_RegisterPage();
     Actions actions = new Actions(Driver.getDriver());
 
