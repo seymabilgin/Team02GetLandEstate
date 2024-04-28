@@ -95,14 +95,14 @@ public class US10_11StepDefinition {
     @Then("Search butonuna tiklayarak ozel aranan emlak turleri goruntulendigi dogrulanir")
     public void search_butonuna_tiklayarak_ozel_aranan_emlak_turleri_goruntulendigi_dogrulanir() {
 
-        propertiesPage.searchButton.click();
+        propertiesPage.searchButtonn.click();
         Assert.assertTrue(propertiesPage.totalFound.getText().contains("Total found"));
 
     }
 
     @And("Filtrelenen emlaklardan bir emlak secilir")
     public void filtrelenenEmlaklardanBirEmlakSecilir() {
-        propertiesPage.searchButton.click();
+        propertiesPage.searchButtonn.click();
         propertiesPage.choiseRent.click();
     }
 
