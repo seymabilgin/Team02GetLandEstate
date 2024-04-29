@@ -14,7 +14,7 @@ import static getlandestate.base_url.Base_Url.setUp;
 public class Hooks {
     @Before("@APIAdmin")
     public void apiAdmin(){
-        setUp(ConfigReader.getProperty("email"),ConfigReader.getProperty("password"));
+        setUp(ConfigReader.getProperty("Email"),ConfigReader.getProperty("password"));
     }
     @Before("@APIManager")
     public void apiManager(){
