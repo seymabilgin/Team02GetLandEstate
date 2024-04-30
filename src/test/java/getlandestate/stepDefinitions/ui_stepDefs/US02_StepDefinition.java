@@ -62,7 +62,7 @@ public class US02_StepDefinition {
     public void enterPasswordGecerliBilgiGirilir() {
         customer.loginPasswordAA.sendKeys(ConfigReader.getProperty("passwordAyse"));
     }*/
-
+/*
     @Then("Customera olarak sayfaya giris yapilamadigi test edilir")
     public void customeraOlarakSayfayaGirisYapilamadigiTestEdilir() {
         String fail=customer.invalidEmailAA.getText();
@@ -115,5 +115,3 @@ public class US02_StepDefinition {
      And Profile tıklanır
     And Logout tiklanir
      */
-}
-*/

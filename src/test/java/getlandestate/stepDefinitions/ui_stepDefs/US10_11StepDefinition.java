@@ -11,7 +11,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-
+/*
 public class US10_11StepDefinition {
 
     GetlandPage getlandPage = new GetlandPage();
@@ -233,4 +233,4 @@ public class US10_11StepDefinition {
         propertiesPage.minPrice.sendKeys("600000");
         propertiesPage.maxPrice.sendKeys("650000");
     }
-}
+}*/

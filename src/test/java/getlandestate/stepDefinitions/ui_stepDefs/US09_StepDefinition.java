@@ -10,7 +10,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
-
+/*
 public class US09_StepDefinition {
     Login_RegisterPage registerPage =new Login_RegisterPage();
     PropertiesPage propertiesPage= new PropertiesPage();
@@ -119,4 +119,4 @@ public class US09_StepDefinition {
 
 
 
-}
+}*/

@@ -367,13 +367,13 @@ public class PropertiesPage {
     @FindBy(id = "dist")
     public WebElement district;
 
-    @FindBy(xpath = "//button[@class='dynamic-button  btn btn-primary']")
-    public WebElement searchButton;
-    @FindBy(xpath = "//span[@class='d-none d-sm-inline']")
-    public WebElement totalFound;
+    //@FindBy(xpath = "//button[@class='dynamic-button  btn btn-primary']")
+    //public WebElement searchButton;
+    //@FindBy(xpath = "//span[@class='d-none d-sm-inline']")
+    //public WebElement totalFound;
 
-    @FindBy(xpath = "//a[@href='/advert/1713619965130-villa']")
-    public WebElement choiseRent;
+    //@FindBy(xpath = "//a[@href='/advert/1713619965130-villa']")
+    //public WebElement choiseRent;
 
 
 
