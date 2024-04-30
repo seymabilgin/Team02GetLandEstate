@@ -1,5 +1,6 @@
 package getlandestate.hooks;
 
+import getlandestate.utilities.ConfigReader;
 import getlandestate.utilities.Driver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -13,15 +14,15 @@ import static getlandestate.base_url.Base_Url.setUp;
 public class Hooks {
     @Before("@APIAdmin")
     public void apiAdmin(){
-        setUp();
+        setUp(ConfigReader.getProperty("Email"),ConfigReader.getProperty("password"));
     }
     @Before("@APIManager")
     public void apiManager(){
-        setUp();
+        setUp(ConfigReader.getProperty(""),ConfigReader.getProperty(""));
     }
     @Before("@APICustomer")
     public void uiCustomer(){
-        setUp();
+        setUp(ConfigReader.getProperty(""),ConfigReader.getProperty(""));
     }
 
     @After("@UICloseDriver")

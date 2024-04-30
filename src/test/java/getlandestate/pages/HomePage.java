@@ -923,7 +923,105 @@ public WebElement loginButtonInHomePage;
 
 
 //925-1025 YAKUP IBRAHIMBAS
+@FindBy(xpath = "//a[@href='/login']")
+public WebElement loginbutton;
 
+ @FindBy(css = "input[name='email']")
+ public WebElement emailTextBox;
+
+ @FindBy(xpath = "//input[@type='password']")
+ public WebElement passwordTextBox;
+
+ @FindBy(xpath = "//*[@id=\"root\"]/div[1]/div/div[2]/div/div/div[1]/div[2]/form/div[4]/button")
+ public WebElement loginButton;
+
+ @FindBy(xpath = "//span[normalize-space()='Back to Site']")
+ public WebElement backToSite;
+
+ @FindBy(xpath = "//img[@class='flag-icon']")
+ public WebElement flagIcon;
+
+ @FindBy(xpath = "//a[.='Home']")
+ public WebElement englishTextVerify;
+
+ @FindBy(xpath = "//a[normalize-space()='Türkçe']")
+ public WebElement trflagIconButton;
+
+ @FindBy(xpath = "//a[normalize-space()='Anasayfa']")
+ public WebElement turkishText;
+
+ @FindBy(xpath = "//a[normalize-space()='Français']")
+ public WebElement franchIconButton;
+
+ @FindBy(xpath = "//a[.='Accueil']")
+ public WebElement frTextVerify;
+ @FindBy(xpath = "//a[normalize-space()='Deutsch']")
+ public WebElement grIconButton;
+
+ @FindBy(xpath = "//a[.='Zuhause']")
+ public WebElement grTextVerify;
+
+ @FindBy(xpath = "//a[normalize-space()='Español']")
+ public WebElement spIconButton;
+
+ @FindBy(xpath = "//a[.='Inicio']")
+ public WebElement spTextVerify;
+
+ @FindBy(xpath = "//*[@placeholder]")
+ public WebElement anasayfaSearchKismi;
+
+
+ @FindBy(xpath = "(//*[@stroke='currentColor'])[9]")
+ public WebElement anasayfaSearchKismiBuyutec;
+
+ @FindBy(xpath = "(//*[@class='card-img-top property-card-img'])[1]")
+ public WebElement ilkCikanIlan;
+
+ @FindBy(id = "tourDate")
+ public WebElement ilanSonrasiTarih;
+ @FindBy(id = "tourTime")
+ public WebElement ilanSonrasiZaman;
+ @FindBy(xpath = "//*[@type='submit']")
+ public WebElement ilanRandevuButon;
+ @FindBy(xpath = "(//*[@class='d-none d-sm-inline'])[5]")
+ public WebElement kullanicilar;
+  @FindBy(xpath = "//*[@placeholder='Type Something']")
+ public WebElement kullaniciKontrol;
+
+ @FindBy(xpath = "(//*[@stroke='currentColor'])[12]")
+ public WebElement buyutec;
+ @FindBy(xpath = "(//*[@stroke-linecap='round'])[2]")
+ public WebElement kullaniciDuzenle;
+ @FindBy(xpath = "//*[@name='role']")
+ public WebElement kullaniciRolDuzenleme;
+ @FindBy(xpath = "//*[@type='submit']")
+ public WebElement guncelleButton;
+ @FindBy(xpath = "//*[.='User type save successfully']")
+ public WebElement DogrulamaYazisi;
+ @FindBy(xpath = "//*[@class='delete-button btn btn-primary']")
+ public WebElement silButton;
+ @FindBy(xpath = "(//*[@class='p-button-label p-c'])[2]")
+ public WebElement silButtononayla;
+
+
+ @FindBy(xpath = "//div/a[@data-rr-ui-event-key='5'")
+ public WebElement loginButtona;
+ @FindBy(xpath = "//*[@placeholder='Email']")
+ public WebElement emailGiris;
+ @FindBy(xpath = "//*[@name='password']")
+ public WebElement passwordGiris;
+ @FindBy(xpath = "//*[@class='form-submit-button']")
+ public WebElement loginButton2;
+ @FindBy(xpath = "(//*[@src])[5]")
+ public WebElement englishLanguage;
+ @FindBy(xpath = "(//*[@src])[7]")
+ public WebElement turkishLanguage;
+ @FindBy(xpath = "(//*[@src])[8]")
+ public WebElement franceLanguage;
+ @FindBy(xpath = "(//*[@src])[9]")
+ public WebElement almancaLanguage;
+ @FindBy(xpath = "(//*[@src])[10]")
+ public WebElement ispanyolcaLanguage;
 
 
 

@@ -222,9 +222,7 @@ public class PropertiesPage {
     
     
     
-//225-325 ORHAN TANER    
-
-    //Orhan Taner 325-415
+//225-325 ORHAN TANER
 
     @FindBy(css = "#body > div:nth-child(2) > div:nth-child(1) > nav:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > img:nth-child(1)")
     public WebElement accountIconButton;
@@ -305,6 +303,16 @@ public class PropertiesPage {
     public WebElement updatedButton;
     @FindBy(xpath = "//tbody/tr[2]/td[5]/div[1]/div[1]/button[2]//*[name()='svg']//*[name()='path' and contains(@d,'M17 3a2.85')]")
     public WebElement advertUpdate_ikonforRejected;
+    @FindBy()
+    public WebElement getMyAdvertsText;
+    @FindBy()
+    public WebElement advertUpdateikonforStatus;
+    @FindBy()
+    public WebElement selectActivatedVerify;
+    @FindBy()
+    public WebElement selectRejectedVerify;
+    @FindBy()
+    public WebElement adminAdvertVerify;
 
 
 
@@ -367,13 +375,15 @@ public class PropertiesPage {
     @FindBy(id = "dist")
     public WebElement district;
 
-    //@FindBy(xpath = "//button[@class='dynamic-button  btn btn-primary']")
-    //public WebElement searchButton;
-    //@FindBy(xpath = "//span[@class='d-none d-sm-inline']")
-    //public WebElement totalFound;
 
-    //@FindBy(xpath = "//a[@href='/advert/1713619965130-villa']")
-    //public WebElement choiseRent;
+   @FindBy(xpath = "//button[@class='dynamic-button  btn btn-primary']")
+    public WebElement searchButtonn;
+
+    @FindBy(xpath = "//span[@class='d-none d-sm-inline']")
+    public WebElement totalFound;
+
+    @FindBy(xpath = "//a[@href='/advert/1713619965130-villa']")
+    public WebElement choiseRent;
 
 
 
