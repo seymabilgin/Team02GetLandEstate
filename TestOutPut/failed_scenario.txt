@@ -1,1 +1,0 @@
-file:src/test/resources/features/ui_features/US17_Manager%20rapor%20oluşturabilmeli.feature:23
