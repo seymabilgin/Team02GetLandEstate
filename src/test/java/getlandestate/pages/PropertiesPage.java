@@ -284,27 +284,43 @@ public class PropertiesPage {
 
     @FindBy(xpath = "//span[normalize-space()='Adverts']")
     public WebElement advertsTikla;
-    @FindBy(xpath = "//input[@id='q']")
+
+    @FindBy(css = "#q")
     public WebElement advertsSearch;
     @FindBy(xpath = "//button[@type='submit']")
-    public WebElement searchButton;
-    @FindBy(xpath = "//tr[@draggable='false']//p[contains(text(),'villan')]")
-    public WebElement searchResult;
+    public WebElement searchButtonn;
+    @FindBy(xpath = "//p[normalize-space()='Villan']")
+    public WebElement searchResultt;
     @FindBy(xpath = "//tbody/tr[1]/td[5]/div[1]/div[1]/button[2]//*[name()='svg']")
-    public WebElement advertUpdateikonforActivated;
+    public WebElement kalemIkonu;
+    @FindBy(xpath = "//tbody//button[2]")
+    public WebElement kalemIkonu2;
+
+    @FindBy(xpath = "//a[@title='Adverts']")
+    public WebElement getAdvertsText;
 
     @FindBy(xpath = "//select[@id='status']")
     public WebElement selectStatus;
+    @FindBy(xpath = "//tbody/tr[1]/td[5]/div[1]/div[1]/button[2]//*[name()='svg']")
+    public WebElement advertUpdateikonforStatus;
     @FindBy(xpath = "//select[@id='statusForAdvert']")
     public WebElement pendingSelect;
     @FindBy(xpath = "//select[@id='statusForAdvert']//option[contains(text(),'Activated')]")
     public WebElement selectActivated;
+    @FindBy(xpath = "//select[@id='statusForAdvert']//option[contains(text(),'Activated')]")
+    public WebElement selectActivatedVerify;
     @FindBy(xpath = "//select[@id='statusForAdvert']//option[contains(text(),'Rejected')]")
     public WebElement selectRejected;
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement updatedButton;
     @FindBy(xpath = "//tbody/tr[2]/td[5]/div[1]/div[1]/button[2]//*[name()='svg']//*[name()='path' and contains(@d,'M17 3a2.85')]")
     public WebElement advertUpdate_ikonforRejected;
+
+    @FindBy(xpath = "//select[@id='statusForAdvert']//option[contains(text(),'Rejected')]")
+    public WebElement selectRejectedVerify;
+
+    @FindBy(xpath = "//select[@id='statusForAdvert']//option[contains(text(),'Rejected')]")
+    public WebElement adminAdvertVerify;
 
 
 
