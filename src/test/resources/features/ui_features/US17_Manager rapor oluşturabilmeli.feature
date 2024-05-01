@@ -1,4 +1,4 @@
-@US17
+@US17 @UITakesScreenShot
 Feature: US17 Manager rapor olusturabilmeli
 
   Background:
