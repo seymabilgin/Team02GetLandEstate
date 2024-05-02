@@ -1,5 +1,0 @@
-<<<<<<< HEAD
-file:src/test/resources/features/ui_features/US15/US_15_Admin_Authorization.feature:5:49:59:72
-=======
-
->>>>>>> 9a60c86db625b8ac29a01c69627966136424c0f3
