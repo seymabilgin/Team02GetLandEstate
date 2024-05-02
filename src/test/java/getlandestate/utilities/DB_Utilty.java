@@ -65,6 +65,10 @@ public class DB_Utilty {
         return rowList;
     }
 
+    public static List<Object> getRowListIndex(String query, int i) {
+        return getQueryResultList(query).get(i);
+    }
+
     public static List<Object> getRowList(String query) {
         return getQueryResultList(query).get(0);
     }

@@ -1,12 +1,11 @@
 package getlandestate.utilities;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
+import org.apache.poi.ss.usermodel.*;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ExcelReader {
     Workbook workbook;
@@ -28,5 +27,21 @@ public class ExcelReader {
     }
     public int rowCount(){
         return sheet.getLastRowNum();
+    }
+
+    public List<Object> getRowData(int rowNum) {
+        List<Object> rowData = new ArrayList<>();
+        Row row = sheet.getRow(rowNum);
+        if (row != null) {
+            for (int i = 0; i < row.getLastCellNum(); i++) {
+                Cell cell = row.getCell(i);
+                if (cell != null) {
+                    rowData.add(getCellData(rowNum, i));
+                } else {
+                    rowData.add(null); // Hücre null ise null değeri ekle
+                }
+            }
+        }
+        return rowData;
     }
 }

@@ -376,8 +376,13 @@ public class PropertiesPage {
     public WebElement district;
 
 
+    //@FindBy(xpath = "//button[@class='dynamic-button  btn btn-primary']")
+    //public WebElement searchButton;
+
+
    @FindBy(xpath = "//button[@class='dynamic-button  btn btn-primary']")
     public WebElement searchButtonn;
+
 
     @FindBy(xpath = "//span[@class='d-none d-sm-inline']")
     public WebElement totalFound;
