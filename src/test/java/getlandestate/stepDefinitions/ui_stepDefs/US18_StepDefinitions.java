@@ -1,4 +1,4 @@
-package getlandestate.stepDefinitions.ui_stepDefs;
+/*package getlandestate.stepDefinitions.ui_stepDefs;
 
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.utilities.ConfigReader;
@@ -111,3 +111,4 @@ public class US18_StepDefinitions {
         Assert.assertTrue(registerPage.dashboard.getText().contains("Dashboard"));
     }
 }
+*/

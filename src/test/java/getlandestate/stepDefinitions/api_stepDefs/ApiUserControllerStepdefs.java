@@ -96,6 +96,6 @@ public class ApiUserControllerStepdefs {
 
     @Then("Kendi hesabini silmek icin Status kodunun {int} oldugu dogrulanır")
     public void kendiHesabiniSilmekIcinStatusKodununOlduguDogrulanır(int statusCode) {
-        assertEquals(statusCode,response.statusCode());
+        assertEquals(statusCode,response.statusCode());//
     }
 }
