@@ -1,6 +1,8 @@
 package getlandestate.utilities;
 
 import java.sql.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -8,12 +10,12 @@ import java.util.Map;
 
 public class DB_Utilty {
 
-    private static Connection connection;
-    private static Statement statement;
-    private static ResultSet resultSet;
+    public static Connection connection;
+    public static Statement statement;
+    public static ResultSet resultSet;
 
 
-    public  static void createConnection(){
+    public static void createConnection() {
         // connection = DriverManager.getConnection("jdbc:postgresql://64.227.123.49:5432/prettierhomes", "tech_pro_edu", "testingIsFun");
 
         String url = "jdbc:postgresql://64.227.123.49:5432/prettierhomes";
@@ -27,7 +29,6 @@ public class DB_Utilty {
             e.printStackTrace();
         }
     }
-
 
 
     public static void executeQuery(String query) {
@@ -73,6 +74,10 @@ public class DB_Utilty {
         return getQueryResultList(query).get(0);
     }
 
+    public static List<Object> getRowListIndex(String query, int i) {
+        return getQueryResultList(query).get(i);
+    }
+
 
     public static List<String> getColumnNames(String query) {
         executeQuery(query);
@@ -111,7 +116,51 @@ public class DB_Utilty {
         }
         return rowList;
     }
+
     public static Map<String, Object> getRowMap(String query) {
         return getQueryResultMap(query).get(0);
     }
+
+    public static Date date(String date) throws ParseException {
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        java.util.Date parsedDate;
+        parsedDate = dateFormat.parse(date);
+        Date sqlDate = new Date(parsedDate.getTime());
+        System.out.println("java.sql.Date: " + sqlDate);
+
+        return sqlDate;
+    }
+
+    public static Timestamp dateTime() {
+
+        String stringDateTime = "2024-04-20 09:58:27.934954";
+
+// İstediğiniz formatı belirleyin
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
+
+// String'i tarihe parse edin
+        Date parsedDate = null;
+        try {
+            parsedDate = (Date) formatter.parse(stringDateTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+// Tarihi Timestamp'e dönüştürün
+        Timestamp timestamp = null;
+        if (parsedDate != null) {
+            timestamp = new Timestamp(parsedDate.getTime());
+        }
+            return timestamp;
+
 }
+
+    public static Long longaDonustur (Integer num){
+        Long numLong = num.longValue();
+        return numLong;
+    }
+
+
+}
+
