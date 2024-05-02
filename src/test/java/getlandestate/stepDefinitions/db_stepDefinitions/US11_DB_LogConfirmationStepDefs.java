@@ -9,18 +9,18 @@ import org.junit.Assert;
 
 import java.util.List;
 
-public class US10_DB_ConfirmationTokenStepDefs {
-    String query ="SELECT * FROM confirmation_token";
-    @Given("confirmation token sutun isimleri ve bilgileri almak icin query gonderilir")
-    public void confirmationTokenSutunIsimleriVeBilgileriAlmakIcinQueryGonderilir() {
+public class US11_DB_LogConfirmationStepDefs {
+    String query ="SELECT * FROM logs";
+
+    @Given("logs sutun isimlerini ve bilgileri almak icin query gonderilir")
+    public void logsSutunIsimleriniVeBilgileriAlmakIcinQueryGonderilir() {
         DB_Utilty.createConnection();
         DB_Utilty.executeQuery(query);
-
     }
 
-    @Then("confirmation token sutun isimleri ve bilgileri dogrulanır")
-    public void confirmationTokenSutunIsimleriVeBilgileriDogrulanır() {
-        ExcelReader excelReader =new ExcelReader(ConfigReader.getProperty("dataBaseExpectedDataPath"),"Tuncer");
+    @Then("logs sutun isimlerini ve bilgileri dogrulanır")
+    public void logsSutunIsimleriniVeBilgileriDogrulanır() {
+        ExcelReader excelReader =new ExcelReader(ConfigReader.getProperty("dataBaseExpectedDataPath"),"Tuncer2");
 
         //Row data expected and actual assertion
         List<Object> expectedRowData = excelReader.getRowData(2);
