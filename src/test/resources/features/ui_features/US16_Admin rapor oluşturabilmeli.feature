@@ -1,4 +1,4 @@
-@US16
+@US16 @UITakesScreenShot
 Feature: US16 Admin rapor olusturabilmeli
 
   Background:
