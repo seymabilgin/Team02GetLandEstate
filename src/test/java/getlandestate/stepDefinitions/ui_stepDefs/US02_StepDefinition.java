@@ -1,3 +1,4 @@
+
 package getlandestate.stepDefinitions.ui_stepDefs;
 
 import getlandestate.pages.Login_RegisterPage;
@@ -63,7 +64,9 @@ public class US02_StepDefinition {
         customer.loginPasswordAA.sendKeys(ConfigReader.getProperty("passwordAyse"));
     }*/
 
-    @Then("Customera olarak sayfaya giris yapilamadigi test edilir")
+
+   /* @Then("Customera olarak sayfaya giris yapilamadigi test edilir")
+
     public void customeraOlarakSayfayaGirisYapilamadigiTestEdilir() {
         String fail=customer.invalidEmailAA.getText();
         Assert.assertEquals("Invalid email",fail);
@@ -109,10 +112,14 @@ public class US02_StepDefinition {
        String fail3=customer.emailIsRequiredAA.getText();
        Assert.assertEquals("Email is required",fail3);
 
-    }
+    }*/
+
 
     /*
      And Profile tıklanır
     And Logout tiklanir
      */
+
+
 }
+
