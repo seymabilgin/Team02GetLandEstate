@@ -621,12 +621,7 @@ Login_RegisterPage {
 
 
 
-
  
-  
-  
-  
-    
       //625-725 FEYZI TUGCU
 @FindBy(xpath = "//span[contains(text(),'Back to Site')]")
 public WebElement backToSiteButton;
