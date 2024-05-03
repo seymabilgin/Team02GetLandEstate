@@ -74,9 +74,6 @@ public class DB_Utilty {
         return getQueryResultList(query).get(0);
     }
 
-    public static List<Object> getRowListIndex(String query, int i) {
-        return getQueryResultList(query).get(i);
-    }
 
 
     public static List<String> getColumnNames(String query) {
