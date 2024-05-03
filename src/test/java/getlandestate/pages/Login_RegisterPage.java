@@ -609,6 +609,10 @@ Login_RegisterPage {
     @FindBy(xpath = "//input[@name='email']") public WebElement loginEmail;
     @FindBy(xpath = "//input[@name='password']") public WebElement loginPassword;
     @FindBy(xpath = "//button[@type='submit']")  public WebElement loginButtona;
+
+    //@FindBy(xpath = "//div[@class='p-toast-detail']") public WebElement //updatedPhoto;
+    //@FindBy(xpath = "//div[@class='p-toast-detail']")  public WebElement a//ccountDelete;
+
    // @FindBy(xpath = "//div[@class='p-toast-detail']") public WebElement updatedPhoto;
     //@FindBy(xpath = "//div[@class='p-toast-detail']")  public WebElement accountDelete;
 
@@ -618,10 +622,6 @@ Login_RegisterPage {
 
 
  
-  
-  
-  
-    
       //625-725 FEYZI TUGCU
 @FindBy(xpath = "//span[contains(text(),'Back to Site')]")
 public WebElement backToSiteButton;

@@ -11,8 +11,6 @@ import java.sql.Statement;
 import java.util.List;
 
 public class US02_CategoriesTableStepDefs {
-    Statement statement;
-    ResultSet resultSet;
 
     String query="SELECT * FROM categories";
 
@@ -49,3 +47,7 @@ public class US02_CategoriesTableStepDefs {
 
     }
 }
+
+
+
+
