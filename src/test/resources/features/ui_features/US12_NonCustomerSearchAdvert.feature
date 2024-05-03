@@ -22,6 +22,7 @@ Feature:US12 Emlak Arama ve Detayları Görüntüleme
 
     And Details "<detailSize>" "<bedroomSize>" "<bathroomSize>" "<garageData>" "<yearOfBuild>" "<furniture>" "<maintenanceFee>" "<terrace>" bilgilerinin gorunurlugunu dogrular
 
+
     And Location "Türkiye" "Aydın" "Kuşadası" "Bayraklıdede mah. No: 15" bilgilerinin gorunurlugunu dogrular
     When Ilan verenin numarasini gormek icin goz ikonuna tiklar
     Then Don't have an account? Create one now! Menusunun gorundugunu dogrular
@@ -36,6 +37,7 @@ Feature:US12 Emlak Arama ve Detayları Görüntüleme
     Examples:
       | detailSize | bedroomSize | bathroomSize | garageData | yearOfBuild | furniture | maintenanceFee | terrace |
       | 120 m²     | 2           | 1            | NO         | 2010        | YES       | $ 900          | NO      |
+
 
 @US12TC02
   Scenario Outline: TC02 Kullanici (Sayfaya Kayit olmayan) satilik ve kiralik ilan arayabilmeli
@@ -68,6 +70,7 @@ Feature:US12 Emlak Arama ve Detayları Görüntüleme
     Examples:
       | detailSize | bedroomSize | bathroomSize | garageData | yearOfBuild | furniture | maintenanceFee | terrace |
       | 140 m²     | 3           | 2            | YES         | 2020        | NO       | $ 1200          | 2      |
+
 
   @US12TC03
   Scenario Outline: TC03 Kullanıcı (Sayfaya Kayıt olmayan) Satılık emlak ilanları için tur isteği oluştururken geçersiz veri kabul olmamalı.
