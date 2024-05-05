@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
 
         glue = {"getlandestate/stepDefinitions/ui_stepDefs", "getlandestate/hooks"},
-        tags = "",
+        tags = " @US09-UI-TC01",
         dryRun = false,
         monochrome = false
 

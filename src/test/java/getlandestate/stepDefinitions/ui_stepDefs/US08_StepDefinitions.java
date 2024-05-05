@@ -1,18 +1,25 @@
 package getlandestate.stepDefinitions.ui_stepDefs;
 
+import getlandestate.pages.DashBoardPage;
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.pages.PropertiesPage;
 import getlandestate.utilities.ConfigReader;
 import getlandestate.utilities.Driver;
+import getlandestate.utilities.ReusableMethods;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.interactions.Actions;
+
+import static org.junit.Assert.assertTrue;
 
 public class US08_StepDefinitions {
-    Login_RegisterPage registerPage =new Login_RegisterPage();
-    PropertiesPage propertiesPage= new PropertiesPage();
+    Login_RegisterPage registerPage = new Login_RegisterPage();
+    PropertiesPage propertiesPage = new PropertiesPage();
+
+    Actions actions = new Actions(Driver.getDriver());
 
     @Given("Manager Anasayfaya gider")
     public void managerAnasayfayaGider() {
@@ -24,61 +31,95 @@ public class US08_StepDefinitions {
         registerPage.homeLogin.click();
         registerPage.loginEmail.sendKeys(ConfigReader.getProperty("email8"));
         registerPage.loginPassword.sendKeys(ConfigReader.getProperty("password8"));
-        //registerPage.login.click();
+        Login_RegisterPage.loginButtonAA.click();
     }
 
-  /*  @Given("Web sitesinin {myAdverts} bolümüne gidilir.")
-    public void webSitesininBolümüneGidilir(String arg0) {
-    registerPage.backToSiteButton.click();
-    propertiesPage.accountIconButton.click();
-    propertiesPage.myAdvertsIcon.click();
-    }*/
-
-    @Then("Managerin ilanlarinin listesini gorebildigi dogrulanir.")
-    public void managerinIlanlarininListesiniGorebildigiDogrulanir() {
-        Assert.assertTrue(propertiesPage.ilan_Listesi.isDisplayed());
-
+@When("Adverts  butonuna tiklanir")
+public void advertsButonunaTiklanir() {
+actions.click(propertiesPage.getAdvertsText).perform();
+       ReusableMethods.bekle(3);
     }
 
-    @And("Listeden ilanlardan birini secer.")
-    public void listedenIlanlardanBiriniSecer() {
-        propertiesPage.ilan_Select1.click();
+   @Then("Manager olarak ilanlarin goruntulendigi dogrulanir")
+    public void managerOlarakIlanlarinGoruntulendigiDogrulanir() {
+        ReusableMethods.bekle(2);
+        assertTrue(PropertiesPage.searchSonucu.isDisplayed());
     }
 
-    @Then("Managerin sectigi ilanin ayrintilarini goruntuleyebildigi dogrulanir")
-    public void managerinSectigiIlaninAyrintilariniGoruntuleyebildigiDogrulanir() {
-        Assert.assertTrue(propertiesPage.ilan_Details.isDisplayed());
-        Driver.closeDriver();
+    @Then("Manager ilanlarda Date Published bilgisi goruntulendigi dogrulanir")
+    public void managerIlanlardaDatePublishedBilgisiGoruntulendigiDogrulanir() {
+        ReusableMethods.bekle(2);
+        assertTrue(propertiesPage.publishedDate.isDisplayed());
     }
 
-    @Then("Managerin ilanlarinin  listesini görebildigi dogrulanir.")
-    public void managerinIlanlarininListesiniGörebildigiDogrulanir() {
-        Assert.assertTrue(propertiesPage.ilan_Listesi.isDisplayed());
+    @Then("Manager ilanlarda Status bilgisi goruntulendigi dogrulanir")
+    public void managerIlanlardaStatusBilgisiGoruntulendigiDogrulanir() {
+        ReusableMethods.bekle(2);
+        assertTrue(propertiesPage.viewLikeTour.isDisplayed());
     }
 
-    @And("Managerin verdigi ilanlar ile ilgili {string}, {string} ve {string} dahil olmak üzere secilen ilanin ayrintilarini goruntuleyebildigi dogrulanir")
-    public void managerinVerdigiIlanlarIleIlgiliVeDahilOlmakÜzereSecilenIlaninAyrintilariniGoruntuleyebildigiDogrulanir(String arg0, String arg1, String arg2) {
-    }
-
-    @And("Bazı bilgileri ( başlık, açıklama, fiyat vb.) güncelleyerek ilanı düzenleyin.")
-    public void bazıBilgileriBaşlıkAçıklamaFiyatVbGüncelleyerekIlanıDüzenleyin() {
-    }
-
-    @And("Değişiklikleri kaydedin.")
-    public void değişiklikleriKaydedin() {
-    }
-
-    @Then("Değişikliklerin ilan ayrıntılarına yansıtıldığını doğrulayın.")
-    public void değişikliklerinIlanAyrıntılarınaYansıtıldığınıDoğrulayın() {
-    }
-
-    @And("Bazı ilanlar silinir.")
-    public void bazıIlanlarSilinir() {
-    }
-
-    @Then("İlanin artik Managerin ilanlar listesinde görünmedigini dogrulayin.")
-    public void ilaninArtikManagerinIlanlarListesindeGörünmediginiDogrulayin() {
+    @Then("Manager ilanlarda View-Like-Tour bilgisi goruntulendigi dogrulanir")
+    public void managerIlanlardaViewLikeTourBilgisiGoruntulendigiDogrulanir() {
+        ReusableMethods.bekle(2);
+        assertTrue(propertiesPage.statusBilgisi.isDisplayed());
     }
 
 
+    @Then("Ilanin delete edilebildigi dogrulanir")
+    public void ilaninDeleteEdilebildigiDogrulanir() {
+        ReusableMethods.bekle(2);
+
+        assertTrue(propertiesPage.advertDeletedButton.isDisplayed());
+    }
+
+
+
+    @And("Silinecek ilan search yapilir")
+    public void silinecekIlanSearchYapilir() {
+        ReusableMethods.bekle(2);
+        propertiesPage.advertsTypeSomethingButton.sendKeys("nuriye");
+        propertiesPage.advertsSearchButton.click();
+
+    }
+
+    @And("Ilan uzerindeki cop kutusu butonuna tiklanir")
+    public void ilanUzerindekiCopKutusuButonunaTiklanir() {
+        ReusableMethods.bekle(2);
+        PropertiesPage.copKutusuButton.click();
+    }
+
+    @And("Yes butonuna tiklanir")
+    public void yesButonunaTiklanir() {
+        ReusableMethods.bekle(2);
+        propertiesPage.deleteYesButonu.click();
+    }
+
+    @And("kullanici kalem ikonuna tiklanir")
+    public void kullaniciKalemIkonunaTiklanir() {
+        propertiesPage.kalemIcon.click();
+    }
+
+    @And("Acilan Edit sayfasinda Title ve sluq a datalar girilir")
+    public void acilanEditSayfasindaTitleVeSluqADatalarGirilir() {
+        propertiesPage.titleInput.sendKeys("House");
+        propertiesPage.sluqInput.sendKeys("userFace");
+    }
+
+    @And("Update butonuna tiklanir")
+    public void updateButonunaTiklanir() {
+        propertiesPage.updateButton.click();
+    }
+
+    @Then("Advert update successfully goruntulendigi dogrulanir")
+    public void advertUpdateSuccessfullyGoruntulendigiDogrulanir() {
+        assertTrue(PropertiesPage.updateVerificationMessage.isDisplayed());
+    }
 }
+
+
+
+
+
+
+
+

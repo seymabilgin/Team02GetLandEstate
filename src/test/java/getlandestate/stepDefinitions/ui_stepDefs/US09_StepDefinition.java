@@ -1,5 +1,6 @@
 package getlandestate.stepDefinitions.ui_stepDefs;
 
+import getlandestate.pages.DashBoardPage;
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.pages.PropertiesPage;
 import getlandestate.utilities.ConfigReader;
@@ -10,145 +11,114 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 
 
+import static getlandestate.utilities.ReusableMethods.ddmVisibleText;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class US09_StepDefinition {
 
-    public class US09_StepDefinitions {
+
 
         Login_RegisterPage registerPage = new Login_RegisterPage();
         PropertiesPage propertiesPage = new PropertiesPage();
+        Login_RegisterPage login;
+        DashBoardPage dashBoardPage;
+    Actions actions=new Actions(Driver.getDriver());
 
         @Given("Admin Anasayfaya gider")
         public void admin_anasayfaya_gider() {
             Driver.getDriver().get(ConfigReader.getProperty("getlandestateUrl"));
-
         }
 
         @When("Admin sistemde oturum acar")
         public void admin_sistemde_oturum_acar() {
-            registerPage.homeLogin.click();
+            login = new Login_RegisterPage();
+            login.loginAA.click();
             registerPage.loginEmail.sendKeys(ConfigReader.getProperty("AdminName"));
             registerPage.loginPassword.sendKeys(ConfigReader.getProperty("AdminPassword"));
-            registerPage.loginButtonAA.click();
+            Login_RegisterPage.loginButtonAA.click();
 
         }
-
         @Given("Web sitesinin Ilanlarim bolümüne gidilir.")
-        public void webSitesinin_Ilanlarim_Bolümüne_Gidilir() {
+        public void webSitesininIlanlarimBolümüneGidilir() {
+            actions.click(propertiesPage.getAdvertsText).perform();
             ReusableMethods.bekle(3);
-            propertiesPage.getAdvertsText.click();
         }
 
-        @When("Belirli kriterlere gore ilan aratilir.")
-        public void belirli_kriterlere_gore_ilan_aratilir() {
-            propertiesPage.advertsTikla.click();
-            propertiesPage.advertsSearch.sendKeys("Villan");
-            propertiesPage.searchButtonn.click();
-        }
+    @And("Belirli kriterlere gore ilan aratilir.")
+    public void belirliKriterlereGoreIlanAratilir() {
+        actions.click(propertiesPage.getAdvertsText).perform();
+        propertiesPage.advertsSearch.sendKeys("villa");
+        ReusableMethods.ddmValue(propertiesPage.selectStatus,"1");
 
+    }
         @Then("Adminin arama kriterleriyle eslesen ilanlarin listesini görüntüleyebildigi dogrulanir.")
-        public void adminin_arama_kriterleriyle_eslesen_ilanlarin_listesini_görüntüleyebildigi_dogrulanir() {
-            //Assert.assertTrue(propertiesPage.searchResult.isDisplayed());
-            assertEquals("Villan", propertiesPage.searchResultt.getText());
-
-        }
-    /*@Then("admin sayfayi kapatir.")
-    public void admin_sayfayi_kapatir() {
-        Driver.closeDriver();
-
-    }*/
-
-
-        @And("Pending olan ilanlar aratilir")
-        public void pendingOlanIlanlarAratilir() {
-            propertiesPage.getAdvertsText.click();
-            propertiesPage.advertsSearch.click();
-            propertiesPage.advertsSearch.sendKeys("Villan");
-            ReusableMethods.bekle(3);
-            ReusableMethods.ddmValue(propertiesPage.selectStatus, "1");
-            ReusableMethods.bekle(3);
-            propertiesPage.searchButtonn.click();
+        public void admininAramaKriterleriyleEslesenIlanlarinListesiniGörüntüleyebildigiDogrulanir() {
+            ReusableMethods.click(propertiesPage.searchButtonn);
+            ReusableMethods.bekle(2);
         }
 
         @And("Listeden herhangi bir ilan seçilir.")
         public void listedenHerhangiBirIlanSeçilir() {
-            ReusableMethods.scrollEnd();
-            ReusableMethods.bekle(2);
+            actions.click(propertiesPage.getAdvertsText).perform();
+            propertiesPage.advertsSearch.sendKeys("villa");
+            ReusableMethods.ddmValue(propertiesPage.selectStatus,"1");
+            ReusableMethods.click(propertiesPage.searchButtonn);
             propertiesPage.advertUpdateikonforStatus.click();
-        }
-
-        @And("Listede herhangi bir ilandaki Pending butonuna tiklanir.")
-        public void listedeHerhangiBirIlandakiPendingButonunaTiklanir() {
-            ReusableMethods.ddmVisibleText(propertiesPage.pendingSelect, "Activated");
-            propertiesPage.updatedButton.click();
-        }
-
+            ReusableMethods.bekle(2);
+            ddmVisibleText(propertiesPage.statusButonu,"Activated");
+    }
         @Then("Ilanin artık aktif olarak isaretlendigi dogrulanir.")
         public void ılaninArtıkAktifOlarakIsaretlendigiDogrulanir() {
-            Assert.assertTrue(propertiesPage.selectActivatedVerify.isDisplayed());
+            ReusableMethods.bekle(2);
+            System.out.println(new Select(propertiesPage.statusButonu).getFirstSelectedOption().getText()+" beklenen Activated");
+            assertEquals("Activated",new Select(propertiesPage.statusButonu).getFirstSelectedOption().getText());
         }
 
+    @And("Listeden herhangibir ilan seçilir.")
+    public void listedenHerhangibirIlanSeçilir() {
+        propertiesPage.advertUpdate_ikonforRejected.click();
+    }
 
-        @And("Belirlenen kriterlere gore ilan aratilir.")
-        public void belirlenenKriterlereGoreIlanAratilir() {
-            propertiesPage.advertsSearch.click();
-            propertiesPage.advertsSearch.sendKeys("titleData");
-            propertiesPage.selectStatus.click();
-            propertiesPage.pendingSelect.click();
-            propertiesPage.searchButtonn.click();
-        }
+    @And("Listeden secilen ilan icin red islemi yapilir")
+    public void listedenSecilenIlanIcinRedIslemiYapilir() {
+        ReusableMethods.ddmVisibleText(propertiesPage.pendingSelect, "Rejected");
+        propertiesPage.updatedButton.click();
+    }
 
-        @And("Listeden herhangibir ilan seçilir.")
-        public void listedenHerhangibirIlanSeçilir() {
-            propertiesPage.advertUpdate_ikonforRejected.click();
-        }
+    @Then("Ilanin artık reddedildi olarak isaretlendigi dogrulanir.")
+    public void ılaninArtıkReddedildiOlarakIsaretlendigiDogrulanir() {
+        System.out.println(new Select(propertiesPage.statusButonu).getFirstSelectedOption().getText()+" Rejected");
 
-        @And("Listeden secilen ilan icin red islemi yapilir")
-        public void listedenSecilenIlanIcinRedIslemiYapilir() {
-            ReusableMethods.ddmVisibleText(propertiesPage.pendingSelect, "Rejected");
-            propertiesPage.updatedButton.click();
-        }
+        assertEquals("Rejected",new Select(propertiesPage.statusButonu).getFirstSelectedOption().getText());
+    }
 
-        @Then("Ilanin artık reddedildi olarak isaretlendigi dogrulanir.")
-        public void ılaninArtıkReddedildiOlarakIsaretlendigiDogrulanir() {
-            Assert.assertTrue(propertiesPage.selectRejectedVerify.isDisplayed());
-        }
+    @And("Listeden secilen ilanin bazı bilgileri degistirilerek secili reklam guncellenir")
+    public void listedenSecilenIlaninBazıBilgileriDegistirilerekSeciliReklamGuncellenir() {
+        actions.click(propertiesPage.getAdvertsText).perform();
+        propertiesPage.advertsSearch.sendKeys("villa");
+        ReusableMethods.ddmValue(propertiesPage.selectStatus,"1");
+        ReusableMethods.click(propertiesPage.searchButtonn);
+        propertiesPage.advertUpdateikonforStatus.click();
+        ReusableMethods.bekle(2);
+        propertiesPage.ilan_EditTitle.sendKeys("HOUSE");
 
+    }
 
-        @And("Belirli kriterlere gore ilanlar aratilir.")
-        public void belirliKriterlereGoreIlanlarAratilir() {
-            propertiesPage.advertsSearch.click();
-            propertiesPage.advertsSearch.sendKeys("titleData");
-            propertiesPage.searchButtonn.click();
-        }
+    @And("Yapilan degisiklikler kaydedilir")
+    public void yapilanDegisikliklerKaydedilir() {
+        propertiesPage.advertsEditUpdateButon.click();
+    }
 
-        @And("Çıkan listeden herhangi bir ilan seçilir.")
-        public void çıkanListedenHerhangiBirIlanSeçilir() {
-            propertiesPage.advertUpdateikonforStatus.click();
-        }
-
-        @And("Listeden secilen ilanin bazı bilgileri degistirilerek secili reklam guncellenir")
-        public void listedenSecilenIlaninBazıBilgileriDegistirilerekSeciliReklamGuncellenir() {
-            propertiesPage.ilan_EditPrice.clear();
-            propertiesPage.ilan_EditPrice.sendKeys("priceData2");
-            propertiesPage.ilan_EditTitle.clear();
-            propertiesPage.ilan_EditTitle.sendKeys("titleData2");
-        }
-
-        @And("Yapilan degisiklikler kaydedilir")
-        public void yapilanDegisikliklerKaydedilir() {
-            propertiesPage.ilanUpdate_Button.click();
-        }
-
-        @Then("Degisikliklerin ilan ayrintilarina yansitildigi dogrulanir.")
-        public void degisikliklerinIlanAyrintilarinaYansitildigiDogrulanir() {
-            Assert.assertTrue(propertiesPage.adminAdvertVerify.isDisplayed());
-            Driver.closeDriver();
-        }
-
+    @Then("Degisikliklerin ilan ayrintilarina yansitildigi dogrulanir.")
+    public void degisikliklerinIlanAyrintilarinaYansitildigiDogrulanir() {
+        assertTrue(PropertiesPage.updateVerificationMessage.isDisplayed());
+        Driver.closeDriver();
 
     }
 }

@@ -1002,8 +1002,11 @@ public WebElement dashboardCategories;
     public WebElement dashboardTourRequestsImage;
 
     @FindBy(xpath = "//span[normalize-space()='Back to Site']")
-    public WebElement dashboardbackToSite;
+    public static WebElement dashboardbackToSite;
 
+    @FindBy(className = "side-menu-link back-site nav-link")
+    public static WebElement dashboardbackToSites;
+    //
     @FindBy(xpath = "//div[@class='user-logo-nav navbar-nav']")
     public WebElement dashboardbackToDashboard;
 
