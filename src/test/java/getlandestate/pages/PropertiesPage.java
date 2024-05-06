@@ -395,8 +395,8 @@ public class PropertiesPage {
     //public WebElement searchButton;
 
 
-   @FindBy(xpath = "//button[@class='dynamic-button  btn btn-primary']")
-    public WebElement searchButtonn;
+   /*@FindBy(xpath = "//button[@class='dynamic-button  btn btn-primary']")
+    public WebElement searchButtonn;*/
 
 
 
