@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         },
         features = "src/test/resources/features",
         glue = {"getlandestate/stepDefinitions","getlandestate/hooks"},
-        tags = "",
+        tags = "@US19_TC01",
         dryRun = false
         ,monochrome=false
 )

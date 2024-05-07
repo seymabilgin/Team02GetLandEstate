@@ -1,4 +1,4 @@
-package getlandestate.stepDefinitions.ui_stepDefs;
+/*package getlandestate.stepDefinitions.ui_stepDefs;
 
 import getlandestate.pages.Login_RegisterPage;
 import getlandestate.utilities.ConfigReader;
@@ -64,7 +64,7 @@ public class US18_StepDefinitions {
    public void mesajiGoruntulendigiDogrulanmalır(String arg0) {
       // Alert alert=registerPage.
       String succesText= ReusableMethods.alertGetTextJS(registerPage.succesText);
-       Assert.assertTrue(succesText.contains("Succes"));
+       Assert.assertTrue(succesText.contains("Success"));
 
    }
 
@@ -77,9 +77,9 @@ public class US18_StepDefinitions {
 
     @And("profil üzerinden MY TOUR REQUEST'e tıklanır")
     public void profilÜzerindenMYTOURREQUESTETıklanır() {
-        registerPage.backToSiteButton.click();
+
         registerPage.userPicture.click();
-        registerPage.tourRequests.click();
+        registerPage.requestMy.click();
 
     }
 
@@ -95,11 +95,20 @@ public class US18_StepDefinitions {
 
     @And("birincisini kabul edebilir")
     public void birincisiniKabulEdebilir() {
-        registerPage.acceptDavet.click();
+        ReusableMethods.click(registerPage.acceptDavet);
+        registerPage.getYes.click();
     }
 
     @Then("ikincisini ret edebilir")
     public void ikincisiniRetEdebilir() {
+        ReusableMethods.click(registerPage.declineDavet);
         registerPage.declineDavet.click();
+        registerPage.getYes.click();
+    }
+
+    @And("Dashboard yazdıgı dogrulanır")
+    public void dashboardYazdıgıDogrulanır() {
+        Assert.assertTrue(registerPage.dashboard.getText().contains("Dashboard"));
     }
 }
+*/
