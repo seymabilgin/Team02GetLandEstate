@@ -8,15 +8,13 @@ import java.io.Serializable;
 public class AdvertTypeResponsePojo implements Serializable {
 	private int id;
 	private String title;
-	private boolean builtIn;
 
 	public AdvertTypeResponsePojo() {
 	}
 
-	public AdvertTypeResponsePojo(int id, String title, boolean builtIn) {
+	public AdvertTypeResponsePojo(int id, String title) {
 		this.id = id;
 		this.title = title;
-		this.builtIn = builtIn;
 	}
 
 	public void setId(int id){
@@ -35,21 +33,14 @@ public class AdvertTypeResponsePojo implements Serializable {
 		return title;
 	}
 
-	public void setBuiltIn(boolean builtIn){
-		this.builtIn = builtIn;
-	}
 
-	public boolean isBuiltIn(){
-		return builtIn;
-	}
 
 	@Override
  	public String toString(){
 		return 
 			"ResponsePOJO{" + 
 			"id = '" + id + '\'' + 
-			",title = '" + title + '\'' + 
-			",builtIn = '" + builtIn + '\'' + 
+			",title = '" + title + '\'' +
 			"}";
 		}
 }
