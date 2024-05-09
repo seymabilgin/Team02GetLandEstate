@@ -530,7 +530,7 @@ Login_RegisterPage {
     @FindBy(xpath = "//input[@name='password']")
     public WebElement loginPasswordAA;
     @FindBy(xpath = "//button[@type='submit']")
-    public WebElement loginButtonAA;
+    public static WebElement loginButtonAA;
     @FindBy(xpath = "//div[@class='user-logo-nav navbar-nav']")
     public WebElement profileLogAA;
     @FindBy(xpath = "(//a[@class='dropdown-item'])[5]")
