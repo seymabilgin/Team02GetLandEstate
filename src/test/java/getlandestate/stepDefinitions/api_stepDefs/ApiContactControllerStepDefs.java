@@ -1,8 +1,6 @@
 package getlandestate.stepDefinitions.api_stepDefs;
 
 import getlandestate.pojos.UserContactControllerPayloadPojo;
-import getlandestate.pojos.UserPayloadPojo;
-import getlandestate.pojos.UserPostResponsePojo;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
