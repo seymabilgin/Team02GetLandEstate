@@ -22,6 +22,7 @@ public class ApiContactControllerStepDefs {
 
     @Given("Post Contact-Controller icin URL duzenlenir")
     public void postContactControllerIcinURLDuzenlenir() {
+        //http://www.getlandestate.com:8092/contact-messages
         spec.pathParam("first", "contact-messages");
     }
 
@@ -34,7 +35,7 @@ public class ApiContactControllerStepDefs {
     @When("Post Contact-Controller icin POST request gonderilir ve Response alinir")
     public void postContactControllerIcinPOSTRequestGonderilirVeResponseAlinir() {
         response = given(spec).body(payload).when().post("{first}");
-        actualData = response.toString();
+        actualData = response.asString();
         response.prettyPrint();
     }
 
@@ -52,6 +53,7 @@ public class ApiContactControllerStepDefs {
 
     @Given("Get Contact-Controller icin URL duzenlenir")
     public void getContactControllerIcinURLDuzenlenir() {
+        spec.pathParam("first", "contact-messages");
     }
 
     @And("Get Contact-Controller icin expected data duzenlenir")

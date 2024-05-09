@@ -1,7 +1,7 @@
 @APIUS06
 Feature: API contact-controller Testleri
 
-  @APIUS06TC01
+  @APIUS06TC01 @APICustomer
   Scenario: TC01 | Post Contact-Controller Testi
     Given Post Contact-Controller icin URL duzenlenir
     And Post Contact-Controller icin payload duzenlenir
@@ -9,7 +9,7 @@ Feature: API contact-controller Testleri
     Then Post Contact-Controller icin Status kodunun 200 oldugu dogrulanir
     And Post Contact-Controller icin Response body dogrulanir
 
-  @APIUS06TC02
+  @APIUS06TC02  @APICustomer
   Scenario: TC02 | Get Contact-Controller Testi
     Given Get Contact-Controller icin URL duzenlenir
     And Get Contact-Controller icin expected data duzenlenir
