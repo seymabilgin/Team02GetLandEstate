@@ -21,7 +21,9 @@ public class Hooks {
 //-----------------------API------------------------------------------------------------------------//
     @Before("@APIAdmin")
     public void apiAdmin(){
-        setUp(ConfigReader.getProperty("EmailAdmin"),ConfigReader.getProperty("PasswordAdmin"));
+
+        setUp(ConfigReader.getProperty(""),ConfigReader.getProperty(""));
+
     }
     @Before("@APIManager")
     public void apiManager(){
@@ -29,7 +31,7 @@ public class Hooks {
     }
     @Before("@APICustomer")
     public void uiCustomer(){
-        setUp(ConfigReader.getProperty("CanEmail"),ConfigReader.getProperty("CanPassword"));
+        setUp(ConfigReader.getProperty(""),ConfigReader.getProperty(""));
     }
 
 //--------------------------DB----------------------------------------------------------------------//

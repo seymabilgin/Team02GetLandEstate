@@ -11,12 +11,14 @@ import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 
+import static getlandestate.utilities.DB_Utilty.*;
 import static getlandestate.utilities.ReusableMethods.*;
 
 public class US06_US07_StepDefinitions {
     Login_RegisterPage loginPage=new Login_RegisterPage();
     CreatePropertyPage createPropertyPage= new CreatePropertyPage();
     HomePage homePage=new HomePage();
+    public static Object advertId;
     @And("Login butonuna tıklanır")
     public void loginButonunaTıklanır() {
         homePage.loginButtonInHomePage.click();
@@ -154,6 +156,10 @@ public class US06_US07_StepDefinitions {
         createPropertyPage.createButtonOfPropert.click();
         visibleWait(createPropertyPage.advertCreatedVeriflyTextOfPropert,15);
         Assert.assertEquals(createPropertyPage.advertCreatedVeriflyTextOfPropert.getText(),createdAlert);
+        createConnection();
+        String query="SELECT * FROM adverts WHERE address = 'Hürriyet Mahallesi, NO:9'";
+        executeQuery(query);
+        advertId = getRowListIndex(query, 0).get(13);
     }
 
     @And("Title ve description alanları boş bırakılır")

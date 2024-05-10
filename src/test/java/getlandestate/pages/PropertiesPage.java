@@ -1,6 +1,7 @@
 package getlandestate.pages;
 
 import getlandestate.utilities.Driver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -226,7 +227,7 @@ public class PropertiesPage {
 
     @FindBy(css = "#body > div:nth-child(2) > div:nth-child(1) > nav:nth-child(1) > div:nth-child(1) > div:nth-child(4) > div:nth-child(2) > div:nth-child(1) > img:nth-child(1)")
     public WebElement accountIconButton;
-    ////span[normalize-space()='My Adverts']
+
     @FindBy(xpath = "//span[normalize-space()='My Adverts']")
     public WebElement myAdvertsIcon;
     @FindBy(xpath = "//div[@class='advert-container container']")
@@ -255,14 +256,19 @@ public class PropertiesPage {
     @FindBy(xpath = "//h1[normalize-space()='EDIT ADVERT']")
     public WebElement ilan_EditAdvert;
 
-    @FindBy(xpath = "//input[@id='price']")
+    @FindBy(xpath = "//input[@id='price']")//input[@id='price']
     public WebElement ilan_EditPrice;
 
     @FindBy(xpath = "//input[@id='title']")
     public WebElement ilan_EditTitle;
-
+    @FindBy(id = "price_start")
+    public WebElement advertsPriceStart1Button;
+    @FindBy(id = "title")
+    public WebElement advertEditTitleButon;
     @FindBy(xpath = "//button[normalize-space()='Update']")
     public WebElement ilanUpdate_Button;
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement advertsEditUpdateButon;
 
 
 
@@ -279,30 +285,56 @@ public class PropertiesPage {
 
     @FindBy(xpath = "//textarea[@id='desc']")
     public WebElement ilan_EditDescription;
+    @FindBy(css = "#q")
+    public WebElement advertsTypeSomethingButton;
 
     @FindBy(xpath = "//span[normalize-space()='Adverts']")
     public WebElement advertsTikla;
-
-    @FindBy(css = "#q")
+//@FindBy(css = "#q")
+//    public WebElement advertsTypeSomethingButton;
+    @FindBy(xpath ="//input[@id='q']")
     public WebElement advertsSearch;
     @FindBy(xpath = "//button[@type='submit']")
     public WebElement searchButtonn;
-    @FindBy(xpath = "//p[normalize-space()='Villan']")
-    public WebElement searchResultt;
-    @FindBy(xpath = "//tbody/tr[1]/td[5]/div[1]/div[1]/button[2]//*[name()='svg']")
-    public WebElement kalemIkonu;
+    @FindBy(id = "statusForAdvert")
+    public WebElement statusButonu;
+    @FindBy(xpath = "(//*[@class=\"btn-link btn btn-primary\"])[1]")
+    public static WebElement copKutusuButton;
+
+    @FindBy(xpath = "//button[@aria-label='Yes']")
+    public WebElement deleteYesButonu;
+
+    @FindBy(xpath = "//*[.='Advert deleted']")
+    public WebElement advertDeletedButton;
+    @FindBy(xpath = "//tr[@draggable='false']//span[@class='p-tag-value'][normalize-space()='PENDING']")
+    public WebElement pendingVerify;
+    @FindBy(id=("kalemIconId"))
+    public WebElement kalemIcon;
+    @FindBy(id=("titleInputId"))
+    public WebElement titleInput;
+
+    @FindBy(id=("sluqInputId"))
+    public WebElement sluqInput;
+
+    @FindBy(id=("updateButtonId"))
+    public WebElement updateButton;
+
+
+
     @FindBy(xpath = "//tbody//button[2]")
     public WebElement kalemIkonu2;
 
     @FindBy(xpath = "//a[@title='Adverts']")
     public WebElement getAdvertsText;
 
-    @FindBy(xpath = "//select[@id='status']")
+    @FindBy(xpath = "//select[@id='status']") ////select[@id='status']
     public WebElement selectStatus;
     @FindBy(xpath = "//tbody/tr[1]/td[5]/div[1]/div[1]/button[2]//*[name()='svg']")
     public WebElement advertUpdateikonforStatus;
     @FindBy(xpath = "//select[@id='statusForAdvert']")
     public WebElement pendingSelect;
+    @FindBy(xpath = "//div[.='Advert updated successfully']")
+    public static WebElement updateVerificationMessage;
     @FindBy(xpath = "//select[@id='statusForAdvert']//option[contains(text(),'Activated')]")
     public WebElement selectActivated;
     @FindBy(xpath = "//select[@id='statusForAdvert']//option[contains(text(),'Activated')]")
@@ -313,34 +345,31 @@ public class PropertiesPage {
     public WebElement updatedButton;
     @FindBy(xpath = "//tbody/tr[2]/td[5]/div[1]/div[1]/button[2]//*[name()='svg']//*[name()='path' and contains(@d,'M17 3a2.85')]")
     public WebElement advertUpdate_ikonforRejected;
-    @FindBy()
-    public WebElement getMyAdvertsText;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement advertsSearchButton;
 
 
-    @FindBy()
-    public WebElement selectRejectedVerify;
-    @FindBy()
-    public WebElement adminAdvertVerify;
-
-
+    @FindBy(xpath = "//div[@data-pc-name='paginator']")
+    public static WebElement searchSonucu;
 
 
 
 
 
+    @FindBy(id = "Size")
+    public WebElement advertsEditSizeButon;
 
 
 
+    @FindBy(xpath = "//span[.='Published']")
+    public WebElement publishedDate;
 
+    @FindBy(xpath = "//span[.='Status']")
+    public WebElement statusBilgisi;
 
-
-
-
-
-
-
-
-
+    @FindBy(xpath = "//span[.='View-Like-Tour']")
+    public WebElement viewLikeTour;
 
 
 
@@ -354,20 +383,44 @@ public class PropertiesPage {
 
 
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  // 350-425 hanife
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // 350-425 hanife
 
     @FindBy(xpath = "//div[@class='page-header container']")
     public WebElement propertiesTitle;
