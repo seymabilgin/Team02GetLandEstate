@@ -21,7 +21,7 @@ public class Hooks {
 //-----------------------API------------------------------------------------------------------------//
     @Before("@APIAdmin")
     public void apiAdmin(){
-        setUp(ConfigReader.getProperty(""),ConfigReader.getProperty(""));
+        setUp(ConfigReader.getProperty("email"),ConfigReader.getProperty("password"));
     }
     @Before("@APIManager")
     public void apiManager(){
