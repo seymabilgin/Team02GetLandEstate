@@ -38,7 +38,7 @@ public class ApiUserControllerStepdefinition {
 
     @And("User Register icin payload duzenlenir")
     public void userRegisterIcinPayloadDuzenlenir() {
-        payloadRegister = new UserRegisterPayloadPojo("Veli", "Can", "(536) 255-5693", "VeliCan123@", "veliCan0222@gmail.com");
+        payloadRegister = new UserRegisterPayloadPojo("Tom", "Can", "(536) 555-8850", "VeliCan123@", "veliCan0750@gmail.com");
     }
 
     @When("User Register icin POST request gonderilir ve Response alinir")
@@ -73,7 +73,7 @@ public class ApiUserControllerStepdefinition {
 
     @And("User Login icin payload duzenlenir")
     public void userLoginIcinPayloadDuzenlenir() {
-        payloadLogin = new LoginPayloadPojo("veliCan0222@gmail.com", "VeliCan123@");
+        payloadLogin = new LoginPayloadPojo("veliCan0750@gmail.com", "VeliCan123@");
 
     }
 
@@ -93,11 +93,11 @@ public class ApiUserControllerStepdefinition {
     @And("User Login icin Response body dogrulanir")
     public void userLoginIcinResponseBodyDogrulanir() {
         // 1) MATCHER CLASS
-        response.then().assertThat().body("id", equalTo(1276)
-                , "email", equalTo("veliCan0222@gmail.com")
-                , "firstName", equalTo("Veli")
+        response.then().assertThat().body("id", equalTo(userId)
+                , "email", equalTo("veliCan0750@gmail.com")
+                , "firstName", equalTo("Tom")
                 , "lastName", equalTo("Can")
-                , "phone", equalTo("(536) 255-5693")
+                , "phone", equalTo("(536) 555-8850")
                 , "role", equalTo("CUSTOMER")
                 , "profilePhoto", equalTo(null));
     }
@@ -108,7 +108,7 @@ public class ApiUserControllerStepdefinition {
     public void getUserIcinURLDuzenlenir() {
         // http://www.getlandestate.com:8092/users/id/admin
 
-        spec.pathParams("first", "users", "second", 1276, "third", "admin");
+        spec.pathParams("first", "users", "second",userId, "third", "admin");
     }
 
     @And("Get User icin expected data duzenlenir")
@@ -116,11 +116,11 @@ public class ApiUserControllerStepdefinition {
 
         //3)EXPECTED DATA HASHMAP
         expectedDataGetId = new HashMap<>();
-        expectedDataGetId.put("id", 1276);
-        expectedDataGetId.put("firstName", "Veli");
+        expectedDataGetId.put("id", userId);
+        expectedDataGetId.put("firstName", "Tom");
         expectedDataGetId.put("lastName", "Can");
-        expectedDataGetId.put("email", "veliCan0222@gmail.com");
-        expectedDataGetId.put("phone", "(536) 255-5696");
+        expectedDataGetId.put("email", "veliCan0750@gmail.com");
+        expectedDataGetId.put("phone", "(536) 555-8850");
         expectedDataGetId.put("role", "CUSTOMER");
 
     }
@@ -152,11 +152,11 @@ public class ApiUserControllerStepdefinition {
     @Given("Kullanıcı bilgileri degisikligi icin Url duzenlenir")
     public void kullanıcıBilgileriDegisikligiIcinUrlDuzenlenir() {
        // http://www.getlandestate.com:8092/users/1074/admin
-        spec.pathParams("first","users","second",1276,"third","admin");
+        spec.pathParams("first","users","second",userId,"third","admin");
     }
     @When("Kullanıcı bilgileri degisikligi icin payload duzenlenir")
     public void kullanıcıBiilgileriDegisikligiIcinPayloadDuzenlenir() {
-        patchPayload=new UsersPatchPayloadPojo("Ayse", "Can", "(536) 255-5696", "VeliCan123@", "veliCan0222@gmail.com","CUSTOMER");
+        patchPayload=new UsersPatchPayloadPojo("Ayse", "Can", "(536) 555-8850", "VeliCan123@", "veliCan0750@gmail.com","CUSTOMER");
 
     }
 
@@ -193,11 +193,17 @@ public class ApiUserControllerStepdefinition {
     public void kendiHesabiniSilmekIcinStatusKodununOlduguDogrulanır(int statusCode) {
         assertEquals(statusCode, response.statusCode());
     }
-
-
-
-
     //---------------------------------------------------------------------------------------//
+    //E2E
+    @Given("Kayıtlı User Id bilgisi alinir")
+    public void kayıtlıUserIdBilgisiAlinir() {
+        //http://www.getlandestate.com:8092/users/admin?size=30&sort=id,desc
+        spec.pathParams("first", "users", "second", "admin")
+                .queryParams("size", 30, "sort", "id,desc");
+        response = given(spec).when().get("{first}/{second}");
+
+        userId = response.jsonPath().getInt("content.find{it.email=='customer@ayseyilmaz.com'}.id");
+    }
 
 }
 
