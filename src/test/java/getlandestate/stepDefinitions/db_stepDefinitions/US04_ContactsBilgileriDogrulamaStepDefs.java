@@ -10,11 +10,18 @@ import java.util.List;
 
 import static getlandestate.utilities.DB_Utilty.*;
 import static getlandestate.utilities.DB_Utilty.getRowListIndex;
+import static org.testng.Assert.assertEquals;
 
 public class US04_ContactsBilgileriDogrulamaStepDefs {
 
 
     String query;
+    String query2;
+    List<Object> expectedColmsData;
+    List<String> actualColmsData;
+    List<Object> expectedInfoData;
+    List<Object> actualInfoData;
+    ExcelReader excelReader;
     @Given("Database ile bağlantı kurulur")
     public void databaseIleBağlantıKurulur() {
         createConnection();
@@ -28,11 +35,11 @@ public class US04_ContactsBilgileriDogrulamaStepDefs {
 
     @Then("contacs sutun isimleri ve bilgileri dogrulanır")
     public void contacsSutunIsimleriVeBilgileriDogrulanır() {
-        ExcelReader excelReader =new ExcelReader(ConfigReader.getProperty("dataBaseExpectedDataPath"),"Furkan");
+        excelReader =new ExcelReader(ConfigReader.getProperty("dataBaseExpectedDataPath"),"Furkan");
 
         //Sutun Dogrulama
-        List<Object> expectedColmsData = excelReader.getRowData(0);
-        List<String> actualColmsData = getColumnNames(query);
+        expectedColmsData = excelReader.getRowData(0);
+        actualColmsData = getColumnNames(query);
         Assert.assertEquals(expectedColmsData,actualColmsData);
 
         //Bilgi dogrulama
@@ -41,4 +48,24 @@ public class US04_ContactsBilgileriDogrulamaStepDefs {
 
     }
 
+    @Given("adverts sutun isimleri ve bilgileri almak icin query gonderilirr")
+    public void advertsSutunIsimleriVeBilgileriAlmakIcinQueryGonderilir() {
+        query2="select * from adverts where id = 292";
+        executeQuery(query2);
+    }
+
+    @Then("adverts sutun isimleri ve bilgileri dogrulanırr")
+    public void advertsSutunIsimleriVeBilgileriDogrulanırr() {
+        excelReader=new ExcelReader(ConfigReader.getProperty("dataBaseExpectedDataPath"),"İlknur");
+        //Sutun bilgilerini doğrulama
+        actualColmsData = getColumnNames(query2);
+        expectedColmsData = excelReader.getRowData(0);
+        assertEquals(actualColmsData.toString(),expectedColmsData.toString());
+
+        //Satır bilgisi doğrulama
+        actualInfoData = getRowListIndex(query2, 0);
+        expectedInfoData = excelReader.getRowData(1);
+
+        assertEquals(actualInfoData.toString(),expectedInfoData.toString());
+    }
 }
